@@ -37,6 +37,7 @@
 		A271D4CA297979F600A8AAC6 /* UpdateTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4C9297979F600A8AAC6 /* UpdateTaskView.swift */; };
 		A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4CB29797EF100A8AAC6 /* UpdateTaskViewModel.swift */; };
 		A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4CD297983D300A8AAC6 /* UpdateTaskService.swift */; };
+		A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2823E69298B10E400224E5A /* DatePickerView.swift */; };
 		A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA882976F18F007369AB /* firebaseTestApp.swift */; };
 		A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA8A2976F18F007369AB /* ContentView.swift */; };
 		A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8C2976F190007369AB /* Assets.xcassets */; };
@@ -47,6 +48,9 @@
 		A2DDAAA1297740AE007369AB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2DDAAA0297740AE007369AB /* FirebaseDatabase */; };
 		A2F0DDF62979E5A9001AF1BB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDF52979E5A9001AF1BB /* ProfileView.swift */; };
 		A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDF72979EB2A001AF1BB /* MainView.swift */; };
+		A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */; };
+		A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */; };
+		A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,7 @@
 		A271D4C9297979F600A8AAC6 /* UpdateTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskView.swift; sourceTree = "<group>"; };
 		A271D4CB29797EF100A8AAC6 /* UpdateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewModel.swift; sourceTree = "<group>"; };
 		A271D4CD297983D300A8AAC6 /* UpdateTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskService.swift; sourceTree = "<group>"; };
+		A2823E69298B10E400224E5A /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		A2DDAA852976F18F007369AB /* firebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DDAA882976F18F007369AB /* firebaseTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseTestApp.swift; sourceTree = "<group>"; };
 		A2DDAA8A2976F18F007369AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		A2DDAA962976F4D5007369AB /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A2F0DDF52979E5A9001AF1BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A2F0DDF72979EB2A001AF1BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusSelection.swift; sourceTree = "<group>"; };
+		A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusView.swift; sourceTree = "<group>"; };
+		A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				A271D48E2977F6EF00A8AAC6 /* SecureFieldView.swift */,
 				A271D4902977F7CC00A8AAC6 /* ButtonView.swift */,
 				A271D495297801C000A8AAC6 /* CloseModifier.swift */,
+				A2823E69298B10E400224E5A /* DatePickerView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -178,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				A271D4B92978A0ED00A8AAC6 /* TaskModel.swift */,
+				A2823E682989AD8600224E5A /* TaskStatus */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -201,6 +211,16 @@
 				A271D4CD297983D300A8AAC6 /* UpdateTaskService.swift */,
 			);
 			path = UpdateTask;
+			sourceTree = "<group>";
+		};
+		A2823E682989AD8600224E5A /* TaskStatus */ = {
+			isa = PBXGroup;
+			children = (
+				A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */,
+				A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */,
+				A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */,
+			);
+			path = TaskStatus;
 			sourceTree = "<group>";
 		};
 		A2DDAA7C2976F18F007369AB = {
@@ -355,7 +375,9 @@
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
 				A271D499297803A900A8AAC6 /* HomeView.swift in Sources */,
 				A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */,
+				A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */,
 				A271D4C32979475B00A8AAC6 /* ShowTaskCardView.swift in Sources */,
+				A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */,
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
 				A271D4BE2978A4D800A8AAC6 /* AddTaskViewModel.swift in Sources */,
 				A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */,
@@ -364,6 +386,7 @@
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
 				A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */,
+				A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */,
 				A271D48A2977EED300A8AAC6 /* LoginView.swift in Sources */,
 				A271D4CA297979F600A8AAC6 /* UpdateTaskView.swift in Sources */,
 				A271D4B12978459200A8AAC6 /* ResetPasswordService.swift in Sources */,
@@ -377,6 +400,7 @@
 				A271D49E297819F000A8AAC6 /* RegisterDetailsModel.swift in Sources */,
 				A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */,
 				A271D4A529782F4100A8AAC6 /* SessionUserModel.swift in Sources */,
+				A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */,
 				A271D4AF2978405B00A8AAC6 /* LoginViewModel.swift in Sources */,
 				A271D4912977F7CC00A8AAC6 /* ButtonView.swift in Sources */,
 				A2F0DDF62979E5A9001AF1BB /* ProfileView.swift in Sources */,

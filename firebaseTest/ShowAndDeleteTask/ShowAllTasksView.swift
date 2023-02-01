@@ -14,7 +14,6 @@ struct ShowAllTasksView: View {
     var body: some View {
             ZStack {
                 List{
-                    Text("All tasks")
                     ForEach(vm.tasks) { task in
                         NavigationLink(destination: ShowTaskDetailsView(task: task, vm: vm)){
                             ShowTaskCardView(task: task)

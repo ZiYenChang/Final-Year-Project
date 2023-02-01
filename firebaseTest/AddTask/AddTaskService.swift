@@ -24,14 +24,16 @@ final class AddTaskServiceImp: AddTaskService {
                 let user = Auth.auth().currentUser
                 if let user = user {
                     let uid = user.uid
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "HH:mm E, d MMM y"
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "HH:mm E, d MMM y"
                     
                     let values = [
                         "title": details.title,
                         "priority": details.priority,
                         "note": details.note,
-//                        "lastUpdate": dateFormatter.string(from: Date()),
+                        "status": details.status.rawValue,
+//                        "deadlineString": details.deadline,
+                        "lastUpdate": dateFormatter.string(from: Date()),
                         "uid": uid
                     ] as [String : Any]
                     

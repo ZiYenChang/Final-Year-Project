@@ -22,14 +22,15 @@ final class UpdateTaskServiceImp: UpdateTaskService {
         Deferred{
             Future{ promise in
                 if let taskid = details.id, let uid = details.uid{
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "HH:mm E, d MMM y"
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "HH:mm E, d MMM y"
 
                     let values = [
                         "title": details.title,
                         "priority": details.priority,
                         "note": details.note,
-//                        "lastUpdate": dateFormatter.string(from: Date()),
+                        "status": details.status.rawValue,
+                        "lastUpdate": dateFormatter.string(from: Date()),
                         "uid": uid
                     ] as [String : Any]
                     

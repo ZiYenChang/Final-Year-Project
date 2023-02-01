@@ -16,8 +16,10 @@ struct ShowTaskCardView: View {
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
             Text("Priority: \(task.priority)")
+            Text("Status: \(task.status.text)")
             Text("Note: \(task.note)")
-//            Text("Last Update: \(task.lastUpdate ?? "")")
+//            Text("Deadline: \(task.deadlineString)")
+            Text("Last Update: \(task.lastUpdate)")
             Text("Id: \(task.id ?? " ")")
         }
         .padding()

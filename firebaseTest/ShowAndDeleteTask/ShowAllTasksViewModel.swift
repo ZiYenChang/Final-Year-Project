@@ -28,7 +28,7 @@ final class ShowAllTasksViewModel: ObservableObject {
         return ref
     }()
     
-    private let encoder = JSONEncoder()
+    
     private let decoder = JSONDecoder()
     
     private var uid:String = ""
@@ -41,24 +41,34 @@ final class ShowAllTasksViewModel: ObservableObject {
     
     func listentoRealtimeDatabase() {
         self.tasks = []
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "HH:mm E, d MMM y"
         guard let databasePath = databasePath else {
             return
         }
         databasePath
             .queryOrdered(byChild: "uid")
             .queryEqual(toValue: uid)
-            .observe(.childAdded) { [weak self] snapshot in
+            .observe(.childAdded) { [weak self] snapshot  in
                 guard
                     let self = self,
                     var json = snapshot.value as? [String: Any]
+                    
                 else {
+                    print("Nothing")
                     return
                 }
+                
                 json["id"] = snapshot.key
                 do {
                     let taskData = try JSONSerialization.data(withJSONObject: json)
+                    print("taskData")
+                    print(taskData)
                     let task = try self.decoder.decode(TaskModel.self, from: taskData)
+                    
+                    
                     self.tasks.append(task)
+                    print(task)
                 } catch {
                     print("An error occurred", error)
                 }

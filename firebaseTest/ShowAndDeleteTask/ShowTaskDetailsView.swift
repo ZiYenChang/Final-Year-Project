@@ -28,6 +28,12 @@ struct ShowTaskDetailsView: View {
                     Spacer()
                     Text("\(task.priority)")
                 }
+                HStack {
+                    Label("Status", systemImage: "flag")
+                    Spacer()
+                    TaskStatusView(status: task.status)
+                        .frame(width: 130)
+                }
                 .accessibilityElement(children: .combine)
                 HStack {
                     Label("\(task.note)", systemImage: "note")

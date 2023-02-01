@@ -20,7 +20,9 @@ struct UpdateTaskView: View {
                 Section(header: Text("Task Info")) {
                     TextField("Title", text: $vm.details.title)
                     TextField("Priority", text: $vm.details.priority)
-                    TextField("Note", text: $vm.details.note)
+                    TaskStatusPickerView(selection: $vm.details.status)
+                    TextField("Note", text: $vm.details.note, axis: .vertical)
+                        .lineLimit(3, reservesSpace: true)
                 }
                 
             }
