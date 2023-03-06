@@ -1,47 +1,46 @@
 //
-//  AddTaskViewModel.swift
+//  AddMoodViewModel.swift
 //  firebaseTest
 //
-//  Created by Zi Yen Chang on 18/01/2023.
+//  Created by Zi Yen Chang on 14/02/2023.
 //
 
 import Foundation
 import Combine
 
-enum AddTaskState {
+enum AddMoodState {
     case successful
     case failed (error:Error)
     case na //not available
 }
 
-protocol AddTaskViewModel {
-    func addTask()
-    var state: AddTaskState{ get }
-    var service: AddTaskService{ get }
-    var details: TaskModel{ get }
+protocol AddMoodViewModel {
+    func addMood()
+    var state: AddMoodState{ get }
+    var service: AddMoodService{ get }
+    var mood: Double{ get }
     var hasError: Bool{ get }
-    init(service: AddTaskService)
+    init(service: AddMoodService)
 }
 
-final class AddTaskViewModelImp: ObservableObject, AddTaskViewModel{
+final class AddMoodViewModelImp: ObservableObject, AddMoodViewModel{
     
     @Published var hasError: Bool = false
-    @Published var state: AddTaskState = .na
-    @Published var details: TaskModel = TaskModel.new
-    @Published var subtasks: [String] = []
+    @Published var state: AddMoodState = .na
+    @Published var mood: Double = 0.0
     
     private var subscriptions = Set<AnyCancellable>()
     
-    let service: AddTaskService //get value from init
+    let service: AddMoodService //get value from init
     
-    init(service: AddTaskService){
+    init(service: AddMoodService){
         self.service = service//dependency injection
         setupErrorSubscriptions() // whenever this viewmodel gets initialised, it will listen to the changes in state
     }
     
     
-    func addTask(){
-        service.addTask(with: details, with: subtasks)
+    func addMood(){
+        service.addMood(with: mood)
             .sink { res in
                 //based on the result if it completes or get an error
                 switch res {
@@ -60,7 +59,7 @@ final class AddTaskViewModelImp: ObservableObject, AddTaskViewModel{
     
 }
 
-private extension AddTaskViewModelImp{
+private extension AddMoodViewModelImp{
     //observe the state changes, depending on the state change, set if an error has occured the bool
     func setupErrorSubscriptions(){
         $state

@@ -24,14 +24,24 @@ struct firebaseTestApp: App {
     @StateObject var sessionService = SessionServiceImp()
     //use state from sessionService to decide which view should appear
     //whenever the state property changes, swiftui will call redraw and change between either login or mainapp
+    
+    @StateObject var appContext = LockAppViewModel()
 
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 switch sessionService.state{
                 case .loggedIn:
-                    MainView()
-                        .environmentObject(sessionService)
+//                    ZStack{
+//                        if appContext.appUnlocked {
+                            MainView()
+                                .environmentObject(sessionService)
+//                        }else {
+//                            LockAppView(appContext: appContext)
+//                                .background(Color.white)
+//                        }
+//                    }//end zstack
+                    
                 case .loggedOut:
                     LoginView()
                     

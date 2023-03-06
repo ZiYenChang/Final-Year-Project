@@ -13,12 +13,13 @@ import FirebaseDatabase
 
 
 protocol UpdateTaskService {
-    func updateTask(with details: TaskModel) -> AnyPublisher<Void, Error>
+    func updateTask(with details: TaskModel, with subtasks: [SubtaskModel]) -> AnyPublisher<Void, Error>
+    func deleteSubtask(with id: String) -> AnyPublisher<Void, Error>
 }
 
 final class UpdateTaskServiceImp: UpdateTaskService {
     
-    func updateTask(with details: TaskModel) -> AnyPublisher<Void, Error> {
+    func updateTask(with details: TaskModel, with subtasks: [SubtaskModel]) -> AnyPublisher<Void, Error> {
         Deferred{
             Future{ promise in
                 if let taskid = details.id, let uid = details.uid{
@@ -30,6 +31,7 @@ final class UpdateTaskServiceImp: UpdateTaskService {
                         "priority": details.priority,
                         "note": details.note,
                         "status": details.status.rawValue,
+                        "deadline": dateFormatter.string(from: details.deadline),
                         "lastUpdate": dateFormatter.string(from: Date()),
                         "uid": uid
                     ] as [String : Any]
@@ -46,7 +48,51 @@ final class UpdateTaskServiceImp: UpdateTaskService {
                             }else{
                                 promise(.success(()))
                                 print("Task Updated")
-                            }
+                                
+                                for subtask in subtasks {
+                                    let subtaskValue = [
+                                        "title": subtask.title,
+                                        "completed": "\(subtask.completed)",
+                                        "lastUpdate": dateFormatter.string(from: Date()),
+                                        "taskid": taskid,
+                                        "uid": uid
+                                    ] as [String : Any]
+                                    
+                                    if let subtaskid = subtask.id{
+                                        Database.database()
+                                            .reference()
+                                            .child("subtasks")
+                                            .child(subtaskid)
+                                            .setValue(subtaskValue){ error, ref in
+                                                if let err = error{
+                                                    promise(.failure (err))
+                                                    print("Failed due to error:", err)
+                                                }else{
+                                                    promise(.success(()))
+                                                    print("Subtask updated")
+                                                }
+                                            }
+                                        
+                                    }else{
+                                        Database.database()
+                                            .reference()
+                                            .child("subtasks")
+                                            .childByAutoId()
+                                            .setValue(subtaskValue){ error, ref in
+                                                if let err = error{
+                                                    promise(.failure (err))
+                                                    print("Failed due to error:", err)
+                                                }else{
+                                                    promise(.success(()))
+                                                    print("New subtask updated")
+                                                }
+                                            }
+                                    }// end else
+
+                                    
+                                }
+                                
+                            }// end else
                         }
                     
                 }
@@ -54,6 +100,29 @@ final class UpdateTaskServiceImp: UpdateTaskService {
         }
         .receive(on: RunLoop.current)
         .eraseToAnyPublisher()
+    }// end func update task
+    
+    func deleteSubtask(with id: String)-> AnyPublisher<Void, Error> {
+        Deferred{
+            Future{ promise in
+                Database.database()
+                    .reference()
+                    .child("subtasks")
+                    .child(id)
+                    .removeValue(){ error, ref in
+                        if let err = error{
+                            promise(.failure (err))
+                            print("Failed due to error:", err)
+                        }else{
+                            promise(.success(()))
+                            print("Task deleted")
+                        }
+                    }
+            }
+        }
+        .receive(on: RunLoop.current)
+        .eraseToAnyPublisher()
+        
     }
 }
 

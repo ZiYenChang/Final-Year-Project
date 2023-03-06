@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */; };
+		A20C3D7D29AA75C90020CCE2 /* MoodCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */; };
+		A20C3D7F29AA75FA0020CCE2 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */; };
+		A20C3D8129AA77A20020CCE2 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */; };
+		A20C3D8329AA7D0D0020CCE2 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */; };
+		A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66A829911B70009E279D /* TaskNumCardView.swift */; };
+		A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AA29924417009E279D /* SubtaskModel.swift */; };
+		A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AD2993BB36009E279D /* LockAppView.swift */; };
+		A23F66B02993BDB2009E279D /* LockAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */; };
+		A23F66B229954628009E279D /* UserToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B129954628009E279D /* UserToolbar.swift */; };
+		A23F66B5299BD09C009E279D /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B4299BD09C009E279D /* MoodView.swift */; };
+		A23F66B7299BD3F9009E279D /* MoodInputCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */; };
+		A23F66B9299BD719009E279D /* MoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B8299BD719009E279D /* MoodModel.swift */; };
+		A23F66BC299BDE3E009E279D /* AddMoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66BB299BDE3E009E279D /* AddMoodService.swift */; };
+		A23F66BE299BDF96009E279D /* AddMoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */; };
+		A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248303129B328A500C6FC06 /* NearlyDueCardView.swift */; };
+		A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278629A53B5F009C9F78 /* MoodSelection.swift */; };
+		A264278A29A571C0009C9F78 /* GetMoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278929A571C0009C9F78 /* GetMoodViewModel.swift */; };
+		A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278B29A57DD9009C9F78 /* MoodChartView.swift */; };
 		A271D48A2977EED300A8AAC6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4892977EED300A8AAC6 /* LoginView.swift */; };
 		A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D48C2977EFF700A8AAC6 /* TextFieldView.swift */; };
 		A271D48F2977F6EF00A8AAC6 /* SecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D48E2977F6EF00A8AAC6 /* SecureFieldView.swift */; };
@@ -42,7 +61,6 @@
 		A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA8A2976F18F007369AB /* ContentView.swift */; };
 		A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8C2976F190007369AB /* Assets.xcassets */; };
 		A2DDAA902976F190007369AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8F2976F190007369AB /* Preview Assets.xcassets */; };
-		A2DDAA972976F4D5007369AB /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA962976F4D5007369AB /* AuthView.swift */; };
 		A2DDAA9C2976F956007369AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A2DDAA9B2976F956007369AB /* FirebaseAuth */; };
 		A2DDAA9E2976F956007369AB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A2DDAA9D2976F956007369AB /* FirebaseFirestore */; };
 		A2DDAAA1297740AE007369AB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2DDAAA0297740AE007369AB /* FirebaseDatabase */; };
@@ -54,6 +72,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLineView.swift; sourceTree = "<group>"; };
+		A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarView.swift; sourceTree = "<group>"; };
+		A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
+		A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
+		A23F66A829911B70009E279D /* TaskNumCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNumCardView.swift; sourceTree = "<group>"; };
+		A23F66AA29924417009E279D /* SubtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskModel.swift; sourceTree = "<group>"; };
+		A23F66AD2993BB36009E279D /* LockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppView.swift; sourceTree = "<group>"; };
+		A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppViewModel.swift; sourceTree = "<group>"; };
+		A23F66B129954628009E279D /* UserToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToolbar.swift; sourceTree = "<group>"; };
+		A23F66B4299BD09C009E279D /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
+		A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodInputCardView.swift; sourceTree = "<group>"; };
+		A23F66B8299BD719009E279D /* MoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModel.swift; sourceTree = "<group>"; };
+		A23F66BB299BDE3E009E279D /* AddMoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodService.swift; sourceTree = "<group>"; };
+		A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodViewModel.swift; sourceTree = "<group>"; };
+		A248303129B328A500C6FC06 /* NearlyDueCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearlyDueCardView.swift; sourceTree = "<group>"; };
+		A264278629A53B5F009C9F78 /* MoodSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelection.swift; sourceTree = "<group>"; };
+		A264278929A571C0009C9F78 /* GetMoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoodViewModel.swift; sourceTree = "<group>"; };
+		A264278B29A57DD9009C9F78 /* MoodChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodChartView.swift; sourceTree = "<group>"; };
 		A271D4892977EED300A8AAC6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A271D48C2977EFF700A8AAC6 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		A271D48E2977F6EF00A8AAC6 /* SecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldView.swift; sourceTree = "<group>"; };
@@ -90,7 +127,6 @@
 		A2DDAA8A2976F18F007369AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2DDAA8C2976F190007369AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2DDAA8F2976F190007369AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A2DDAA962976F4D5007369AB /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		A2F0DDF52979E5A9001AF1BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A2F0DDF72979EB2A001AF1BB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusSelection.swift; sourceTree = "<group>"; };
@@ -112,6 +148,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A20C3D7B29AA759C0020CCE2 /* MoodCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */,
+				A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */,
+				A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */,
+				A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */,
+			);
+			path = MoodCalendar;
+			sourceTree = "<group>";
+		};
+		A23F66AC2993BABA009E279D /* LockApp */ = {
+			isa = PBXGroup;
+			children = (
+				A23F66AD2993BB36009E279D /* LockAppView.swift */,
+				A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */,
+			);
+			path = LockApp;
+			sourceTree = "<group>";
+		};
+		A23F66B3299BD07A009E279D /* Mood */ = {
+			isa = PBXGroup;
+			children = (
+				A20C3D7B29AA759C0020CCE2 /* MoodCalendar */,
+				A264278829A57179009C9F78 /* GetMood */,
+				A23F66BA299BDD42009E279D /* AddMood */,
+				A23F66B4299BD09C009E279D /* MoodView.swift */,
+				A264278B29A57DD9009C9F78 /* MoodChartView.swift */,
+				A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */,
+				A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */,
+				A23F66B8299BD719009E279D /* MoodModel.swift */,
+				A264278629A53B5F009C9F78 /* MoodSelection.swift */,
+			);
+			path = Mood;
+			sourceTree = "<group>";
+		};
+		A23F66BA299BDD42009E279D /* AddMood */ = {
+			isa = PBXGroup;
+			children = (
+				A23F66BB299BDE3E009E279D /* AddMoodService.swift */,
+				A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */,
+			);
+			path = AddMood;
+			sourceTree = "<group>";
+		};
+		A264278829A57179009C9F78 /* GetMood */ = {
+			isa = PBXGroup;
+			children = (
+				A264278929A571C0009C9F78 /* GetMoodViewModel.swift */,
+			);
+			path = GetMood;
+			sourceTree = "<group>";
+		};
 		A271D4882977EEBE00A8AAC6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +220,7 @@
 				A271D4902977F7CC00A8AAC6 /* ButtonView.swift */,
 				A271D495297801C000A8AAC6 /* CloseModifier.swift */,
 				A2823E69298B10E400224E5A /* DatePickerView.swift */,
+				A23F66B129954628009E279D /* UserToolbar.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -150,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				A271D498297803A900A8AAC6 /* HomeView.swift */,
+				A23F66A829911B70009E279D /* TaskNumCardView.swift */,
+				A248303129B328A500C6FC06 /* NearlyDueCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -188,6 +280,7 @@
 			children = (
 				A271D4B92978A0ED00A8AAC6 /* TaskModel.swift */,
 				A2823E682989AD8600224E5A /* TaskStatus */,
+				A23F66AA29924417009E279D /* SubtaskModel.swift */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -244,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				A2F0DDF72979EB2A001AF1BB /* MainView.swift */,
+				A23F66B3299BD07A009E279D /* Mood */,
+				A23F66AC2993BABA009E279D /* LockApp */,
 				A2F0DDF42979E591001AF1BB /* Profile */,
 				A271D4C8297979CA00A8AAC6 /* UpdateTask */,
 				A271D4BF2979459700A8AAC6 /* ShowAndDeleteTask */,
@@ -257,7 +352,6 @@
 				A271D4882977EEBE00A8AAC6 /* Login */,
 				A2DDAA882976F18F007369AB /* firebaseTestApp.swift */,
 				A2DDAA8A2976F18F007369AB /* ContentView.swift */,
-				A2DDAA962976F4D5007369AB /* AuthView.swift */,
 				A2DDAA8C2976F190007369AB /* Assets.xcassets */,
 				A271D4A829783C4E00A8AAC6 /* GoogleService-Info.plist */,
 				A2DDAA8E2976F190007369AB /* Preview Content */,
@@ -368,8 +462,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A271D48F2977F6EF00A8AAC6 /* SecureFieldView.swift in Sources */,
+				A23F66B5299BD09C009E279D /* MoodView.swift in Sources */,
+				A20C3D7D29AA75C90020CCE2 /* MoodCalendarView.swift in Sources */,
 				A271D4BA2978A0ED00A8AAC6 /* TaskModel.swift in Sources */,
-				A2DDAA972976F4D5007369AB /* AuthView.swift in Sources */,
+				A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */,
 				A271D496297801C000A8AAC6 /* CloseModifier.swift in Sources */,
 				A271D4C1297945AC00A8AAC6 /* ShowAllTasksView.swift in Sources */,
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
@@ -377,31 +473,47 @@
 				A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */,
 				A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */,
 				A271D4C32979475B00A8AAC6 /* ShowTaskCardView.swift in Sources */,
+				A23F66B7299BD3F9009E279D /* MoodInputCardView.swift in Sources */,
+				A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */,
 				A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */,
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
 				A271D4BE2978A4D800A8AAC6 /* AddTaskViewModel.swift in Sources */,
+				A23F66B02993BDB2009E279D /* LockAppViewModel.swift in Sources */,
+				A23F66B9299BD719009E279D /* MoodModel.swift in Sources */,
 				A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */,
 				A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */,
 				A271D4AB29783E2D00A8AAC6 /* LoginDetailsModel.swift in Sources */,
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
+				A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */,
 				A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */,
 				A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */,
+				A264278A29A571C0009C9F78 /* GetMoodViewModel.swift in Sources */,
 				A271D48A2977EED300A8AAC6 /* LoginView.swift in Sources */,
 				A271D4CA297979F600A8AAC6 /* UpdateTaskView.swift in Sources */,
 				A271D4B12978459200A8AAC6 /* ResetPasswordService.swift in Sources */,
 				A271D4B6297899C800A8AAC6 /* AddTaskView.swift in Sources */,
+				A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */,
 				A271D4C52979498600A8AAC6 /* ShowAllTasksViewModel.swift in Sources */,
+				A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */,
 				A271D49C2978067400A8AAC6 /* ResetPasswordView.swift in Sources */,
 				A271D4A2297820E200A8AAC6 /* RegisterViewModel.swift in Sources */,
 				A271D4942977FFD200A8AAC6 /* RegisterView.swift in Sources */,
+				A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */,
 				A271D4AD29783EA100A8AAC6 /* LoginService.swift in Sources */,
 				A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */,
+				A20C3D8129AA77A20020CCE2 /* CalendarHelper.swift in Sources */,
 				A271D49E297819F000A8AAC6 /* RegisterDetailsModel.swift in Sources */,
 				A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */,
 				A271D4A529782F4100A8AAC6 /* SessionUserModel.swift in Sources */,
+				A20C3D7F29AA75FA0020CCE2 /* DateScrollerView.swift in Sources */,
 				A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */,
+				A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */,
 				A271D4AF2978405B00A8AAC6 /* LoginViewModel.swift in Sources */,
+				A23F66B229954628009E279D /* UserToolbar.swift in Sources */,
+				A20C3D8329AA7D0D0020CCE2 /* CalendarCellView.swift in Sources */,
+				A23F66BC299BDE3E009E279D /* AddMoodService.swift in Sources */,
+				A23F66BE299BDF96009E279D /* AddMoodViewModel.swift in Sources */,
 				A271D4912977F7CC00A8AAC6 /* ButtonView.swift in Sources */,
 				A2F0DDF62979E5A9001AF1BB /* ProfileView.swift in Sources */,
 				A271D4B32978473500A8AAC6 /* ResetPasswordViewModel.swift in Sources */,
@@ -533,6 +645,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"firebaseTest/Preview Content\"";
+				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -540,6 +653,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"firebaseTest/Preview Content\"";
+				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -568,6 +683,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

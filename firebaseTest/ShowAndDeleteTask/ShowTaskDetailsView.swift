@@ -23,23 +23,74 @@ struct ShowTaskDetailsView: View {
                     Label(task.title, systemImage: "mappin")
                     Spacer()
                 }
+                .accessibilityElement(children: .combine)
                 HStack {
                     Label("Priority", systemImage: "exclamationmark.circle")
                     Spacer()
                     Text("\(task.priority)")
+                    
                 }
+                .accessibilityElement(children: .combine)
                 HStack {
-                    Label("Status", systemImage: "flag")
-                    Spacer()
+                    Label("", systemImage: "flag")
                     TaskStatusView(status: task.status)
-                        .frame(width: 130)
                 }
                 .accessibilityElement(children: .combine)
                 HStack {
-                    Label("\(task.note)", systemImage: "note")
+                    Label("", systemImage: "clock")
+                    Text(deadlineString(deadline: task.deadline))
                 }
                 .accessibilityElement(children: .combine)
-            }
+                
+                if(task.note != ""){
+                    HStack {
+                        VStack{
+                            Label("", systemImage: "note")
+                                .padding(.top, 7)
+                            Spacer()
+                        }
+                        
+                        Text(task.note)
+                            
+                    }
+                }
+            }//section end
+            
+            Section{
+                ForEach($vm.subtasks, id: \.self){ $subtask in
+                    if(subtask.taskid == task.id){
+                        HStack{
+                            Button(action: {
+                                if(subtask.completed){
+                                    subtask.completed = false
+                                    vm.updateSubtask(with: subtask)
+                                    vm.listentoRealtimeDatabase()
+                                }else{
+                                    subtask.completed = true
+                                    vm.updateSubtask(with: subtask)
+                                    vm.listentoRealtimeDatabase()
+                                }
+                                }, label: {
+                                    Image(systemName: subtask.completed ? "checkmark.circle.fill" : "circle")
+                                          .imageScale(.large)
+                                          .foregroundColor(subtask.completed ? Color.gray : Color.blue)
+                                    
+                                })
+                                .buttonStyle(PlainButtonStyle()) // remove any implicit styling from the button
+                            
+                            if(!subtask.completed){
+                                Text(subtask.title)
+                                    .fontWeight(.medium)
+                            }else{
+                                Text(subtask.title)
+                                    .strikethrough()
+                                    .foregroundColor(Color.gray)
+                            }
+//                            Spacer()
+                        }
+                    }// end if
+                }// end foreach
+            }//end section
                         
         }
         .navigationTitle(task.title)
@@ -47,6 +98,12 @@ struct ShowTaskDetailsView: View {
         .safeAreaInset(edge: .bottom, content: {
             Button(role: .destructive) {
                 if let id = task.id{
+//                    var subtasksForDelete: [SubtaskModel] = []
+//                    for subtask in vm.subtasks{
+//                        if (subtask.taskid == id){
+//                            subtasksForDelete.append(subtask)
+//                        }
+//                    }
                     vm.deleteTask(with: id)
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -71,7 +128,7 @@ struct ShowTaskDetailsView: View {
                 .sheet(isPresented: $showUpdateTask,
                        content: {
                     UpdateTaskView(
-                        vm:UpdateTaskViewModelImp(service: UpdateTaskServiceImp(),details: task),
+                        vm:UpdateTaskViewModelImp(service: UpdateTaskServiceImp(),details: task, subtasks: vm.subtasks),
                         showTaskvm: vm
                     )
 //                    .onDisappear {
@@ -84,6 +141,13 @@ struct ShowTaskDetailsView: View {
         }
         
     }
+}
+
+func deadlineString(deadline:Date) -> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm E, d MMM y"
+    
+    return dateFormatter.string(from: deadline)
 }
 
 //struct ShowTaskDetailsView_Previews: PreviewProvider {

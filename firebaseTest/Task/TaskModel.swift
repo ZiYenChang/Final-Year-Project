@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct TaskModel: Identifiable, Codable {
+struct TaskModel: Identifiable, Codable, Equatable {
     var id: String?
     var title: String
     var priority: String
     var note: String
     var status: Status
-//    var deadline: String
+    var deadline: Date
     var lastUpdate: String
     var uid: String?
 }
@@ -29,7 +29,7 @@ extension TaskModel{
                          priority: "",
                          note: "",
                          status: .notStarted,
-//                         deadline: Date(),
+                         deadline: Date(),
                          lastUpdate: dateFormatter.string(from: Date())
                   )
     }
@@ -42,13 +42,13 @@ extension TaskModel {
                   priority: "High",
                   note: "This is the note",
                   status: .notStarted,
-//                  deadline: Date(),
+                  deadline: Date(),
                   lastUpdate:" "),
         TaskModel(title: "Groupwork 1",
                   priority: "Normal",
                   note: "This is the note",
                   status: .notStarted,
-//                  deadline: Date(),
+                  deadline: Date(),
                   lastUpdate: "")
     ]
 }

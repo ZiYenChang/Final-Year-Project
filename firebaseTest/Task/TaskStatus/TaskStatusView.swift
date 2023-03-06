@@ -10,11 +10,21 @@ import SwiftUI
 struct TaskStatusView: View {
     let status: Status
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 4)
-                .fill(status.accentColor)
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 4)
+//                .fill(status.accentColor)
+//            Text(status.text)
+//                .padding(2)
+//        }
+//        .foregroundColor(.black)
+//        .fixedSize(horizontal: false, vertical: true)
+        HStack {
+            Circle()
+                .frame(width: 10, height: 10)
+                .foregroundColor(status.accentColor)
             Text(status.text)
                 .padding(2)
+            Spacer()
         }
         .foregroundColor(.black)
         .fixedSize(horizontal: false, vertical: true)

@@ -7,22 +7,41 @@
 
 import SwiftUI
 
+enum tabs: String, CaseIterable, Identifiable {
+    case tasks
+    case home
+    case mood
+    var id: Self { self }
+    
+    var text: String {
+        switch self {
+        case .tasks: return "Tasks"
+        case .home: return "Home"
+        case .mood: return "Mood"
+        }
+    }
+}
+
 struct MainView: View {
-    @State var selection = 2
+    @State var selection = tabs.home
     
     var body: some View {
         TabView(selection: $selection){
             ShowAllTasksView()
                 .tabItem {
                     Label("Tasks", systemImage: "mappin")
-                }.tag(1)
-            HomeView()
+                }.tag(tabs.tasks)
+            HomeView(tabSelection: $selection)
                 .tabItem {
                     Label("Home", systemImage: "house")
-                }.tag(2)
+                }.tag(tabs.home)
+            MoodView()
+                .tabItem {
+                    Label("Mood", systemImage: "face.smiling")
+                }.tag(tabs.mood)
         }
         .accentColor(.purple)
-        .navigationTitle(selection == 1 ? "Tasks" : "Home")
+        .navigationTitle(selection.text)
     }
 }
 
