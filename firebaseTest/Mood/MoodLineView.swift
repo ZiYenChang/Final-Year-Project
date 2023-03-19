@@ -12,39 +12,92 @@ struct MoodLineView: View {
     var data: [MoodChartData]
     
     var body: some View {
-        
-        ScrollView(.horizontal, showsIndicators: false){
-            Chart(data) { eachData in
-                LineMark(
-                    x: .value("Date", eachData.date, unit: .day),
-                    y: .value("Mood", eachData.mood)
-                )
-                .interpolationMethod(.catmullRom)
-                .symbol() {
-                    Text(emojiIdentifier(mood: eachData.mood))
-                }
-                .symbolSize(30)
-            } // end chart
-            .chartYScale(domain:0 ... 10)
-            .chartXScale(domain: data[0].date.addingTimeInterval(-86400) ... data[Int(data.count-1)].date.addingTimeInterval(86400*3),
-                         range: .plotDimension(startPadding: 0, endPadding: -50))
-            .chartXAxis{
-                AxisMarks(values: .stride(by: .day)){ value in
-                    if let dateValue = value.as(Date.self){
-                        AxisValueLabel(format: .dateTime.day().month(.defaultDigits),centered: true)
-                            .foregroundStyle(Calendar.current.isDateInToday(dateValue) ? Color.blue : Color.gray)
-                    }
+        ZStack(alignment: .leading) {
+            ScrollViewReader { value in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    VStack(alignment: .leading) {
+                        Chart(data) {eachData in
+                            LineMark(
+                                x: .value("Date", eachData.date, unit: .day),
+                                y: .value("Mood", eachData.mood)
+                            )
+                            .interpolationMethod(.catmullRom)
+                            .symbol() {
+                                Text(emojiIdentifier(mood: eachData.mood))
+                            }
+                            .symbolSize(30)
+                            .foregroundStyle(.linearGradient(colors: [Color(red: 0.8, green: 0.0, blue: 0.0), .yellow], startPoint: .bottom, endPoint: .top))
+                        } // end chart
+                        .chartYScale(domain:0 ... 10)
+//                            .chartXScale(domain: data[1].date.addingTimeInterval(-86400) ... data[Int(data.count-1)].date.addingTimeInterval(86400*3),
+//                                         range: .plotDimension(startPadding: 10, endPadding: -52))
+//                            .chartXScale(domain: domainRange, type: ScaleType.date)
+                        .chartXAxis{
+                            AxisMarks(values: .stride(by: .day)){ value in
+                                if let dateValue = value.as(Date.self){
+                                    AxisValueLabel(format: .dateTime.day().month(.defaultDigits),centered: true)
+                                        .foregroundStyle(Calendar.current.isDateInToday(dateValue) ? Color.blue : Color.gray)
+                                }
+                                else{
+                                    AxisValueLabel(format: .dateTime.day().month(.defaultDigits),centered: true)
+                                       .foregroundStyle(Color.gray)
+                                }
+                                    
+                            }
+                        }
+                        .chartYAxis{
+                            AxisMarks(position: .leading){ value in
+                                AxisGridLine()
+                            }
+                        }
+                        .padding(.vertical,4)
+                        .padding(.leading, 15)
+                        .frame(width: ((CGFloat(data.count)+3)/7 * 550.0), height: 220)
                         
-                }
-            }
-            .chartYAxis{
-                AxisMarks(position: .leading)
-            }
-            .padding()
-            .frame(width: 1000, height: 200)
+                        // to ensure the graph starts from the end
+                        HStack{
+                            ForEach(0..<(data.count), id: \.self) { i in
+                                Text("\(data[i].date, format: .dateTime.day())")
+                                    .font(.caption)
+                                    .padding(.trailing, 29)
+                                    .id(i)
+                                    .opacity(0.2)
+                            }
+                            .offset(x:54, y:-22)
+                        } //end hstack
+                    } // end vstack
+                    .onAppear{
+                        value.scrollTo(data.count - 1)
+                    }
+                } // end scrollview
+            }// end scrollview reader
             
-        }
+            
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: 22, height: 220)
+                .offset(x:0, y: -15)
+//                    .opacity(0.5)
+            VStack{
+                Text("10")
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text("5")
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+                Spacer()
+                Text("0")
+                    .font(.caption2)
+                    .padding(.bottom, 39)
+                    .foregroundColor(.gray)
+                    
+            }
+            .frame(height: 245)
+            .padding(.leading, 8)
+        } //end vstack
     }
+    
 }
 
 struct MoodLineView_Previews: PreviewProvider {

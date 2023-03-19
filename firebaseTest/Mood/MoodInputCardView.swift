@@ -13,7 +13,7 @@ struct MoodInputCardView: View {
     )
     @State private var mood = 5.0
     @State private var isEditing = false
-//    @State private var currentEmoji: String = "\(MoodEmoji.zero.emoji)"
+    @EnvironmentObject var getVM: GetMoodViewModel
     
     @Binding var isMoodSelected: Bool
     var body: some View {
@@ -36,18 +36,15 @@ struct MoodInputCardView: View {
                         isEditing = editing
                     }
                 )
-//                HStack{
-//                    Text("👎")
-//                    Spacer()
-//                    Text("👍")
-//                } //end hstack
-//                .offset(x: 0, y: -10)
                 
             } //end vstack
             
             Button("Record") {
+                getVM.moodStopListening()
                 vm.mood = mood
                 vm.addMood()
+                isMoodSelected = false
+                getVM.moodlistenDatabase()
             }
             .foregroundColor(.black)
             .cornerRadius(9)

@@ -34,31 +34,41 @@ struct ShowAllTasksView: View {
     @State private var showAddTask = false
     @State private var statusFilter: StatusFilter = .all
     @State private var dateShowLatest = true
-    
-    
+    @State private var shownTask: Int = 0
+
     
     @EnvironmentObject var sessionService: SessionServiceImp
     
     var body: some View {
         ZStack {
             List{
-                    HStack{
+                HStack{
                         Picker("Deadline", selection: $dateShowLatest) {
                             Text("Further Due").tag(true)
                             Text("Latest Due").tag(false)
                         }
                         .pickerStyle(MenuPickerStyle())
                         .labelsHidden()
+                        .frame(minWidth: 100)
                         
-                        Picker("Filter", selection: $statusFilter) {
+                    Picker("Filter", selection: $statusFilter) {
                             ForEach(StatusFilter.allCases){ status in
                                 Text(status.text).tag(status)
+                                    
                             }
                         }
                         .pickerStyle(MenuPickerStyle())
                         .labelsHidden()
+                        .frame(minWidth: 120)
+                        .onChange(of: statusFilter) { _ in
+                            shownTask = 0
+                        }
+                        
                         
                         Spacer()
+                        Text("\(shownTask)/\(vm.tasks.count)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
                     }
                     .listRowBackground(
                         RoundedRectangle(cornerRadius: 10)
@@ -74,6 +84,13 @@ struct ShowAllTasksView: View {
                     if (statusFilter.rawValue == task.status.rawValue){
                             NavigationLink(destination: ShowTaskDetailsView(task: task, vm: vm)){
                                 ShowTaskCardView(task: task, vm: vm)
+                            }
+                            .onAppear{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.005) {
+                                    shownTask += 1
+                                }
+                            }.onDisappear(){
+                                shownTask = 0
                             }
                             .listRowSeparator(.hidden)
                             .listStyle(InsetGroupedListStyle())
@@ -98,6 +115,14 @@ struct ShowAllTasksView: View {
                     } else if(statusFilter.rawValue == "all"){
                             NavigationLink(destination: ShowTaskDetailsView(task: task, vm: vm)){
                                 ShowTaskCardView(task: task, vm: vm)
+                            }
+                            .onAppear{
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.005) {
+                                    shownTask = vm.tasks.count
+                                }
+                            }
+                            .onDisappear(){
+                                shownTask = 0
                             }
                             .listRowSeparator(.hidden)
                             .listStyle(InsetGroupedListStyle())

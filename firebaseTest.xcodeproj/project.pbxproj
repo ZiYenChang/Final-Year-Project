@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */; };
-		A20C3D7D29AA75C90020CCE2 /* MoodCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */; };
-		A20C3D7F29AA75FA0020CCE2 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */; };
-		A20C3D8129AA77A20020CCE2 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */; };
-		A20C3D8329AA7D0D0020CCE2 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */; };
 		A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66A829911B70009E279D /* TaskNumCardView.swift */; };
 		A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AA29924417009E279D /* SubtaskModel.swift */; };
 		A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AD2993BB36009E279D /* LockAppView.swift */; };
@@ -23,6 +19,10 @@
 		A23F66BC299BDE3E009E279D /* AddMoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66BB299BDE3E009E279D /* AddMoodService.swift */; };
 		A23F66BE299BDF96009E279D /* AddMoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */; };
 		A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A248303129B328A500C6FC06 /* NearlyDueCardView.swift */; };
+		A24D42BA29B8D84F00313720 /* MoodCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24D42B929B8D84F00313720 /* MoodCalendarView.swift */; };
+		A24D42DF29B9F07F00313720 /* CheerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24D42DE29B9F07F00313720 /* CheerVideoView.swift */; };
+		A24D42E129B9F0AB00313720 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24D42E029B9F0AB00313720 /* WebViewModel.swift */; };
+		A24D42E329B9F0D600313720 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24D42E229B9F0D600313720 /* WebViewContainer.swift */; };
 		A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278629A53B5F009C9F78 /* MoodSelection.swift */; };
 		A264278A29A571C0009C9F78 /* GetMoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278929A571C0009C9F78 /* GetMoodViewModel.swift */; };
 		A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278B29A57DD9009C9F78 /* MoodChartView.swift */; };
@@ -57,6 +57,10 @@
 		A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4CB29797EF100A8AAC6 /* UpdateTaskViewModel.swift */; };
 		A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4CD297983D300A8AAC6 /* UpdateTaskService.swift */; };
 		A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2823E69298B10E400224E5A /* DatePickerView.swift */; };
+		A2BDB20529BA0F5E00B2426E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20429BA0F5E00B2426E /* NotificationManager.swift */; };
+		A2BDB20729BA0F9500B2426E /* LocalNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20629BA0F9500B2426E /* LocalNotificationView.swift */; };
+		A2BDB20929BA1A9800B2426E /* MeditationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20829BA1A9800B2426E /* MeditationVideoView.swift */; };
+		A2BDB20B29BA230200B2426E /* RiskTaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */; };
 		A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA882976F18F007369AB /* firebaseTestApp.swift */; };
 		A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA8A2976F18F007369AB /* ContentView.swift */; };
 		A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8C2976F190007369AB /* Assets.xcassets */; };
@@ -73,10 +77,6 @@
 
 /* Begin PBXFileReference section */
 		A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLineView.swift; sourceTree = "<group>"; };
-		A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarView.swift; sourceTree = "<group>"; };
-		A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
-		A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
-		A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		A23F66A829911B70009E279D /* TaskNumCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNumCardView.swift; sourceTree = "<group>"; };
 		A23F66AA29924417009E279D /* SubtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskModel.swift; sourceTree = "<group>"; };
 		A23F66AD2993BB36009E279D /* LockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppView.swift; sourceTree = "<group>"; };
@@ -88,6 +88,10 @@
 		A23F66BB299BDE3E009E279D /* AddMoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodService.swift; sourceTree = "<group>"; };
 		A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoodViewModel.swift; sourceTree = "<group>"; };
 		A248303129B328A500C6FC06 /* NearlyDueCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearlyDueCardView.swift; sourceTree = "<group>"; };
+		A24D42B929B8D84F00313720 /* MoodCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarView.swift; sourceTree = "<group>"; };
+		A24D42DE29B9F07F00313720 /* CheerVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheerVideoView.swift; sourceTree = "<group>"; };
+		A24D42E029B9F0AB00313720 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		A24D42E229B9F0D600313720 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		A264278629A53B5F009C9F78 /* MoodSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelection.swift; sourceTree = "<group>"; };
 		A264278929A571C0009C9F78 /* GetMoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoodViewModel.swift; sourceTree = "<group>"; };
 		A264278B29A57DD9009C9F78 /* MoodChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodChartView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,10 @@
 		A271D4CB29797EF100A8AAC6 /* UpdateTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskViewModel.swift; sourceTree = "<group>"; };
 		A271D4CD297983D300A8AAC6 /* UpdateTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTaskService.swift; sourceTree = "<group>"; };
 		A2823E69298B10E400224E5A /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		A2BDB20429BA0F5E00B2426E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A2BDB20629BA0F9500B2426E /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
+		A2BDB20829BA1A9800B2426E /* MeditationVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationVideoView.swift; sourceTree = "<group>"; };
+		A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskTaskCardView.swift; sourceTree = "<group>"; };
 		A2DDAA852976F18F007369AB /* firebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DDAA882976F18F007369AB /* firebaseTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseTestApp.swift; sourceTree = "<group>"; };
 		A2DDAA8A2976F18F007369AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,17 +156,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A20C3D7B29AA759C0020CCE2 /* MoodCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				A20C3D7C29AA75C90020CCE2 /* MoodCalendarView.swift */,
-				A20C3D7E29AA75FA0020CCE2 /* DateScrollerView.swift */,
-				A20C3D8029AA77A20020CCE2 /* CalendarHelper.swift */,
-				A20C3D8229AA7D0D0020CCE2 /* CalendarCellView.swift */,
-			);
-			path = MoodCalendar;
-			sourceTree = "<group>";
-		};
 		A23F66AC2993BABA009E279D /* LockApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,11 +168,11 @@
 		A23F66B3299BD07A009E279D /* Mood */ = {
 			isa = PBXGroup;
 			children = (
-				A20C3D7B29AA759C0020CCE2 /* MoodCalendar */,
 				A264278829A57179009C9F78 /* GetMood */,
 				A23F66BA299BDD42009E279D /* AddMood */,
 				A23F66B4299BD09C009E279D /* MoodView.swift */,
 				A264278B29A57DD9009C9F78 /* MoodChartView.swift */,
+				A24D42B929B8D84F00313720 /* MoodCalendarView.swift */,
 				A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */,
 				A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */,
 				A23F66B8299BD719009E279D /* MoodModel.swift */,
@@ -191,6 +188,17 @@
 				A23F66BD299BDF96009E279D /* AddMoodViewModel.swift */,
 			);
 			path = AddMood;
+			sourceTree = "<group>";
+		};
+		A24D42DD29B9F04D00313720 /* Recommendation */ = {
+			isa = PBXGroup;
+			children = (
+				A24D42DE29B9F07F00313720 /* CheerVideoView.swift */,
+				A24D42E029B9F0AB00313720 /* WebViewModel.swift */,
+				A24D42E229B9F0D600313720 /* WebViewContainer.swift */,
+				A2BDB20829BA1A9800B2426E /* MeditationVideoView.swift */,
+			);
+			path = Recommendation;
 			sourceTree = "<group>";
 		};
 		A264278829A57179009C9F78 /* GetMood */ = {
@@ -241,6 +249,7 @@
 			children = (
 				A271D498297803A900A8AAC6 /* HomeView.swift */,
 				A23F66A829911B70009E279D /* TaskNumCardView.swift */,
+				A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */,
 				A248303129B328A500C6FC06 /* NearlyDueCardView.swift */,
 			);
 			path = Home;
@@ -316,6 +325,15 @@
 			path = TaskStatus;
 			sourceTree = "<group>";
 		};
+		A2BDB20329BA0EC800B2426E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				A2BDB20429BA0F5E00B2426E /* NotificationManager.swift */,
+				A2BDB20629BA0F9500B2426E /* LocalNotificationView.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		A2DDAA7C2976F18F007369AB = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				A2F0DDF72979EB2A001AF1BB /* MainView.swift */,
+				A2BDB20329BA0EC800B2426E /* Notification */,
+				A24D42DD29B9F04D00313720 /* Recommendation */,
 				A23F66B3299BD07A009E279D /* Mood */,
 				A23F66AC2993BABA009E279D /* LockApp */,
 				A2F0DDF42979E591001AF1BB /* Profile */,
@@ -463,7 +483,6 @@
 			files = (
 				A271D48F2977F6EF00A8AAC6 /* SecureFieldView.swift in Sources */,
 				A23F66B5299BD09C009E279D /* MoodView.swift in Sources */,
-				A20C3D7D29AA75C90020CCE2 /* MoodCalendarView.swift in Sources */,
 				A271D4BA2978A0ED00A8AAC6 /* TaskModel.swift in Sources */,
 				A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */,
 				A271D496297801C000A8AAC6 /* CloseModifier.swift in Sources */,
@@ -477,12 +496,15 @@
 				A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */,
 				A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */,
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
+				A2BDB20529BA0F5E00B2426E /* NotificationManager.swift in Sources */,
 				A271D4BE2978A4D800A8AAC6 /* AddTaskViewModel.swift in Sources */,
 				A23F66B02993BDB2009E279D /* LockAppViewModel.swift in Sources */,
 				A23F66B9299BD719009E279D /* MoodModel.swift in Sources */,
+				A24D42E129B9F0AB00313720 /* WebViewModel.swift in Sources */,
 				A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */,
 				A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */,
 				A271D4AB29783E2D00A8AAC6 /* LoginDetailsModel.swift in Sources */,
+				A2BDB20929BA1A9800B2426E /* MeditationVideoView.swift in Sources */,
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
 				A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */,
@@ -502,16 +524,18 @@
 				A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */,
 				A271D4AD29783EA100A8AAC6 /* LoginService.swift in Sources */,
 				A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */,
-				A20C3D8129AA77A20020CCE2 /* CalendarHelper.swift in Sources */,
 				A271D49E297819F000A8AAC6 /* RegisterDetailsModel.swift in Sources */,
 				A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */,
+				A24D42DF29B9F07F00313720 /* CheerVideoView.swift in Sources */,
+				A2BDB20B29BA230200B2426E /* RiskTaskCardView.swift in Sources */,
 				A271D4A529782F4100A8AAC6 /* SessionUserModel.swift in Sources */,
-				A20C3D7F29AA75FA0020CCE2 /* DateScrollerView.swift in Sources */,
+				A24D42E329B9F0D600313720 /* WebViewContainer.swift in Sources */,
+				A2BDB20729BA0F9500B2426E /* LocalNotificationView.swift in Sources */,
+				A24D42BA29B8D84F00313720 /* MoodCalendarView.swift in Sources */,
 				A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */,
 				A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */,
 				A271D4AF2978405B00A8AAC6 /* LoginViewModel.swift in Sources */,
 				A23F66B229954628009E279D /* UserToolbar.swift in Sources */,
-				A20C3D8329AA7D0D0020CCE2 /* CalendarCellView.swift in Sources */,
 				A23F66BC299BDE3E009E279D /* AddMoodService.swift in Sources */,
 				A23F66BE299BDF96009E279D /* AddMoodViewModel.swift in Sources */,
 				A271D4912977F7CC00A8AAC6 /* ButtonView.swift in Sources */,

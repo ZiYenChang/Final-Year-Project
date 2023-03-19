@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct HomeView: View {
     //use to inject service into homeview
@@ -19,6 +20,7 @@ struct HomeView: View {
     @StateObject var vm = ShowAllTasksViewModel()
     
     @State private var numOfTask = 0
+    @State private var isVideoDone = false
     
     var body: some View {
         VStack(alignment: .leading){
@@ -77,6 +79,7 @@ struct HomeView: View {
                         
                         Button(action: {
                             self.tabSelection = .tasks
+// https://stackoverflow.com/questions/62504400/programmatically-change-to-another-tab-in-swiftui
                         }) {
                             Text("Go Tasks Section")
                         }
@@ -148,12 +151,21 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
             }
             
+            if isBeforeTime(time: 16) && isAfterTime(time: 8) && !isVideoDone{
+                MeditationVideoView(isVideoDone: $isVideoDone)
+                    .animation(.easeInOut, value: isVideoDone)
+            }
+            
             Spacer()
             
         }
         .onAppear {
             vm.listentoRealtimeDatabase()
             print("listentoRealtimeDatabase() run in AllTaskView")
+            NotificationManager.instance.requestAuthorization()
+            NotificationManager.instance.cancelNotification()
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            NotificationManager.instance.scheduleTimeNotification(title: "Welcome to Seed", subtitle: "Your task management companion", minutes: 0.3)
         }
         .padding(.horizontal)
         .showUserToolbar()

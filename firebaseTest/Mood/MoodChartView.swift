@@ -14,7 +14,6 @@ func moodModelForChart(rawData: Array<MoodModel>) -> Array<MoodChartData> {
     for mood in rawData{
         var iD = 0
         moodChart.append(MoodChartData(lastUpdate: mood.lastUpdate, mood: mood.mood, id: iD))
-        print(moodChart)
         iD = iD + 1
     }
     
@@ -22,8 +21,10 @@ func moodModelForChart(rawData: Array<MoodModel>) -> Array<MoodChartData> {
 }
 
 struct MoodChartView: View {
-    @Binding var rawData: [MoodModel]
+    @EnvironmentObject var vm: GetMoodViewModel
     @State var data: [MoodChartData] = []
+    @State private var lineView = true
+    
     
     private func isToday(value: AxisValue) -> Bool {
         let dateValue = value.as(Date.self)!
@@ -32,91 +33,41 @@ struct MoodChartView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("February")
-                .padding(.horizontal)
-            ZStack(alignment: .leading) {
-                ScrollViewReader { value in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        VStack(alignment: .leading) {
-                            Chart(data) {eachData in
-                                LineMark(
-                                    x: .value("Date", eachData.date, unit: .day),
-                                    y: .value("Mood", eachData.mood)
-                                )
-                                .interpolationMethod(.catmullRom)
-                                .symbol() {
-                                    Text(emojiIdentifier(mood: eachData.mood))
-                                }
-                                .symbolSize(30)
-                                .foregroundStyle(.linearGradient(colors: [.red, .yellow], startPoint: .bottom, endPoint: .top))
-                            } // end chart
-                            .chartYScale(domain:0 ... 10)
-//                            .chartXScale(domain: data[0].date.addingTimeInterval(-86400) ... data[Int(data.count-1)].date.addingTimeInterval(86400*3),
-//                                         range: .plotDimension(startPadding: 10, endPadding: -52))
-                            .chartXAxis{
-                                AxisMarks(values: .stride(by: .day)){ value in
-                                    if let dateValue = value.as(Date.self){
-                                        AxisValueLabel(format: .dateTime.day().month(.defaultDigits),centered: true)
-                                            .foregroundStyle(Calendar.current.isDateInToday(dateValue) ? Color.blue : Color.gray)
-                                    }
-                                    else{
-                                        AxisValueLabel(format: .dateTime.day().month(.defaultDigits),centered: true)
-                                           .foregroundStyle(Color.gray)
-                                    }
-                                        
-                                }
-                            }
-                            .chartYAxis{
-                                AxisMarks(position: .leading){ value in
-                                    AxisGridLine()
-                                }
-                            }
-                            .padding()
-                            .frame(width: ((CGFloat(data.count)+3)/7 * 350.0), height: 200)
-                            
-                            // to ensure the graph starts from the end
-                            HStack{
-                                ForEach(0..<(data.count), id: \.self) { i in
-                                    Text("\(data[i].date, format: .dateTime.day())")
-                                        .font(.caption)
-                                        .padding(.trailing, 29)
-                                        .id(i)
-                                        .opacity(0.2)
-                                }
-                                .offset(x:54, y:-22)
-                            } //end hstack
-                        } // end vstack
-                        .onAppear{
-                            value.scrollTo(data.count - 1)
-                            data = moodModelForChart(rawData: rawData)
-                        }
-                    } // end scrollview
-                }// end scrollview reader
+            HStack{
+                Text("Your mood trend ")
+                    .font(.headline)
                 
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: 34, height: 200)
-//                    .opacity(0.5)
-                VStack{
-                    Text("10")
-                        .font(.caption2)
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("5")
-                        .font(.caption2)
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("0")
-                        .font(.caption2)
-                        .padding(.bottom, 38)
-                        .foregroundColor(.gray)
-                        
-                }
-                .frame(height: 200)
-                .padding(.leading, 16)
-            } //end vstack
+                Spacer()
+                
+                Button(action: {
+                    lineView.toggle()
+                }, label: {
+                    Image(systemName: lineView ? "calendar" : "chart.xyaxis.line")
+                        .foregroundColor(.blue)
+                        .imageScale(.large)
+                })
+            }
+            .padding(.top)
+            .padding(.horizontal)
+            
+            if lineView {
+                MoodLineView(data: moodModelForChart(rawData: vm.moods))
+                    .padding(.trailing,5)
+            } else{
+                MoodCalendarView(data: moodModelForChart(rawData: vm.moods))
+                    .padding(.horizontal, 5)
+            }
+            
+        } //end vstack
+        .animation(.easeInOut(duration: 0.3), value: lineView)
+        .onAppear{
+//            data = moodModelForChart(rawData: vm.moods)
         }
-    }
+        .background(.white)
+        .cornerRadius(10)
+        .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
+        .padding()
+    } // end body
     
 //    private func emojiIdentifier2(mood: PlottableValue<<#Value: Plottable#>>) -> String {
 //        if (mood == 0.0 || mood == 0.5){

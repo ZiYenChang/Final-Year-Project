@@ -14,13 +14,13 @@ struct TaskNumCardView: View {
     var body: some View {
         VStack {
             VStack{
-                Text(title)
-                    .font(.caption)
-                    .multilineTextAlignment(.center)
                 Text(String(taskNumber))
                     .font(.title)
                     .foregroundColor(color)
                     .fontWeight(.bold)
+                Text(title)
+                    .font(.caption)
+                    .multilineTextAlignment(.center)
                 
             }
         }
