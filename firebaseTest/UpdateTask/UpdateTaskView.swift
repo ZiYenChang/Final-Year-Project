@@ -126,8 +126,8 @@ struct UpdateTaskView: View {
                         vm.subtasks = subtasks
                         vm.updateTask()
                         presentationMode.wrappedValue.dismiss()
-                        showTaskvm.stopListening()
-//                        showTaskvm.listentoRealtimeDatabase()
+//                        showTaskvm.stopListening()
+                        showTaskvm.listentoRealtimeDatabase()
 //                        print("listentoRealtimeDatabase() run in UpdateTaskView")
                     }, label: {
                         Text("Update")

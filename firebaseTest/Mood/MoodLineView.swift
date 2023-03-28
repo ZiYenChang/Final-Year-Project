@@ -16,7 +16,7 @@ struct MoodLineView: View {
             ScrollViewReader { value in
                 ScrollView(.horizontal, showsIndicators: false) {
                     VStack(alignment: .leading) {
-                        Chart(data) {eachData in
+                        Chart(data.sorted(by: { $0.date.compare($1.date) == .orderedAscending})) {eachData in
                             LineMark(
                                 x: .value("Date", eachData.date, unit: .day),
                                 y: .value("Mood", eachData.mood)
@@ -52,7 +52,7 @@ struct MoodLineView: View {
                         }
                         .padding(.vertical,4)
                         .padding(.leading, 15)
-                        .frame(width: ((CGFloat(data.count)+3)/7 * 550.0), height: 220)
+                        .frame(width: ((CGFloat(data.count)+3)/7 * 290.0), height: 220)
                         
                         // to ensure the graph starts from the end
                         HStack{

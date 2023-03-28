@@ -30,6 +30,7 @@ struct TempSubtaskModel: Identifiable, Codable {
     var lastUpdate: String
     var taskid: String?
     var uid: String?
+    var completeDate: String?
 }
 
 
@@ -90,6 +91,7 @@ final class ShowAllTasksViewModel: ObservableObject {
         newTask.id = tempSubtask.id
         newTask.uid = tempSubtask.uid
         newTask.taskid = tempSubtask.taskid
+        newTask.completeDate = tempSubtask.completeDate
         
         if(tempSubtask.completed == "false"){
             newTask.completed = false
@@ -196,14 +198,26 @@ final class ShowAllTasksViewModel: ObservableObject {
     func updateSubtask(with subtask: SubtaskModel){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm E, d MMM y"
-        
-        let values = [
+        var values = [
             "title": subtask.title,
             "completed": "\(subtask.completed)",
             "lastUpdate": dateFormatter.string(from: Date()),
             "taskid": subtask.taskid!,
-            "uid": subtask.uid!
+            "uid": subtask.uid!,
+            "completeDate":""
         ] as [String : Any]
+        
+        if subtask.completed {
+            values = [
+                "title": subtask.title,
+                "completed": "\(subtask.completed)",
+                "lastUpdate": dateFormatter.string(from: Date()),
+                "taskid": subtask.taskid!,
+                "uid": subtask.uid!,
+                "completeDate": dateFormatter.string(from: Date())
+            ]
+        }
+        
         
         print("in updateSubtask")
         Database.database()

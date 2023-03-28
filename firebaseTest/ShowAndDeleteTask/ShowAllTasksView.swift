@@ -149,6 +149,7 @@ struct ShowAllTasksView: View {
 //                                            }
 //                                        }
                                     vm.deleteTask(with: task.id ?? "")
+                                    vm.listentoRealtimeDatabase()
                                     
                                 }) {
                                     Image(systemName: "trash")

@@ -60,7 +60,8 @@ final class AddTaskServiceImp: AddTaskService {
                                         "completed": "false",
                                         "lastUpdate": dateFormatter.string(from: Date()),
                                         "taskid": autoID,
-                                        "uid": uid
+                                        "uid": uid,
+                                        "completeDate":""
                                     ] as [String : Any]
 
                                     Database.database()

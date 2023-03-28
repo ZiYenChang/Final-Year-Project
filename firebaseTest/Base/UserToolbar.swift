@@ -10,6 +10,7 @@ import SwiftUI
 struct UserToolbar: ViewModifier {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var sessionService: SessionServiceImp
+//    @StateObject var vm = SessionServiceImp()
     
     func body(content: Content) -> some View {
         content

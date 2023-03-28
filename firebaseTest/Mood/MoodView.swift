@@ -49,10 +49,10 @@ struct MoodView: View {
                     if (vm.moods != []){
                         MoodChartView()
                             .environmentObject(vm)
-                        if (vm.moods[vm.moods.count - 1].mood < 4.5){
-                            CheerVideoView(messageID: 1)
-                                .padding(.horizontal)
-                        }
+//                        if (vm.moods[vm.moods.count - 1].mood < 4.5){
+//                            CheerVideoView(messageID: 1)
+//                                .padding(.horizontal)
+//                        }
                     }
                     
                     
@@ -71,21 +71,23 @@ struct MoodView: View {
         
     }
     
-    func todayInput(moods: [MoodModel]) -> Bool {
-        let today = Date()
-        let calendar = Calendar.current
+    
+}
+
+func todayInput(moods: [MoodModel]) -> Bool {
+    let today = Date()
+    let calendar = Calendar.current
+    
+    for mood in moods {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm E, d MMM y"
+        let originalDate = dateFormatter.date(from: mood.lastUpdate)!
         
-        for mood in moods {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm E, d MMM y"
-            let originalDate = dateFormatter.date(from: mood.lastUpdate)!
-            
-            if calendar.isDate(originalDate, inSameDayAs: today) {
-                return false
-            }
+        if calendar.isDate(originalDate, inSameDayAs: today) {
+            return false
         }
-        return true
     }
+    return true
 }
 
 func isAfterTime(time: Int) -> Bool {

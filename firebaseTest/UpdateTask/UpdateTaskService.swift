@@ -45,7 +45,8 @@ final class UpdateTaskServiceImp: UpdateTaskService {
                             if let err = error{
                                 promise(.failure (err))
                                 print("Failed due to error:", err)
-                            }else{
+                            }
+                            else{
                                 promise(.success(()))
                                 print("Task Updated")
                                 
@@ -55,7 +56,8 @@ final class UpdateTaskServiceImp: UpdateTaskService {
                                         "completed": "\(subtask.completed)",
                                         "lastUpdate": dateFormatter.string(from: Date()),
                                         "taskid": taskid,
-                                        "uid": uid
+                                        "uid": uid,
+                                        "completeDate": subtask.completeDate as Any
                                     ] as [String : Any]
                                     
                                     if let subtaskid = subtask.id{
