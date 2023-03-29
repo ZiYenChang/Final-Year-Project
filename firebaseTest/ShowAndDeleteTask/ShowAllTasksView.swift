@@ -102,7 +102,7 @@ struct ShowAllTasksView: View {
                             .listRowBackground(
                                     RoundedRectangle(cornerRadius: 10)
                                         .background(.clear)
-                                        .foregroundColor(Color.white)
+                                        .foregroundColor(Color.white.opacity(0.9))
                                         .padding(
                                             EdgeInsets(
                                                 top: 2,
@@ -129,7 +129,7 @@ struct ShowAllTasksView: View {
                             .listRowBackground(
                                     RoundedRectangle(cornerRadius: 10)
                                         .background(.clear)
-                                        .foregroundColor(Color.white)
+                                        .foregroundColor(Color.white.opacity(0.9))
                                         .padding(
                                             EdgeInsets(
                                                 top: 2,
@@ -162,6 +162,11 @@ struct ShowAllTasksView: View {
                 vm.listentoRealtimeDatabase()
                 print("listentoRealtimeDatabase() run in AllTaskView")
             }
+            .background(Image("tiffany-waves")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea())
+            .scrollContentBackground(.hidden)
         
             VStack{
                 Spacer()

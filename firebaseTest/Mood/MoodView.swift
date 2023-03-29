@@ -67,6 +67,7 @@ struct MoodView: View {
                     vm.moodStopListening()
             }
             }
+            .background(Image("yellow-pink-gradient"))
         }
         
     }

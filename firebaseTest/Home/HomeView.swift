@@ -66,7 +66,7 @@ struct HomeView: View {
                     } // end hstack
                     .padding(.top, 10)
                     .padding(.bottom, 10)
-                    .background(.white)
+                    .background(.white.opacity(0.9))
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
                     .frame(maxWidth: .infinity)
@@ -182,7 +182,7 @@ struct HomeView: View {
                     
                 }
                 .padding()
-                .background(.white)
+                .background(.white.opacity(0.9))
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity)
                 .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
@@ -210,7 +210,7 @@ struct HomeView: View {
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(.white)
+                    .background(.white.opacity(0.9))
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
                     
@@ -234,21 +234,30 @@ struct HomeView: View {
                                 
             }
             .onAppear {
-                vm.listentoRealtimeDatabase()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+//                vm.listentoRealtimeDatabase()
+//                vmMood.moodlistenDatabase()
                 print("listentoRealtimeDatabase() run in AllTaskView")
                 NotificationManager.instance.requestAuthorization()
                 NotificationManager.instance.cancelNotification()
                 UIApplication.shared.applicationIconBadgeNumber = 0
                 NotificationManager.instance.scheduleTimeNotification(title: "Welcome to Seed", subtitle: "Your task management companion", minutes: 0.3)
-                vmMood.moodlistenDatabase()
             }
-            .onDisappear{
-                vm.stopListening()
-                vmMood.moodStopListening()
-            }
+//            .onDisappear{
+//                vm.stopListening()
+//                vmMood.moodStopListening()
+//            }
             .padding(.horizontal)
-            .showUserToolbar()
         }
+        .onAppear {
+            vm.listentoRealtimeDatabase()
+            vmMood.moodlistenDatabase()
+        }
+        .scrollContentBackground(.hidden)
+        .background(Image("sunrise-pastel")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea())
     
     }
     private func checkNumOfTask(tasks: Array<TaskModel>, filter: Status)-> Int{

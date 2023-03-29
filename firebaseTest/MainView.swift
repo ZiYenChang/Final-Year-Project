@@ -40,8 +40,11 @@ struct MainView: View {
                     Label("Mood", systemImage: "face.smiling")
                 }.tag(tabs.mood)
         }
-        .accentColor(.purple)
+        .accentColor(.blue)
         .navigationTitle(selection.text)
+        .showUserToolbar()
+        
+        
     }
 }
 

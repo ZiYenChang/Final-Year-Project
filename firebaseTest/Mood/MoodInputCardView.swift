@@ -56,7 +56,7 @@ struct MoodInputCardView: View {
         .padding(.horizontal, 20)
         .padding(.top, 20)
         .padding(.bottom, 10)
-        .background(.white)
+        .background(.white.opacity(0.9))
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
     }//end view

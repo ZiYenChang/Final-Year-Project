@@ -12,17 +12,16 @@ struct TaskNumCardView: View {
     let taskNumber: Int
     let color:Color
     var body: some View {
-        VStack {
-            VStack{
-                Text(String(taskNumber))
-                    .font(.title)
-                    .foregroundColor(color)
-                    .fontWeight(.bold)
-                Text(title)
-                    .font(.caption)
-                    .multilineTextAlignment(.center)
-                
-            }
+        VStack{
+            Text(String(taskNumber))
+                .font(.title)
+                .foregroundColor(color)
+                .fontWeight(.bold)
+            Text(title)
+                .font(.caption)
+                .multilineTextAlignment(.center)
+            
+        
         }
         
     }

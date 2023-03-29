@@ -17,10 +17,11 @@ struct UserToolbar: ViewModifier {
             .navigationBarHidden(false)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ProfileView().environmentObject(sessionService))
+                    NavigationLink(destination: ProfileView()
+                        .environmentObject(sessionService))
                     {
                         Image(systemName: "person.circle.fill")
-                            .foregroundColor(.gray.opacity(0.7))
+                            .foregroundColor(.black.opacity(0.4))
                             .scaleEffect(1.2)
                     }
                     
@@ -28,7 +29,7 @@ struct UserToolbar: ViewModifier {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Welcome \(sessionService.userDetails?.firstName ?? " ")")
                         .font(.body)
-                        .foregroundColor(Color(.systemGray))
+                        .foregroundColor(.black.opacity(0.4))
                     
                 }
             }

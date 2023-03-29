@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct UpdateTaskView: View {
     
@@ -17,6 +18,8 @@ struct UpdateTaskView: View {
     @State private var subtasks: [SubtaskModel] = []
     @State private var firstLoad = true
 //    @State private var sub = self.vm.subtasks
+    
+    @Binding var confetti: Int
     
     var body: some View {
         NavigationView{
@@ -129,6 +132,9 @@ struct UpdateTaskView: View {
 //                        showTaskvm.stopListening()
                         showTaskvm.listentoRealtimeDatabase()
 //                        print("listentoRealtimeDatabase() run in UpdateTaskView")
+                        if vm.details.status == .completed{
+                            confetti += 1
+                        }
                     }, label: {
                         Text("Update")
                             .foregroundColor(.blue)

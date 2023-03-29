@@ -74,7 +74,7 @@ struct MoodLineView: View {
             
             
             Rectangle()
-                .fill(Color.white)
+                .fill(Color(red: 253/256, green: 251/256, blue: 247/256))
                 .frame(width: 22, height: 220)
                 .offset(x:0, y: -15)
 //                    .opacity(0.5)

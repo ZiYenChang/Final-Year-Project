@@ -14,10 +14,11 @@ import SwiftUI
 struct ProfileModel: Codable, Equatable {
     var courseName: String
     var firstName: String
+    var email: String
 }
 
 final class ProfileEditViewModel: ObservableObject {
-    @Published var profile: ProfileModel = ProfileModel(courseName: "", firstName: "")
+    @Published var profile: ProfileModel = ProfileModel(courseName: "", firstName: "", email: "")
     
     private lazy var databasePath: DatabaseReference? = {
         let ref = Database.database().reference().child("users").child(self.uid)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct ShowTaskDetailsView: View {
     
@@ -13,11 +14,29 @@ struct ShowTaskDetailsView: View {
     @State private var showUpdateTask = false
     @ObservedObject var vm: ShowAllTasksViewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var confetti = 0
     
     
     
     var body: some View {
+        
         List {
+            if task.status == Status.completed{
+                VStack(alignment: .center, spacing: 3){
+                    Text("Congrats! You have completed this task!")
+                        .multilineTextAlignment(.center)
+                        .font(.subheadline)
+                        .foregroundColor(Color(red: 0, green: 0.5, blue: 0))
+                        .fontWeight(.semibold)
+                    Text("🥳 🥳 🥳")
+                        .multilineTextAlignment(.center)
+                        .font(.title2)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 5)
+                .listRowBackground(Color.white.opacity(0.9))
+            }
+            
             Section(header: Text("Task Info")) {
                 HStack {
                     Label(task.title, systemImage: "mappin")
@@ -95,6 +114,11 @@ struct ShowTaskDetailsView: View {
         }
         .navigationTitle(task.title)
         .navigationBarTitleDisplayMode(.inline)
+        .background(Image("tiffany-waves")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea())
+        .scrollContentBackground(.hidden)
         .safeAreaInset(edge: .bottom, content: {
             Button(role: .destructive) {
                 if let id = task.id{
@@ -112,10 +136,12 @@ struct ShowTaskDetailsView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding()
-            .background(.white)
             .frame(width:350)
+            .background(.white)
             .cornerRadius(8)
             .padding(.bottom)
+            .confettiCannon(counter: $confetti, num: 80, radius: 750.0)
+            // https://www.appcoda.com/swiftui-confetti-animation/
         })
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
@@ -129,7 +155,7 @@ struct ShowTaskDetailsView: View {
                        content: {
                     UpdateTaskView(
                         vm:UpdateTaskViewModelImp(service: UpdateTaskServiceImp(),details: task, subtasks: vm.subtasks),
-                        showTaskvm: vm
+                        showTaskvm: vm, confetti: $confetti
                     )
 //                    .onDisappear {
 //                        vm.stopListening()

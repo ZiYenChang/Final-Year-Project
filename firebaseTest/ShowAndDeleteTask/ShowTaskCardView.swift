@@ -29,10 +29,12 @@ struct ShowTaskCardView: View {
                         .frame(width: 35, height: 35)
                         .rotationEffect(Angle(degrees: 270.0))
                     
-                    Text("\(Int(completedPercentage()[0]))/\(Int(completedPercentage()[1]))")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                        .opacity(0.8)
+                    
+                        Text("\(Int(completedPercentage()[0]))/\(Int(completedPercentage()[1]))")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .opacity(0.8)
+                    
                 }else{
                     Circle()
                         .stroke(lineWidth: 5)
@@ -56,13 +58,19 @@ struct ShowTaskCardView: View {
             VStack{
                 Spacer()
                 ZStack {
+                    if task.status == .completed{
+                    Text("✔️")
+                        .fontWeight(.medium)
+                    }else{
                     RoundedRectangle(cornerRadius: 4)
                         .fill(.gray)
                         .opacity(0.2)
-                    Text(numberOfDaysBetween(to: task.deadline))
-                        .padding(.vertical, 3)
-                        .padding(.horizontal, 5)
-                        .font(.caption)
+                    
+                        Text(numberOfDaysBetween(to: task.deadline))
+                            .padding(.vertical, 3)
+                            .padding(.horizontal, 5)
+                            .font(.caption)
+                    }
                 }
                 .foregroundColor(.black)
                 .frame(minWidth: 35)

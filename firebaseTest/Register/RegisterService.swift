@@ -12,12 +12,6 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-//for firebase database keys
-enum RegisterKeys: String {
-    case firstName
-    case courseName
-}
-
 protocol RegisterService {
     func register(with details: RegisterDetailsModel) -> AnyPublisher<Void, Error> // return a publisher that be subscribed. If successful, do nothing. If failed, drawback the error.
 }
@@ -41,8 +35,9 @@ final class RegisterServiceImp: RegisterService {
                             //create a dictionary for the value that we want to store in firebase
                             //KEY:VALUE, we use the enum here to avoid typo
                             let values = [
-                                RegisterKeys.firstName.rawValue: details.firstName,
-                                RegisterKeys.courseName.rawValue: details.courseName
+                                "courseName": details.firstName,
+                                "firstName": details.courseName,
+                                "email": details.email
                             ] as [String : Any]
                             
                             //use firebase database function to update user with values

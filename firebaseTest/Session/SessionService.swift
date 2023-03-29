@@ -98,8 +98,8 @@ private extension SessionServiceImp{
                 
                 guard let self=self,
                       let value = snapshot.value as? NSDictionary, // get the snapshot out of the dictionary
-                      let firstName = value[RegisterKeys.firstName.rawValue] as? String,
-                      let courseName = value[RegisterKeys.courseName.rawValue] as? String else{
+                      let firstName = value["firstName"] as? String,
+                      let courseName = value["courseName"] as? String else{
                     return
                 }
                 

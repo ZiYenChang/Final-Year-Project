@@ -63,7 +63,7 @@ struct MoodChartView: View {
         .onAppear{
 //            data = moodModelForChart(rawData: vm.moods)
         }
-        .background(.white)
+        .background(.white.opacity(0.9))
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
         .padding()

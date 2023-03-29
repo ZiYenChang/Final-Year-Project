@@ -43,7 +43,6 @@
 		A271D4A2297820E200A8AAC6 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4A1297820E200A8AAC6 /* RegisterViewModel.swift */; };
 		A271D4A529782F4100A8AAC6 /* SessionUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4A429782F4100A8AAC6 /* SessionUserModel.swift */; };
 		A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4A629782FF200A8AAC6 /* SessionService.swift */; };
-		A271D4A929783C4E00A8AAC6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A271D4A829783C4E00A8AAC6 /* GoogleService-Info.plist */; };
 		A271D4AB29783E2D00A8AAC6 /* LoginDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4AA29783E2D00A8AAC6 /* LoginDetailsModel.swift */; };
 		A271D4AD29783EA100A8AAC6 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4AC29783EA100A8AAC6 /* LoginService.swift */; };
 		A271D4AF2978405B00A8AAC6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4AE2978405B00A8AAC6 /* LoginViewModel.swift */; };
@@ -77,6 +76,12 @@
 		A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */; };
 		A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */; };
 		A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */; };
+		A2F155C329D39E1E004116F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */; };
+		A2F155E329D3A0F1004116F7 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */; };
+		A2F1560329D4842A004116F7 /* SecurityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560229D4842A004116F7 /* SecurityController.swift */; };
+		A2F1560529D48485004116F7 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560429D48485004116F7 /* LockView.swift */; };
+		A2F1560929D48E87004116F7 /* AppLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560829D48E87004116F7 /* AppLockViewModel.swift */; };
+		A2F1560B29D48FBD004116F7 /* AppLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560A29D48FBD004116F7 /* AppLockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,7 +121,6 @@
 		A271D4A1297820E200A8AAC6 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A271D4A429782F4100A8AAC6 /* SessionUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionUserModel.swift; sourceTree = "<group>"; };
 		A271D4A629782FF200A8AAC6 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
-		A271D4A829783C4E00A8AAC6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A271D4AA29783E2D00A8AAC6 /* LoginDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDetailsModel.swift; sourceTree = "<group>"; };
 		A271D4AC29783EA100A8AAC6 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		A271D4AE2978405B00A8AAC6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -148,6 +152,11 @@
 		A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusSelection.swift; sourceTree = "<group>"; };
 		A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusView.swift; sourceTree = "<group>"; };
 		A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusPickerView.swift; sourceTree = "<group>"; };
+		A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2F1560229D4842A004116F7 /* SecurityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityController.swift; sourceTree = "<group>"; };
+		A2F1560429D48485004116F7 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		A2F1560829D48E87004116F7 /* AppLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockViewModel.swift; sourceTree = "<group>"; };
+		A2F1560A29D48FBD004116F7 /* AppLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +166,7 @@
 			files = (
 				A2DDAAA1297740AE007369AB /* FirebaseDatabase in Frameworks */,
 				A2DDAA9C2976F956007369AB /* FirebaseAuth in Frameworks */,
+				A2F155E329D3A0F1004116F7 /* ConfettiSwiftUI in Frameworks */,
 				A2DDAA9E2976F956007369AB /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +376,6 @@
 		A2DDAA872976F18F007369AB /* firebaseTest */ = {
 			isa = PBXGroup;
 			children = (
-				A2F0DDF72979EB2A001AF1BB /* MainView.swift */,
 				A2BDB20329BA0EC800B2426E /* Notification */,
 				A24D42DD29B9F04D00313720 /* Recommendation */,
 				A23F66B3299BD07A009E279D /* Mood */,
@@ -375,6 +384,7 @@
 				A271D4BF2979459700A8AAC6 /* ShowAndDeleteTask */,
 				A271D4B7297899E700A8AAC6 /* Task */,
 				A271D4B429787A3B00A8AAC6 /* AddTask */,
+				A2F0DDF72979EB2A001AF1BB /* MainView.swift */,
 				A2F0DDF42979E591001AF1BB /* Profile */,
 				A271D4A329782F3000A8AAC6 /* Session */,
 				A271D48B2977EFB300A8AAC6 /* Base */,
@@ -385,7 +395,7 @@
 				A2DDAA882976F18F007369AB /* firebaseTestApp.swift */,
 				A2DDAA8A2976F18F007369AB /* ContentView.swift */,
 				A2DDAA8C2976F190007369AB /* Assets.xcassets */,
-				A271D4A829783C4E00A8AAC6 /* GoogleService-Info.plist */,
+				A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */,
 				A2DDAA8E2976F190007369AB /* Preview Content */,
 			);
 			path = firebaseTest;
@@ -411,6 +421,10 @@
 			children = (
 				A2F0DDF52979E5A9001AF1BB /* ProfileView.swift */,
 				A260685729D3547C005BD972 /* ProfileEditViewModel.swift */,
+				A2F1560229D4842A004116F7 /* SecurityController.swift */,
+				A2F1560429D48485004116F7 /* LockView.swift */,
+				A2F1560829D48E87004116F7 /* AppLockViewModel.swift */,
+				A2F1560A29D48FBD004116F7 /* AppLockView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -442,6 +456,7 @@
 				A2DDAA9B2976F956007369AB /* FirebaseAuth */,
 				A2DDAA9D2976F956007369AB /* FirebaseFirestore */,
 				A2DDAAA0297740AE007369AB /* FirebaseDatabase */,
+				A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */,
 			);
 			productName = firebaseTest;
 			productReference = A2DDAA852976F18F007369AB /* firebaseTest.app */;
@@ -473,6 +488,7 @@
 			mainGroup = A2DDAA7C2976F18F007369AB;
 			packageReferences = (
 				A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A2F155E129D3A0F1004116F7 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = A2DDAA862976F18F007369AB /* Products */;
 			projectDirPath = "";
@@ -489,8 +505,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2DDAA902976F190007369AB /* Preview Assets.xcassets in Resources */,
-				A271D4A929783C4E00A8AAC6 /* GoogleService-Info.plist in Resources */,
 				A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */,
+				A2F155C329D39E1E004116F7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +521,7 @@
 				A23F66B5299BD09C009E279D /* MoodView.swift in Sources */,
 				A271D4BA2978A0ED00A8AAC6 /* TaskModel.swift in Sources */,
 				A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */,
+				A2F1560929D48E87004116F7 /* AppLockViewModel.swift in Sources */,
 				A271D496297801C000A8AAC6 /* CloseModifier.swift in Sources */,
 				A271D4C1297945AC00A8AAC6 /* ShowAllTasksView.swift in Sources */,
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
@@ -524,10 +541,12 @@
 				A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */,
 				A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */,
 				A271D4AB29783E2D00A8AAC6 /* LoginDetailsModel.swift in Sources */,
+				A2F1560529D48485004116F7 /* LockView.swift in Sources */,
 				A2BDB20929BA1A9800B2426E /* MeditationVideoView.swift in Sources */,
 				A260685829D3547C005BD972 /* ProfileEditViewModel.swift in Sources */,
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
+				A2F1560B29D48FBD004116F7 /* AppLockView.swift in Sources */,
 				A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */,
 				A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */,
 				A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */,
@@ -544,6 +563,7 @@
 				A271D4A2297820E200A8AAC6 /* RegisterViewModel.swift in Sources */,
 				A271D4942977FFD200A8AAC6 /* RegisterView.swift in Sources */,
 				A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */,
+				A2F1560329D4842A004116F7 /* SecurityController.swift in Sources */,
 				A271D4AD29783EA100A8AAC6 /* LoginService.swift in Sources */,
 				A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */,
 				A260683429C7630A005BD972 /* CompletedSubtaskView.swift in Sources */,
@@ -696,6 +716,7 @@
 				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to unlock app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -726,6 +747,7 @@
 				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to unlock app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -777,6 +799,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		A2F155E129D3A0F1004116F7 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -794,6 +824,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2F155E129D3A0F1004116F7 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
