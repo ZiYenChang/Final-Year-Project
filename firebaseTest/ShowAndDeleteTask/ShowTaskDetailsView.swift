@@ -44,13 +44,6 @@ struct ShowTaskDetailsView: View {
                 }
                 .accessibilityElement(children: .combine)
                 HStack {
-                    Label("Priority", systemImage: "exclamationmark.circle")
-                    Spacer()
-                    Text("\(task.priority)")
-                    
-                }
-                .accessibilityElement(children: .combine)
-                HStack {
                     Label("", systemImage: "flag")
                     TaskStatusView(status: task.status)
                 }
@@ -120,27 +113,47 @@ struct ShowTaskDetailsView: View {
             .ignoresSafeArea())
         .scrollContentBackground(.hidden)
         .safeAreaInset(edge: .bottom, content: {
-            Button(role: .destructive) {
-                if let id = task.id{
-//                    var subtasksForDelete: [SubtaskModel] = []
-//                    for subtask in vm.subtasks{
-//                        if (subtask.taskid == id){
-//                            subtasksForDelete.append(subtask)
-//                        }
-//                    }
-                    vm.deleteTask(with: id)
-                    presentationMode.wrappedValue.dismiss()
+            
+            VStack {
+                if task.status.rawValue != Status.completed.rawValue{
+                    Button(action: {
+                        vm.completeTask(with: task)
+                        confetti += 1
+                        vm.listentoRealtimeDatabase()
+                    }) {
+                        Text("Mark as completed")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .foregroundColor(.blue)
+                    }
+                    .padding()
+                    .frame(width:350)
+                    .background(.white)
+                    .cornerRadius(8)
+
                 }
-            } label: {
-                Text("Delete")
-                    .frame(maxWidth: .infinity, alignment: .center)
+                
+                Button(role: .destructive) {
+                    if let id = task.id{
+    //                    var subtasksForDelete: [SubtaskModel] = []
+    //                    for subtask in vm.subtasks{
+    //                        if (subtask.taskid == id){
+    //                            subtasksForDelete.append(subtask)
+    //                        }
+    //                    }
+                        vm.deleteTask(with: id)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    Text("Delete")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+                .padding()
+                .frame(width:350)
+                .background(.white)
+                .cornerRadius(8)
+                .padding(.bottom)
+                .confettiCannon(counter: $confetti, num: 80, radius: 750.0)
             }
-            .padding()
-            .frame(width:350)
-            .background(.white)
-            .cornerRadius(8)
-            .padding(.bottom)
-            .confettiCannon(counter: $confetti, num: 80, radius: 750.0)
             // https://www.appcoda.com/swiftui-confetti-animation/
         })
         .toolbar {

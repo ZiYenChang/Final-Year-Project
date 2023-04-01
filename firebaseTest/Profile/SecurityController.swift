@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import LocalAuthentication
 
+//https://medium.com/@williewilson99/app-lock-with-swiftui-9d573aa2d040
+
 @MainActor
 class SecurityController: ObservableObject {
     

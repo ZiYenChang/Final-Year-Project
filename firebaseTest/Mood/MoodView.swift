@@ -29,21 +29,69 @@ struct MoodView: View {
     @StateObject var vm = GetMoodViewModel()
     @EnvironmentObject var sessionService: SessionServiceImp
     
+    @State private var readyInput = false
+    
     @State private var isMoodSelected: Bool = false
     var body: some View {
         
         NavigationView {
             ScrollView {
                 VStack {
-                    if isAfterTime(time: 12) && todayInput(moods: vm.moods){
+                    if isAfterTime(time: 11) && todayInput(moods: vm.moods){
                         VStack {
-                            Text("Are you satisfied with today's progress?☺️")
+                            if !readyInput {
+                                Image("work")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 150.0)
+                                Text("Hey \(sessionService.userDetails?.firstName ?? " ")")
+                                    .frame(maxWidth: .infinity)
+                                    .font(.title2)
+                                    .fontWeight(.medium)
+                                    .padding(.bottom, 1)
+                                Text("Have you call it a day with your work?")
+                                    .frame(maxWidth: .infinity)
+                                    .font(.subheadline)
+                                
+                                Button(action: {
+                                    readyInput = true
+                                }) {
+                                    Text("Yes")
+                                        .padding(.horizontal)
+                                }
+                                .foregroundColor(.black)
+                                .cornerRadius(9)
+                                .buttonStyle(.bordered)
+                                
+                            }else{
+                                HStack {
+                                    Button(action: {
+                                        readyInput = false
+                                    }) {
+                                        HStack{
+                                            Image(systemName: "chevron.backward")
+                                                .font(.title2)
+                                                .fontWeight(.semibold)
+                                            Text("Back")
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                                .padding(.bottom, 10)
                                 MoodInputCardView(isMoodSelected: $isMoodSelected)
-                                    .padding(.horizontal, 10)
                                     .environmentObject(vm)
+                            }
                             
                         }//end vstack
+                        .animation(.easeInOut(duration: 0.2), value: readyInput)
+                        .padding(.vertical)
+                        .padding(.horizontal,12)
+                        .background(.white.opacity(0.9))
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
                         .animation(.easeInOut(duration: 0.2), value: isMoodSelected)
+                        .animation(.easeInOut(duration: 0.2), value: readyInput)
                     }
                     
                     if (vm.moods != []){

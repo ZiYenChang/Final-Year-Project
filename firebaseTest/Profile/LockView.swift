@@ -12,14 +12,33 @@ struct LockView: View {
         
         
         var body: some View {
-            Button("Unlock") {
-                securityController.authenticate()
-            }
-            .onAppear{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001) {
+            
+            VStack(spacing: 5){
+                Image(systemName: "lock.fill")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .padding(12)
+                Text("App Locked")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                Button("Unlock") {
                     securityController.authenticate()
                 }
+                .padding(5)
+                .onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.0001) {
+    //                    securityController.authenticate()
+                    }
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Image("sunrise-pastel")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+                .opacity(0.8)
+            )
+            
         }
 }
 

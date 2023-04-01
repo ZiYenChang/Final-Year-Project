@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject private var securityController = SecurityController()
+    @ObservedObject var securityController:SecurityController
     
     @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var sessionService: SessionServiceImp
@@ -16,18 +16,12 @@ struct ProfileView: View {
     @StateObject private var vm = ProfileEditViewModel()
     @State private var editingName = false
     @FocusState private var keyboardFocused: Bool
+    @State private var showForgotPassword = false
     
     var body: some View {
         
             VStack {
-                ScrollView{
-                    //            Text("Hi \(sessionService.userDetails?.firstName ?? " ")")
-                    Text("About you")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle)
-                        .padding(.horizontal)
-                        .fontWeight(.semibold)
-                    
+                VStack{
                     HStack{
                         if !editingName{
                             Text(vm.profile.firstName)
@@ -37,6 +31,7 @@ struct ProfileView: View {
                                 editingName.toggle()
                             }) {
                                 Text("Edit")
+                                    .padding(.trailing,8)
                             }
                             .padding()
                             
@@ -59,6 +54,7 @@ struct ProfileView: View {
                                 vm.listentoUserDatabase()
                             }) {
                                 Text("Done")
+                                    .padding(.trailing,8)
                             }
                             .padding()
                         }
@@ -77,7 +73,7 @@ struct ProfileView: View {
                     .cornerRadius(9)
 
                     HStack{
-                        Text("You are doing \(vm.profile.courseName) 🫡")
+                        Text("You are studying \(vm.profile.courseName) 🫡")
                             .multilineTextAlignment(.center)
                             .padding()
                         Spacer()
@@ -86,19 +82,67 @@ struct ProfileView: View {
                     .background(.white.opacity(0.8))
                     .cornerRadius(9)
                     
-                    Toggle("App Lock", isOn: $securityController.isAppLockEnabled)
+                    HStack{
+                        Text("SECURITY AND PASSWORD")
+                            .font(.caption)
+                            .padding(.top,30)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.gray)
+                            .padding(.leading,22)
+                        Spacer()
+                    }
+                    
+                    Toggle("Screen Lock", isOn: $securityController.isAppLockEnabled)
                         .onChange(of: securityController.isAppLockEnabled, perform: { value in
                             securityController.appLockStateChange(value)
                             print("the value \(value)")
                         })
-                        .padding()
+                        .padding(.horizontal,30)
+                        .padding(.vertical,10)
+                        .background(.white.opacity(0.8))
+                        .cornerRadius(9)
+                    HStack{
+                        Text("Require Face ID to unlock App.")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                            .padding(.leading,30)
+                        Spacer()
+                    }
+                    HStack{
+                        Button(action: {
+                            showForgotPassword.toggle()
+                        }, label: {
+                            Text("Reset Password")
+                                .frame(maxWidth: .infinity)
+                        })
+                        .sheet(isPresented: $showForgotPassword) {
+                            ResetPasswordView()
+                        }
+                        .padding(13)
+                    }
+                    .padding(.horizontal)
+                    .background(.white.opacity(0.8))
+                    .cornerRadius(9)
+                    .padding(.top, 4)
                 }
                 .padding()
                 
                 Spacer()
-                ButtonView(title: "Logout") {
-                    sessionService.logout()
+//                ButtonView(title: "Logout") {
+//                    sessionService.logout()
+//                }
+                VStack{
+                    Button(action: {
+                        sessionService.logout()
+                    }, label: {
+                        Text("Logout")
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.red)
+                            .padding()
+                    })
                 }
+                .background(.white.opacity(0.8))
+                .cornerRadius(9)
                 .padding()
                 
             }
@@ -108,6 +152,7 @@ struct ProfileView: View {
             .onDisappear{
                 vm.stopListeningUser()
             }
+            .navigationTitle("About you")
             .scrollContentBackground(.hidden)
             .background(Image("orange-green")
                 .resizable()

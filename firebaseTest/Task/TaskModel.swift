@@ -10,7 +10,6 @@ import Foundation
 struct TaskModel: Identifiable, Codable, Equatable {
     var id: String?
     var title: String
-    var priority: String
     var note: String
     var status: Status
     var deadline: Date
@@ -26,7 +25,6 @@ extension TaskModel{
         dateFormatter.dateFormat = "HH:mm E, d MMM y"
         
         return TaskModel(title: "",
-                         priority: "",
                          note: "",
                          status: .notStarted,
                          deadline: Date(),
@@ -39,13 +37,11 @@ extension TaskModel {
     static let sampleData: [TaskModel] =
     [
         TaskModel(title: "Groupwork",
-                  priority: "High",
                   note: "This is the note",
                   status: .notStarted,
                   deadline: Date(),
                   lastUpdate:" "),
         TaskModel(title: "Groupwork 1",
-                  priority: "Normal",
                   note: "This is the note",
                   status: .notStarted,
                   deadline: Date(),

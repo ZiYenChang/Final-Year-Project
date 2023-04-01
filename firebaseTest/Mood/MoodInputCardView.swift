@@ -18,15 +18,20 @@ struct MoodInputCardView: View {
     @Binding var isMoodSelected: Bool
     var body: some View {
         VStack {
-            Text("Rate your today's progress satisfaction 👀")
+            Text("Rate your progress satisfaction 🎭")
                 .multilineTextAlignment(.center)
-                .font(.system(size: 16))
+                .font(.headline)
+                .fontWeight(.semibold)
+            Text("How do you feel about your progress?")
+                .multilineTextAlignment(.center)
+                .font(.caption)
             VStack {
                     Text(emojiIdentifier(mood: mood))
-                        .font(.system(size: 36))
+                        .font(.system(size: 42))
+                        .padding(.top, 1)
                 
                 Text("\(mood, specifier: "%.1f")")
-                    .foregroundColor(isEditing ? .blue : .black)
+                    .fontWeight(isEditing ? .regular : .medium)
                     .font(.caption)
                 Slider(
                     value: $mood,
@@ -36,29 +41,45 @@ struct MoodInputCardView: View {
                         isEditing = editing
                     }
                 )
+                .tint(Color.orange.opacity(0.9))
                 
             } //end vstack
             
-            Button("Record") {
+            Button(action: {
                 getVM.moodStopListening()
                 vm.mood = mood
                 vm.addMood()
                 isMoodSelected = false
                 getVM.moodlistenDatabase()
+            }) {
+                Text("Record")
+                    .padding(.horizontal)
             }
             .foregroundColor(.black)
             .cornerRadius(9)
             .buttonStyle(.bordered)
-            .padding(.top, 1)
+            .padding(.top, 10)
+            
+//            Button("Record") {
+//                getVM.moodStopListening()
+//                vm.mood = mood
+//                vm.addMood()
+//                isMoodSelected = false
+//                getVM.moodlistenDatabase()
+//            }
+//            .foregroundColor(.black)
+//            .cornerRadius(9)
+//            .buttonStyle(.bordered)
+//            .padding(.top, 1)
 //            .offset(x: 0, y: -18)
             
         }//end vstack
-        .padding(.horizontal, 20)
-        .padding(.top, 20)
-        .padding(.bottom, 10)
-        .background(.white.opacity(0.9))
-        .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
+//        .padding(.horizontal, 20)
+//        .padding(.top, 20)
+//        .padding(.bottom, 15)
+//        .background(.white.opacity(0.9))
+//        .cornerRadius(10)
+//        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
     }//end view
 }
 

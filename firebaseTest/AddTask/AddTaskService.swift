@@ -30,7 +30,6 @@ final class AddTaskServiceImp: AddTaskService {
                     
                     let values = [
                         "title": details.title,
-                        "priority": details.priority,
                         "note": details.note,
                         "status": details.status.rawValue,
                         "deadline": dateFormatter.string(from: details.deadline),

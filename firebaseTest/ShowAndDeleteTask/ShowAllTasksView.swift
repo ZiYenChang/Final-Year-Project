@@ -49,7 +49,8 @@ struct ShowAllTasksView: View {
                         }
                         .pickerStyle(MenuPickerStyle())
                         .labelsHidden()
-                        .frame(minWidth: 100)
+                        .frame(minWidth:130)
+                        
                         
                     Picker("Filter", selection: $statusFilter) {
                             ForEach(StatusFilter.allCases){ status in
@@ -95,6 +96,15 @@ struct ShowAllTasksView: View {
                             .listRowSeparator(.hidden)
                             .listStyle(InsetGroupedListStyle())
                             .swipeActions(edge: .trailing){
+                                if task.status != Status.completed {
+                                    Button(action: {
+                                        vm.completeTask(with: task)
+                                        vm.listentoRealtimeDatabase()
+                                    }) {
+                                        Image(systemName: "checkmark.circle.fill")
+                                    }
+                                .tint(.blue)
+                                }
                                 Button(role: .destructive, action: {vm.deleteTask(with: task.id ?? "")}) {
                                     Image(systemName: "trash")
                                 }
@@ -140,14 +150,17 @@ struct ShowAllTasksView: View {
                                         )
                                 )
                             .swipeActions(edge: .trailing){
+                                if task.status != Status.completed {
+                                    Button(action: {
+                                        vm.completeTask(with: task)
+                                        vm.listentoRealtimeDatabase()
+                                    }) {
+                                        Image(systemName: "checkmark.circle.fill")
+                                    }
+                                .tint(.blue)
+                                }
                                 Button(role: .destructive,
                                        action: {
-//                                        var subtasksForDelete: [SubtaskModel] = []
-//                                        for subtask in vm.subtasks{
-//                                            if (subtask.taskid == task.id){
-//                                                subtasksForDelete.append(subtask)
-//                                            }
-//                                        }
                                     vm.deleteTask(with: task.id ?? "")
                                     vm.listentoRealtimeDatabase()
                                     
@@ -176,7 +189,15 @@ struct ShowAllTasksView: View {
                         showAddTask.toggle()
                     }, label: {
                         Image(systemName: "plus")
-                            .foregroundColor(.blue)
+                            .fontWeight(.medium)
+                            .font(.title2)
+                            .padding(15)
+                            .foregroundColor(.black)
+                            .background(
+                                Circle()
+                                    .fill(Color.white.opacity(0.85))
+                                    .shadow(color: Color.black.opacity(0.3), radius: 4.5, x: 2, y: 2)
+                            )
                     })
                     .padding()
                     .sheet(isPresented: $showAddTask) {
@@ -187,8 +208,8 @@ struct ShowAllTasksView: View {
                             }
                     }
                 }
-                .padding(.trailing,10)
-                .padding(.bottom,10)
+                .padding(.trailing,20)
+                .padding(.bottom,15)
             }
         }
         

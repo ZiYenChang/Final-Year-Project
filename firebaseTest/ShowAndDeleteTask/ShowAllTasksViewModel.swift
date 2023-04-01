@@ -14,7 +14,6 @@ import SwiftUI
 struct TempTaskModel: Identifiable, Codable {
     var id: String?
     var title: String
-    var priority: String
     var note: String
     var status: Status
     var deadline: String
@@ -75,7 +74,6 @@ final class ShowAllTasksViewModel: ObservableObject {
         newTask.title = tempTask.title
         newTask.status = tempTask.status
         newTask.deadline = newDeadline ?? Date()
-        newTask.priority = tempTask.priority
         newTask.note = tempTask.note
         newTask.lastUpdate = tempTask.lastUpdate
         newTask.id = tempTask.id
@@ -127,6 +125,8 @@ final class ShowAllTasksViewModel: ObservableObject {
                     let taskData = try JSONSerialization.data(withJSONObject: json)
                     let task = try self.decoder.decode(TempTaskModel.self, from: taskData)
                     self.tasks.append(self.convertDeadline(tempTask: task))
+                    print("'eachtask'")
+                    print(self.convertDeadline(tempTask: task))
                 } catch {
                     print("An error occurred", error)
                 }
@@ -193,6 +193,34 @@ final class ShowAllTasksViewModel: ObservableObject {
                 }
         }
         
+    }
+    
+    func completeTask(with task: TaskModel){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm E, d MMM y"
+
+        let values = [
+            "title": task.title,
+            "note": task.note,
+            "status": Status.completed.rawValue,
+            "deadline": dateFormatter.string(from: task.deadline),
+            "lastUpdate": dateFormatter.string(from: Date()),
+            "uid": uid
+        ] as [String : Any]
+        
+        //use firebase database function to update user with values
+        Database.database()
+            .reference()
+            .child("tasks")
+            .child(task.id!)
+            .updateChildValues(values){ error, ref in
+                if let err = error{
+                    print("Failed due to error:", err)
+                }
+                else{
+                    print("Task Updated as complete")
+                }
+            }
     }
     
     func updateSubtask(with subtask: SubtaskModel){

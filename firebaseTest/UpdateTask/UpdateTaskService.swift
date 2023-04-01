@@ -28,7 +28,6 @@ final class UpdateTaskServiceImp: UpdateTaskService {
 
                     let values = [
                         "title": details.title,
-                        "priority": details.priority,
                         "note": details.note,
                         "status": details.status.rawValue,
                         "deadline": dateFormatter.string(from: details.deadline),

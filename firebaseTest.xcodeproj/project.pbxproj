@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A20C3D7829AA3BE00020CCE2 /* MoodLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */; };
+		A21D91B929D8903D00C87ACA /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A21D91B829D8903D00C87ACA /* FirebaseDatabaseSwift */; };
+		A21D91BB29D890DB00C87ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */; };
 		A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66A829911B70009E279D /* TaskNumCardView.swift */; };
 		A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AA29924417009E279D /* SubtaskModel.swift */; };
 		A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AD2993BB36009E279D /* LockAppView.swift */; };
@@ -76,16 +78,22 @@
 		A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */; };
 		A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */; };
 		A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */; };
-		A2F155C329D39E1E004116F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */; };
 		A2F155E329D3A0F1004116F7 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */; };
 		A2F1560329D4842A004116F7 /* SecurityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560229D4842A004116F7 /* SecurityController.swift */; };
 		A2F1560529D48485004116F7 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560429D48485004116F7 /* LockView.swift */; };
-		A2F1560929D48E87004116F7 /* AppLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560829D48E87004116F7 /* AppLockViewModel.swift */; };
-		A2F1560B29D48FBD004116F7 /* AppLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560A29D48FBD004116F7 /* AppLockView.swift */; };
+		A2F1561029D62332004116F7 /* s1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1560F29D62332004116F7 /* s1View.swift */; };
+		A2F1561229D62342004116F7 /* s2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561129D62342004116F7 /* s2View.swift */; };
+		A2F1561429D6234E004116F7 /* s3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561329D6234E004116F7 /* s3View.swift */; };
+		A2F1561629D6235A004116F7 /* s4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561529D62359004116F7 /* s4View.swift */; };
+		A2F1561929D62413004116F7 /* s5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561829D62413004116F7 /* s5View.swift */; };
+		A2F1561B29D6244C004116F7 /* s6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561A29D6244C004116F7 /* s6View.swift */; };
+		A2F1561D29D62458004116F7 /* s7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561C29D62458004116F7 /* s7View.swift */; };
+		A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLineView.swift; sourceTree = "<group>"; };
+		A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A23F66A829911B70009E279D /* TaskNumCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNumCardView.swift; sourceTree = "<group>"; };
 		A23F66AA29924417009E279D /* SubtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskModel.swift; sourceTree = "<group>"; };
 		A23F66AD2993BB36009E279D /* LockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppView.swift; sourceTree = "<group>"; };
@@ -152,11 +160,16 @@
 		A2F0DDF92981996C001AF1BB /* TaskStatusSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusSelection.swift; sourceTree = "<group>"; };
 		A2F0DDFB29819B61001AF1BB /* TaskStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusView.swift; sourceTree = "<group>"; };
 		A2F0DDFD2981D31C001AF1BB /* TaskStatusPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusPickerView.swift; sourceTree = "<group>"; };
-		A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2F1560229D4842A004116F7 /* SecurityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityController.swift; sourceTree = "<group>"; };
 		A2F1560429D48485004116F7 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
-		A2F1560829D48E87004116F7 /* AppLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockViewModel.swift; sourceTree = "<group>"; };
-		A2F1560A29D48FBD004116F7 /* AppLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockView.swift; sourceTree = "<group>"; };
+		A2F1560F29D62332004116F7 /* s1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s1View.swift; sourceTree = "<group>"; };
+		A2F1561129D62342004116F7 /* s2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s2View.swift; sourceTree = "<group>"; };
+		A2F1561329D6234E004116F7 /* s3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s3View.swift; sourceTree = "<group>"; };
+		A2F1561529D62359004116F7 /* s4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s4View.swift; sourceTree = "<group>"; };
+		A2F1561829D62413004116F7 /* s5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s5View.swift; sourceTree = "<group>"; };
+		A2F1561A29D6244C004116F7 /* s6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s6View.swift; sourceTree = "<group>"; };
+		A2F1561C29D62458004116F7 /* s7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s7View.swift; sourceTree = "<group>"; };
+		A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21D91B929D8903D00C87ACA /* FirebaseDatabaseSwift in Frameworks */,
 				A2DDAAA1297740AE007369AB /* FirebaseDatabase in Frameworks */,
 				A2DDAA9C2976F956007369AB /* FirebaseAuth in Frameworks */,
 				A2F155E329D3A0F1004116F7 /* ConfettiSwiftUI in Frameworks */,
@@ -190,6 +204,7 @@
 				A264278829A57179009C9F78 /* GetMood */,
 				A23F66BA299BDD42009E279D /* AddMood */,
 				A23F66B4299BD09C009E279D /* MoodView.swift */,
+				A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */,
 				A264278B29A57DD9009C9F78 /* MoodChartView.swift */,
 				A24D42B929B8D84F00313720 /* MoodCalendarView.swift */,
 				A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */,
@@ -272,6 +287,7 @@
 				A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */,
 				A248303129B328A500C6FC06 /* NearlyDueCardView.swift */,
 				A260683529C77AB5005BD972 /* LowMoodView.swift */,
+				A2F1560E29D622FC004116F7 /* Suggestions */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -395,7 +411,7 @@
 				A2DDAA882976F18F007369AB /* firebaseTestApp.swift */,
 				A2DDAA8A2976F18F007369AB /* ContentView.swift */,
 				A2DDAA8C2976F190007369AB /* Assets.xcassets */,
-				A2F155C229D39E1E004116F7 /* GoogleService-Info.plist */,
+				A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */,
 				A2DDAA8E2976F190007369AB /* Preview Content */,
 			);
 			path = firebaseTest;
@@ -423,8 +439,6 @@
 				A260685729D3547C005BD972 /* ProfileEditViewModel.swift */,
 				A2F1560229D4842A004116F7 /* SecurityController.swift */,
 				A2F1560429D48485004116F7 /* LockView.swift */,
-				A2F1560829D48E87004116F7 /* AppLockViewModel.swift */,
-				A2F1560A29D48FBD004116F7 /* AppLockView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -434,6 +448,20 @@
 			children = (
 			);
 			path = MoodOptions;
+			sourceTree = "<group>";
+		};
+		A2F1560E29D622FC004116F7 /* Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				A2F1560F29D62332004116F7 /* s1View.swift */,
+				A2F1561129D62342004116F7 /* s2View.swift */,
+				A2F1561329D6234E004116F7 /* s3View.swift */,
+				A2F1561529D62359004116F7 /* s4View.swift */,
+				A2F1561829D62413004116F7 /* s5View.swift */,
+				A2F1561A29D6244C004116F7 /* s6View.swift */,
+				A2F1561C29D62458004116F7 /* s7View.swift */,
+			);
+			path = Suggestions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +485,7 @@
 				A2DDAA9D2976F956007369AB /* FirebaseFirestore */,
 				A2DDAAA0297740AE007369AB /* FirebaseDatabase */,
 				A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */,
+				A21D91B829D8903D00C87ACA /* FirebaseDatabaseSwift */,
 			);
 			productName = firebaseTest;
 			productReference = A2DDAA852976F18F007369AB /* firebaseTest.app */;
@@ -506,7 +535,7 @@
 			files = (
 				A2DDAA902976F190007369AB /* Preview Assets.xcassets in Resources */,
 				A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */,
-				A2F155C329D39E1E004116F7 /* GoogleService-Info.plist in Resources */,
+				A21D91BB29D890DB00C87ACA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,15 +550,16 @@
 				A23F66B5299BD09C009E279D /* MoodView.swift in Sources */,
 				A271D4BA2978A0ED00A8AAC6 /* TaskModel.swift in Sources */,
 				A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */,
-				A2F1560929D48E87004116F7 /* AppLockViewModel.swift in Sources */,
 				A271D496297801C000A8AAC6 /* CloseModifier.swift in Sources */,
 				A271D4C1297945AC00A8AAC6 /* ShowAllTasksView.swift in Sources */,
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
 				A271D499297803A900A8AAC6 /* HomeView.swift in Sources */,
+				A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */,
 				A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */,
 				A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */,
 				A271D4C32979475B00A8AAC6 /* ShowTaskCardView.swift in Sources */,
 				A23F66B7299BD3F9009E279D /* MoodInputCardView.swift in Sources */,
+				A2F1561D29D62458004116F7 /* s7View.swift in Sources */,
 				A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */,
 				A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */,
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
@@ -546,7 +576,6 @@
 				A260685829D3547C005BD972 /* ProfileEditViewModel.swift in Sources */,
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
-				A2F1560B29D48FBD004116F7 /* AppLockView.swift in Sources */,
 				A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */,
 				A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */,
 				A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */,
@@ -566,6 +595,10 @@
 				A2F1560329D4842A004116F7 /* SecurityController.swift in Sources */,
 				A271D4AD29783EA100A8AAC6 /* LoginService.swift in Sources */,
 				A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */,
+				A2F1561229D62342004116F7 /* s2View.swift in Sources */,
+				A2F1561429D6234E004116F7 /* s3View.swift in Sources */,
+				A2F1561629D6235A004116F7 /* s4View.swift in Sources */,
+				A2F1561929D62413004116F7 /* s5View.swift in Sources */,
 				A260683429C7630A005BD972 /* CompletedSubtaskView.swift in Sources */,
 				A271D49E297819F000A8AAC6 /* RegisterDetailsModel.swift in Sources */,
 				A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */,
@@ -574,6 +607,7 @@
 				A2BDB20B29BA230200B2426E /* RiskTaskCardView.swift in Sources */,
 				A271D4A529782F4100A8AAC6 /* SessionUserModel.swift in Sources */,
 				A24D42E329B9F0D600313720 /* WebViewContainer.swift in Sources */,
+				A2F1561029D62332004116F7 /* s1View.swift in Sources */,
 				A2BDB20729BA0F9500B2426E /* LocalNotificationView.swift in Sources */,
 				A24D42BA29B8D84F00313720 /* MoodCalendarView.swift in Sources */,
 				A2F0DDFA2981996C001AF1BB /* TaskStatusSelection.swift in Sources */,
@@ -581,6 +615,7 @@
 				A271D4AF2978405B00A8AAC6 /* LoginViewModel.swift in Sources */,
 				A23F66B229954628009E279D /* UserToolbar.swift in Sources */,
 				A23F66BC299BDE3E009E279D /* AddMoodService.swift in Sources */,
+				A2F1561B29D6244C004116F7 /* s6View.swift in Sources */,
 				A23F66BE299BDF96009E279D /* AddMoodViewModel.swift in Sources */,
 				A271D4912977F7CC00A8AAC6 /* ButtonView.swift in Sources */,
 				A2F0DDF62979E5A9001AF1BB /* ProfileView.swift in Sources */,
@@ -810,6 +845,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A21D91B829D8903D00C87ACA /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		A2DDAA9B2976F956007369AB /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

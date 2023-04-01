@@ -23,7 +23,6 @@ struct AddTaskView: View {
             Form{
                 Section{
                     TextField("Title", text: $vm.details.title)
-                    TextField("Priority", text: $vm.details.priority)
                     TaskStatusPickerView(selection: $vm.details.status)
                     TextField("Note", text: $vm.details.note, axis: .vertical)
                         .lineLimit(3, reservesSpace: true)

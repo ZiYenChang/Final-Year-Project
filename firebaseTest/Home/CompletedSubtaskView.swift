@@ -11,7 +11,7 @@ struct CompletedSubtaskView: View {
     let taskTitle: String
     let subTask: SubtaskModel
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Text("✔️")
                 .font(.headline)
             VStack(alignment: .leading) {

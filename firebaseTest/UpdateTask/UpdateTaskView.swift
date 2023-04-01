@@ -26,7 +26,6 @@ struct UpdateTaskView: View {
             Form{
                 Section(header: Text("Task Info")) {
                     TextField("Title", text: $vm.details.title)
-                    TextField("Priority", text: $vm.details.priority)
                     TaskStatusPickerView(selection: $vm.details.status)
                     HStack {
                         DatePicker(selection: $vm.details.deadline){

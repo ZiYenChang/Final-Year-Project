@@ -27,10 +27,10 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 18){
-    //            Text("Welcome \(sessionService.userDetails?.firstName ?? " ")")
-    //            Text("You are studying \(sessionService.userDetails?.courseName ?? " ").")
-    //            Text("You have total of \(vm.tasks.count) tasks")
+            VStack(alignment: .leading, spacing: 14){
+                //            Text("Welcome \(sessionService.userDetails?.firstName ?? " ")")
+                //            Text("You are studying \(sessionService.userDetails?.courseName ?? " ").")
+                //            Text("You have total of \(vm.tasks.count) tasks")
                 
                 //number of tasks
                 if(vm.tasks != []){
@@ -66,7 +66,7 @@ struct HomeView: View {
                     } // end hstack
                     .padding(.top, 10)
                     .padding(.bottom, 10)
-                    .background(.white.opacity(0.9))
+                    .background(.regularMaterial)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
                     .frame(maxWidth: .infinity)
@@ -76,69 +76,74 @@ struct HomeView: View {
                 VStack (alignment: .center){
                     if(vm.tasks != []){
                         if(checkIncompleteOverdue(tasks: vm.tasks) != []){
-                            HStack {
-                                Text("CHECK THESE OUT FIRST")
-                                    .foregroundColor(.orange)
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("Overdue")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("You have some incomplete overdue tasks😯:")
-                                    .font(.subheadline)
-                                Spacer()
-                            }
+                            Text("Overdue")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity)
+                            
+                            Text("Focus on these first")
+                                .font(.caption)
+                                .padding(.bottom, 6)
+                            
                             
                             ForEach(checkIncompleteOverdue(tasks: vm.tasks)){ task in
-                                NearlyDueCardView(task: task)
+                                HStack(alignment: .center) {
+                                    Circle()
+                                        .frame(width: 8, height: 8)
+                                        .padding(.horizontal, 4)
+                                        .foregroundColor(task.status.accentColor)
+                                    
+                                    Text(task.title)
+                                        .padding(.trailing, 10)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
                             }
                             
                             Button(action: {
                                 self.tabSelection = .tasks
                             }) {
-                                Text("Update Task")
+                                Text("Update Tasks")
+                                    .padding(.horizontal,10)
+                                    .padding(.vertical, 2)
                             }
-                            .buttonStyle(.borderedProminent)
+                            .foregroundColor(.black)
+                            .background(.gray.opacity(0.6))
+                            .cornerRadius(9)
+                            .buttonStyle(.bordered)
+                            .padding(.vertical, 5)
                             
                         } else if(checkNext7Days(tasks: vm.tasks) != []){
-                            HStack {
-                                Text("NEXT 7 DAYS ...")
-                                    .foregroundColor(.secondary)
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("Due soon")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                Spacer()
-                            }
+                            
+                            Text("Due Soon")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity)
+                            Text("In next 7 days")
+                                .font(.caption)
+                                .padding(.bottom, 6)
+                            
                             ForEach(checkNext7Days(tasks: vm.tasks)){ task in
                                 NearlyDueCardView(task: task)
+                                    .padding(.horizontal, 20)
                             }
                         } else if (checkAfter7Days(tasks: vm.tasks) != []){
-                            HStack {
                                 Text("CONSIDER THESE SOON ...")
                                     .foregroundColor(.secondary)
                                     .font(.subheadline)
                                     .fontWeight(.semibold)
-                                Spacer()
-                            }
-                            HStack {
                                 Text("Upcoming due")
                                     .font(.title)
                                     .fontWeight(.bold)
-                                Spacer()
-                            }
+                                    .frame(maxWidth: .infinity)
+                                Text("Consider these soon")
+                                    .font(.caption)
+                                    .padding(.bottom, 6)
                             ForEach(checkAfter7Days(tasks: vm.tasks).prefix(3)){ task in
                                 NearlyDueCardView(task: task)
+                                    .padding(.horizontal, 20)
                             }
                         }
                         else if(checkIncompleteOverdue(tasks: vm.tasks) == []){
@@ -146,107 +151,125 @@ struct HomeView: View {
                                 .foregroundColor(.secondary)
                                 .font(.subheadline)
                                 .padding(.bottom, 3)
-                        
-                            Text("Take a break now if you have done everything!🤩")
-                            .frame(maxWidth: .infinity)
-                            .padding(.bottom, 3)
-                            .multilineTextAlignment(.center)
+                            
+                            Text("Take a break now or update new task!🤩")
+                                .frame(maxWidth: .infinity)
+                                .padding(.bottom, 3)
+                                .multilineTextAlignment(.center)
                             
                             Button(action: {
                                 self.tabSelection = .tasks
-    // https://stackoverflow.com/questions/62504400/programmatically-change-to-another-tab-in-swiftui
+                                // https://stackoverflow.com/questions/62504400/programmatically-change-to-another-tab-in-swiftui
                             }) {
                                 Text("Go Tasks Section")
+                                    .padding(.horizontal,10)
+                                    .padding(.vertical, 2)
                             }
+                            .foregroundColor(.black)
+                            .background(.gray.opacity(0.6))
+                            .cornerRadius(9)
+                            .buttonStyle(.bordered)
+                            .padding(.vertical, 5)
                         }
                         
                         
                     } // end if
                     else if (vm.tasks == []){
-                        Text("\(sessionService.userDetails?.firstName ?? " "), you haven't record any task yet.")
+                        Text("\(sessionService.userDetails?.firstName ?? " "), you don't have any task recorded.")
                             .foregroundColor(.secondary)
                             .font(.subheadline)
                             .padding(.bottom, 3)
-                    
+                        
                         Text("Add a new task now! 🤩")
-                        .frame(maxWidth: .infinity)
-                        .padding(.bottom, 3)
+                            .frame(maxWidth: .infinity)
+                            .padding(.bottom, 3)
                         
                         Button(action: {
                             self.tabSelection = .tasks
                         }) {
                             Text("Go Tasks Section")
+                                .padding(.horizontal,10)
+                                .padding(.vertical, 2)
                         }
+                        .foregroundColor(.black)
+                        .background(.gray.opacity(0.6))
+                        .cornerRadius(9)
+                        .buttonStyle(.bordered)
+                        .padding(.vertical, 5)
                         
                     }
                     
                 }
                 .padding()
-                .background(.white.opacity(0.9))
+                .background(.regularMaterial)
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity)
                 .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
                 
                 
                 
-//                if isBeforeTime(time: 16) && isAfterTime(time: 8) && !isVideoDone{
-//                    MeditationVideoView(isVideoDone: $isVideoDone)
-//                        .animation(.easeInOut, value: isVideoDone)
-//                }
+                //                if isBeforeTime(time: 16) && isAfterTime(time: 8) && !isVideoDone{
+                //                    MeditationVideoView(isVideoDone: $isVideoDone)
+                //                        .animation(.easeInOut, value: isVideoDone)
+                //                }
                 
                 //today completed task
                 if(checkTodaySubtaskCompleted(subtasks: vm.subtasks) != []) {
                     VStack {
-                        Text("Good Job! 👏")
-                        Text("Some subtasks completed today!🥳")
+                        Text("Good Job 👏")
+                            .font(.headline)
+                        //                            .fontWeight(.semibold)
+                        Text("Some subtasks completed today!")
+                            .font(.caption)
                         ForEach(checkTodaySubtaskCompleted(subtasks: vm.subtasks)){ subtask in
                             ForEach(vm.tasks){ task in
                                 if (task.id == subtask.taskid){
                                     CompletedSubtaskView(taskTitle: task.title, subTask: subtask)
                                         .padding(3)
+                                        .padding(.horizontal, 20)
                                 }
                             }
                         }
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(.white.opacity(0.9))
+                    .background(.regularMaterial)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1), radius: 4.5, x: 0, y: 0)
                     
                 }
                 
-//                if isAfterTime(time: 12) && todayInput(moods: vmMood.moods){
-//                    VStack {
-//                        Text("Are you satisfied with today's progress?☺️")
-//                            MoodInputCardView(isMoodSelected: $isMoodSelected)
-//                                .environmentObject(vmMood)
-//
-//                    }//end vstack
-//                    .animation(.easeInOut(duration: 0.2), value: isMoodSelected)
-//                }
+                //                if isAfterTime(time: 12) && todayInput(moods: vmMood.moods){
+                //                    VStack {
+                //                        Text("Are you satisfied with today's progress?☺️")
+                //                            MoodInputCardView(isMoodSelected: $isMoodSelected)
+                //                                .environmentObject(vmMood)
+                //
+                //                    }//end vstack
+                //                    .animation(.easeInOut(duration: 0.2), value: isMoodSelected)
+                //                }
                 
-                if (checkLowMood(moods: vmMood.moods)){
-                    VStack{
-                        LowMoodView()
-                    }
+                //                if (checkLowMood(moods: vmMood.moods)){
+                VStack{
+                    LowMoodView(recentDeadline: 1)
                 }
-                                
+                //                }
+                
             }
             .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
-//                vm.listentoRealtimeDatabase()
-//                vmMood.moodlistenDatabase()
+                //                DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+                //                vm.listentoRealtimeDatabase()
+                //                vmMood.moodlistenDatabase()
                 print("listentoRealtimeDatabase() run in AllTaskView")
                 NotificationManager.instance.requestAuthorization()
                 NotificationManager.instance.cancelNotification()
                 UIApplication.shared.applicationIconBadgeNumber = 0
                 NotificationManager.instance.scheduleTimeNotification(title: "Welcome to Seed", subtitle: "Your task management companion", minutes: 0.3)
             }
-//            .onDisappear{
-//                vm.stopListening()
-//                vmMood.moodStopListening()
-//            }
+            //            .onDisappear{
+            //                vm.stopListening()
+            //                vmMood.moodStopListening()
+            //            }
             .padding(.horizontal)
         }
         .onAppear {
@@ -258,7 +281,7 @@ struct HomeView: View {
             .resizable()
             .scaledToFill()
             .ignoresSafeArea())
-    
+        
     }
     private func checkNumOfTask(tasks: Array<TaskModel>, filter: Status)-> Int{
         var numOfFilteredTask:Int = 0
@@ -292,7 +315,7 @@ func checkAfter7Days(tasks: Array<TaskModel>) -> Array<TaskModel>{
     
     let currentDate = Date()
     let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)!
-
+    
     for task in tasks {
         if task.deadline > futureDate  {
             after7Days.append(task)
@@ -324,7 +347,7 @@ func convertStringToDate(date: String) -> Date{
 
 func checkTodaySubtaskCompleted(subtasks: Array<SubtaskModel>) -> Array<SubtaskModel>{
     var todaySubtaskCompleted: [SubtaskModel] = []
-
+    
     for subtask in subtasks {
         if subtask.completed == true {
             if let completeDate = subtask.completeDate {
@@ -346,7 +369,7 @@ func checkLowMood(moods: Array<MoodModel>) -> Bool{
     var yesterdayMood = 12.0
     var dayBeforeMood = 12.0
     var todayMood = 12.0
-
+    
     for mood in moods {
         let moodDate = convertStringToDate(date: mood.lastUpdate)
         if Calendar.current.isDate(moodDate, inSameDayAs: yesterday) {

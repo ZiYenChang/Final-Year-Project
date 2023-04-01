@@ -22,7 +22,7 @@ struct ResetPasswordView: View {
                               keyboardType: .emailAddress,
                               sfSymbol: "envelope")
                 
-                ButtonView(title: "Register") {
+                ButtonView(title: "Reset") {
                     vm.resetPassword()
                     presentationMode.wrappedValue.dismiss()
                 }

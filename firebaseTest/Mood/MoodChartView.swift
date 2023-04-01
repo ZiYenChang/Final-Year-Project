@@ -35,7 +35,8 @@ struct MoodChartView: View {
         VStack(alignment: .leading) {
             HStack{
                 Text("Your mood trend ")
-                    .font(.headline)
+                    .font(.title2)
+                    .fontWeight(.bold)
                 
                 Spacer()
                 

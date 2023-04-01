@@ -40,7 +40,6 @@ struct firebaseTestApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     @State private var firstInApp = 0
-//    @State private var showSheet = false
     @State private var outsideApp = true
 
     var body: some Scene {
@@ -50,21 +49,37 @@ struct firebaseTestApp: App {
                 case .loggedIn:
 //                    ZStack{
 //                        if appContext.appUnlocked {
-                            MainView()
+                            MainView(securityController: securityController)
                                 .environmentObject(sessionService)
-                                .environmentObject(securityController)
-                                .onAppear {
-                                    if firstInApp == 0{
-//                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                    print("is app enabled \(securityController.isAppLockEnabled)")
-                                            securityController.showLockedViewIfEnabled(first: firstInApp)
-                                            firstInApp = firstInApp + 1
-                                            print("first in app \(firstInApp)")
-//                                            showSheet = securityController.isLocked
-//                                        }
-                                        
+//                                .environmentObject(securityController)
+                                .onChange(of: scenePhase) { phase in
+                                    if phase == .active {
+                                        print("on change works for main view")
+                                        if firstInApp == 0{
+    //                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                        print("is app enabled \(securityController.isAppLockEnabled)")
+                                                securityController.showLockedViewIfEnabled(first: firstInApp)
+                                                firstInApp = firstInApp + 1
+                                                print("first in app \(firstInApp)")
+    //                                            showSheet = securityController.isLocked
+    //                                        }
+                                            
+                                        }
                                     }
                                 }
+//                                .onAppear {
+//                                    print("on appear works for main view")
+//                                    if firstInApp == 0{
+////                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                                    print("is app enabled \(securityController.isAppLockEnabled)")
+//                                            securityController.showLockedViewIfEnabled(first: firstInApp)
+//                                            firstInApp = firstInApp + 1
+//                                            print("first in app \(firstInApp)")
+////                                            showSheet = securityController.isLocked
+////                                        }
+//                                        
+//                                    }
+//                                }
                                 .sheet(isPresented: $securityController.showSheet) {
                                     
                                         LockView()
@@ -112,7 +127,10 @@ struct firebaseTestApp: App {
             default:
                 break
             }
+            
+            
         })
+
         
     }
 }
