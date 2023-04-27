@@ -8,10 +8,28 @@
 import Foundation
 import Combine
 
-enum LoginState{
+
+enum LoginState: Equatable{
     case successful
     case failed(error:Error)
     case na
+    
+    static func == (lhs: LoginState, rhs: LoginState) -> Bool {
+        switch (lhs, rhs) {
+        case (.successful, .successful):
+            return true
+            
+        case (let .failed(lhsError), let .failed(rhsError)):
+            return (lhsError).localizedDescription == (rhsError).localizedDescription
+
+        case (.na, .na):
+            return true
+
+        default:
+            return false
+        }
+    }
+    
 }
 
 protocol LoginViewModel{
@@ -75,3 +93,5 @@ private extension LoginViewModelImp{
             .assign(to: &$hasError)//assign the mapped value to hasError
     }
 }
+
+

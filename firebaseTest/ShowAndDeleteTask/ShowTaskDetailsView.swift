@@ -125,7 +125,7 @@ struct ShowTaskDetailsView: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                             .foregroundColor(.blue)
                     }
-                    .padding()
+                    .padding(.vertical, 12)
                     .frame(width:350)
                     .background(.white)
                     .cornerRadius(8)
@@ -147,7 +147,7 @@ struct ShowTaskDetailsView: View {
                     Text("Delete")
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .padding()
+                .padding(.vertical, 12)
                 .frame(width:350)
                 .background(.white)
                 .cornerRadius(8)

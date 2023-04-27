@@ -8,22 +8,39 @@
 import Foundation
 import Combine
 
-enum AddMoodState {
+enum AddMoodState: Equatable{
     case successful
-    case failed (error:Error)
-    case na //not available
+    case failed(error:Error)
+    case na
+    
+    static func == (lhs: AddMoodState, rhs: AddMoodState) -> Bool {
+        switch (lhs, rhs) {
+        case (.successful, .successful):
+            return true
+            
+        case (let .failed(lhsError), let .failed(rhsError)):
+            return (lhsError).localizedDescription == (rhsError).localizedDescription
+            
+        case (.na, .na):
+            return true
+            
+        default:
+            return false
+        }
+    }
 }
+    
 
-protocol AddMoodViewModel {
-    func addMood()
-    var state: AddMoodState{ get }
-    var service: AddMoodService{ get }
-    var mood: Double{ get }
-    var hasError: Bool{ get }
-    init(service: AddMoodService)
-}
+//protocol AddMoodViewModel {
+//    func addMood()
+//    var state: AddMoodState{ get }
+//    var service: AddMoodService{ get }
+//    var mood: Double{ get }
+//    var hasError: Bool{ get }
+//    init(service: AddMoodService)
+//}
 
-final class AddMoodViewModelImp: ObservableObject, AddMoodViewModel{
+final class AddMoodViewModelImp: ObservableObject{
     
     @Published var hasError: Bool = false
     @Published var state: AddMoodState = .na

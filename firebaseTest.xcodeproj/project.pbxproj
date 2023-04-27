@@ -12,8 +12,6 @@
 		A21D91BB29D890DB00C87ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */; };
 		A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66A829911B70009E279D /* TaskNumCardView.swift */; };
 		A23F66AB29924417009E279D /* SubtaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AA29924417009E279D /* SubtaskModel.swift */; };
-		A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AD2993BB36009E279D /* LockAppView.swift */; };
-		A23F66B02993BDB2009E279D /* LockAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */; };
 		A23F66B229954628009E279D /* UserToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B129954628009E279D /* UserToolbar.swift */; };
 		A23F66B5299BD09C009E279D /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B4299BD09C009E279D /* MoodView.swift */; };
 		A23F66B7299BD3F9009E279D /* MoodInputCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */; };
@@ -32,6 +30,14 @@
 		A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278629A53B5F009C9F78 /* MoodSelection.swift */; };
 		A264278A29A571C0009C9F78 /* GetMoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278929A571C0009C9F78 /* GetMoodViewModel.swift */; };
 		A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A264278B29A57DD9009C9F78 /* MoodChartView.swift */; };
+		A26F437A29DE1A9800889600 /* GoodMoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F437929DE1A9800889600 /* GoodMoodView.swift */; };
+		A26F437D29DE1F9A00889600 /* R1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F437C29DE1F9A00889600 /* R1View.swift */; };
+		A26F437F29DEBC7600889600 /* R2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F437E29DEBC7600889600 /* R2View.swift */; };
+		A26F438129DEC3AD00889600 /* R3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F438029DEC3AD00889600 /* R3View.swift */; };
+		A26F438329DED28B00889600 /* R4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F438229DED28B00889600 /* R4View.swift */; };
+		A26F438529DEF66F00889600 /* R5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F438429DEF66F00889600 /* R5View.swift */; };
+		A26F438729DEFCB800889600 /* R6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F438629DEFCB800889600 /* R6View.swift */; };
+		A26F438929DEFF8200889600 /* AboutThisAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26F438829DEFF8200889600 /* AboutThisAppView.swift */; };
 		A271D48A2977EED300A8AAC6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D4892977EED300A8AAC6 /* LoginView.swift */; };
 		A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D48C2977EFF700A8AAC6 /* TextFieldView.swift */; };
 		A271D48F2977F6EF00A8AAC6 /* SecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A271D48E2977F6EF00A8AAC6 /* SecureFieldView.swift */; };
@@ -89,15 +95,33 @@
 		A2F1561B29D6244C004116F7 /* s6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561A29D6244C004116F7 /* s6View.swift */; };
 		A2F1561D29D62458004116F7 /* s7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561C29D62458004116F7 /* s7View.swift */; };
 		A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */; };
+		A2F7E39729FA954C004E11C8 /* projectUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E39629FA954C004E11C8 /* projectUnitTests.swift */; };
+		A2F7E39E29FA955B004E11C8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A2F7E39D29FA955B004E11C8 /* FirebaseAuth */; };
+		A2F7E3A029FA955B004E11C8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2F7E39F29FA955B004E11C8 /* FirebaseDatabase */; };
+		A2F7E3A229FA955B004E11C8 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2F7E3A129FA955B004E11C8 /* ConfettiSwiftUI */; };
+		A2F7E3A829FA959F004E11C8 /* LogoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A329FA959F004E11C8 /* LogoutTest.swift */; };
+		A2F7E3A929FA959F004E11C8 /* AddTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A429FA959F004E11C8 /* AddTaskTest.swift */; };
+		A2F7E3AA29FA959F004E11C8 /* RegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A529FA959F004E11C8 /* RegisterTest.swift */; };
+		A2F7E3AB29FA959F004E11C8 /* UpdateTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A629FA959F004E11C8 /* UpdateTaskTest.swift */; };
+		A2F7E3AC29FA959F004E11C8 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A729FA959F004E11C8 /* LoginTest.swift */; };
+		A2F7E3AF29FA9E9E004E11C8 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3AE29FA9E9E004E11C8 /* LockTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2F7E39829FA954C004E11C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2DDAA7D2976F18F007369AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2DDAA842976F18F007369AB;
+			remoteInfo = firebaseTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLineView.swift; sourceTree = "<group>"; };
 		A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A23F66A829911B70009E279D /* TaskNumCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNumCardView.swift; sourceTree = "<group>"; };
 		A23F66AA29924417009E279D /* SubtaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtaskModel.swift; sourceTree = "<group>"; };
-		A23F66AD2993BB36009E279D /* LockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppView.swift; sourceTree = "<group>"; };
-		A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockAppViewModel.swift; sourceTree = "<group>"; };
 		A23F66B129954628009E279D /* UserToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserToolbar.swift; sourceTree = "<group>"; };
 		A23F66B4299BD09C009E279D /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		A23F66B6299BD3F9009E279D /* MoodInputCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodInputCardView.swift; sourceTree = "<group>"; };
@@ -116,6 +140,14 @@
 		A264278629A53B5F009C9F78 /* MoodSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSelection.swift; sourceTree = "<group>"; };
 		A264278929A571C0009C9F78 /* GetMoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoodViewModel.swift; sourceTree = "<group>"; };
 		A264278B29A57DD9009C9F78 /* MoodChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodChartView.swift; sourceTree = "<group>"; };
+		A26F437929DE1A9800889600 /* GoodMoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMoodView.swift; sourceTree = "<group>"; };
+		A26F437C29DE1F9A00889600 /* R1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R1View.swift; sourceTree = "<group>"; };
+		A26F437E29DEBC7600889600 /* R2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2View.swift; sourceTree = "<group>"; };
+		A26F438029DEC3AD00889600 /* R3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R3View.swift; sourceTree = "<group>"; };
+		A26F438229DED28B00889600 /* R4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R4View.swift; sourceTree = "<group>"; };
+		A26F438429DEF66F00889600 /* R5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R5View.swift; sourceTree = "<group>"; };
+		A26F438629DEFCB800889600 /* R6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R6View.swift; sourceTree = "<group>"; };
+		A26F438829DEFF8200889600 /* AboutThisAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppView.swift; sourceTree = "<group>"; };
 		A271D4892977EED300A8AAC6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A271D48C2977EFF700A8AAC6 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		A271D48E2977F6EF00A8AAC6 /* SecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureFieldView.swift; sourceTree = "<group>"; };
@@ -170,6 +202,14 @@
 		A2F1561A29D6244C004116F7 /* s6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s6View.swift; sourceTree = "<group>"; };
 		A2F1561C29D62458004116F7 /* s7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s7View.swift; sourceTree = "<group>"; };
 		A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQuoteView.swift; sourceTree = "<group>"; };
+		A2F7E39429FA954C004E11C8 /* projectUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2F7E39629FA954C004E11C8 /* projectUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectUnitTests.swift; sourceTree = "<group>"; };
+		A2F7E3A329FA959F004E11C8 /* LogoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTest.swift; sourceTree = "<group>"; };
+		A2F7E3A429FA959F004E11C8 /* AddTaskTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTest.swift; sourceTree = "<group>"; };
+		A2F7E3A529FA959F004E11C8 /* RegisterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTest.swift; sourceTree = "<group>"; };
+		A2F7E3A629FA959F004E11C8 /* UpdateTaskTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaskTest.swift; sourceTree = "<group>"; };
+		A2F7E3A729FA959F004E11C8 /* LoginTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
+		A2F7E3AE29FA9E9E004E11C8 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,18 +225,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2F7E39129FA954C004E11C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2F7E3A229FA955B004E11C8 /* ConfettiSwiftUI in Frameworks */,
+				A2F7E3A029FA955B004E11C8 /* FirebaseDatabase in Frameworks */,
+				A2F7E39E29FA955B004E11C8 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A23F66AC2993BABA009E279D /* LockApp */ = {
-			isa = PBXGroup;
-			children = (
-				A23F66AD2993BB36009E279D /* LockAppView.swift */,
-				A23F66AF2993BDB2009E279D /* LockAppViewModel.swift */,
-			);
-			path = LockApp;
-			sourceTree = "<group>";
-		};
 		A23F66B3299BD07A009E279D /* Mood */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +284,19 @@
 			path = GetMood;
 			sourceTree = "<group>";
 		};
+		A26F437B29DE1F7700889600 /* GoodMoodRecommendations */ = {
+			isa = PBXGroup;
+			children = (
+				A26F437C29DE1F9A00889600 /* R1View.swift */,
+				A26F437E29DEBC7600889600 /* R2View.swift */,
+				A26F438029DEC3AD00889600 /* R3View.swift */,
+				A26F438229DED28B00889600 /* R4View.swift */,
+				A26F438429DEF66F00889600 /* R5View.swift */,
+				A26F438629DEFCB800889600 /* R6View.swift */,
+			);
+			path = GoodMoodRecommendations;
+			sourceTree = "<group>";
+		};
 		A271D4882977EEBE00A8AAC6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,7 +341,9 @@
 				A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */,
 				A248303129B328A500C6FC06 /* NearlyDueCardView.swift */,
 				A260683529C77AB5005BD972 /* LowMoodView.swift */,
-				A2F1560E29D622FC004116F7 /* Suggestions */,
+				A26F437929DE1A9800889600 /* GoodMoodView.swift */,
+				A26F437B29DE1F7700889600 /* GoodMoodRecommendations */,
+				A2F1560E29D622FC004116F7 /* LowMoodSuggestions */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -376,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				A2DDAA872976F18F007369AB /* firebaseTest */,
+				A2F7E39529FA954C004E11C8 /* projectUnitTests */,
 				A2DDAA862976F18F007369AB /* Products */,
 				A2DDAA9F297740AE007369AB /* Frameworks */,
 			);
@@ -385,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				A2DDAA852976F18F007369AB /* firebaseTest.app */,
+				A2F7E39429FA954C004E11C8 /* projectUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -395,7 +453,6 @@
 				A2BDB20329BA0EC800B2426E /* Notification */,
 				A24D42DD29B9F04D00313720 /* Recommendation */,
 				A23F66B3299BD07A009E279D /* Mood */,
-				A23F66AC2993BABA009E279D /* LockApp */,
 				A271D4C8297979CA00A8AAC6 /* UpdateTask */,
 				A271D4BF2979459700A8AAC6 /* ShowAndDeleteTask */,
 				A271D4B7297899E700A8AAC6 /* Task */,
@@ -439,6 +496,7 @@
 				A260685729D3547C005BD972 /* ProfileEditViewModel.swift */,
 				A2F1560229D4842A004116F7 /* SecurityController.swift */,
 				A2F1560429D48485004116F7 /* LockView.swift */,
+				A26F438829DEFF8200889600 /* AboutThisAppView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -450,7 +508,7 @@
 			path = MoodOptions;
 			sourceTree = "<group>";
 		};
-		A2F1560E29D622FC004116F7 /* Suggestions */ = {
+		A2F1560E29D622FC004116F7 /* LowMoodSuggestions */ = {
 			isa = PBXGroup;
 			children = (
 				A2F1560F29D62332004116F7 /* s1View.swift */,
@@ -461,7 +519,21 @@
 				A2F1561A29D6244C004116F7 /* s6View.swift */,
 				A2F1561C29D62458004116F7 /* s7View.swift */,
 			);
-			path = Suggestions;
+			path = LowMoodSuggestions;
+			sourceTree = "<group>";
+		};
+		A2F7E39529FA954C004E11C8 /* projectUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2F7E39629FA954C004E11C8 /* projectUnitTests.swift */,
+				A2F7E3A429FA959F004E11C8 /* AddTaskTest.swift */,
+				A2F7E3A729FA959F004E11C8 /* LoginTest.swift */,
+				A2F7E3A329FA959F004E11C8 /* LogoutTest.swift */,
+				A2F7E3A529FA959F004E11C8 /* RegisterTest.swift */,
+				A2F7E3A629FA959F004E11C8 /* UpdateTaskTest.swift */,
+				A2F7E3AE29FA9E9E004E11C8 /* LockTest.swift */,
+			);
+			path = projectUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +563,29 @@
 			productReference = A2DDAA852976F18F007369AB /* firebaseTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A2F7E39329FA954C004E11C8 /* projectUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2F7E39A29FA954C004E11C8 /* Build configuration list for PBXNativeTarget "projectUnitTests" */;
+			buildPhases = (
+				A2F7E39029FA954C004E11C8 /* Sources */,
+				A2F7E39129FA954C004E11C8 /* Frameworks */,
+				A2F7E39229FA954C004E11C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2F7E39929FA954C004E11C8 /* PBXTargetDependency */,
+			);
+			name = projectUnitTests;
+			packageProductDependencies = (
+				A2F7E39D29FA955B004E11C8 /* FirebaseAuth */,
+				A2F7E39F29FA955B004E11C8 /* FirebaseDatabase */,
+				A2F7E3A129FA955B004E11C8 /* ConfettiSwiftUI */,
+			);
+			productName = projectUnitTests;
+			productReference = A2F7E39429FA954C004E11C8 /* projectUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -503,6 +598,10 @@
 				TargetAttributes = {
 					A2DDAA842976F18F007369AB = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					A2F7E39329FA954C004E11C8 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = A2DDAA842976F18F007369AB;
 					};
 				};
 			};
@@ -524,6 +623,7 @@
 			projectRoot = "";
 			targets = (
 				A2DDAA842976F18F007369AB /* firebaseTest */,
+				A2F7E39329FA954C004E11C8 /* projectUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -539,6 +639,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2F7E39229FA954C004E11C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -551,11 +658,13 @@
 				A271D4BA2978A0ED00A8AAC6 /* TaskModel.swift in Sources */,
 				A264278729A53B5F009C9F78 /* MoodSelection.swift in Sources */,
 				A271D496297801C000A8AAC6 /* CloseModifier.swift in Sources */,
+				A26F437A29DE1A9800889600 /* GoodMoodView.swift in Sources */,
 				A271D4C1297945AC00A8AAC6 /* ShowAllTasksView.swift in Sources */,
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
 				A271D499297803A900A8AAC6 /* HomeView.swift in Sources */,
 				A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */,
 				A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */,
+				A26F438729DEFCB800889600 /* R6View.swift in Sources */,
 				A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */,
 				A271D4C32979475B00A8AAC6 /* ShowTaskCardView.swift in Sources */,
 				A23F66B7299BD3F9009E279D /* MoodInputCardView.swift in Sources */,
@@ -565,8 +674,8 @@
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
 				A2BDB20529BA0F5E00B2426E /* NotificationManager.swift in Sources */,
 				A271D4BE2978A4D800A8AAC6 /* AddTaskViewModel.swift in Sources */,
-				A23F66B02993BDB2009E279D /* LockAppViewModel.swift in Sources */,
 				A23F66B9299BD719009E279D /* MoodModel.swift in Sources */,
+				A26F437F29DEBC7600889600 /* R2View.swift in Sources */,
 				A24D42E129B9F0AB00313720 /* WebViewModel.swift in Sources */,
 				A2F0DDF82979EB2A001AF1BB /* MainView.swift in Sources */,
 				A271D4CC29797EF100A8AAC6 /* UpdateTaskViewModel.swift in Sources */,
@@ -584,10 +693,11 @@
 				A271D48A2977EED300A8AAC6 /* LoginView.swift in Sources */,
 				A271D4CA297979F600A8AAC6 /* UpdateTaskView.swift in Sources */,
 				A271D4B12978459200A8AAC6 /* ResetPasswordService.swift in Sources */,
+				A26F438329DED28B00889600 /* R4View.swift in Sources */,
+				A26F438529DEF66F00889600 /* R5View.swift in Sources */,
 				A271D4B6297899C800A8AAC6 /* AddTaskView.swift in Sources */,
 				A23F66A929911B70009E279D /* TaskNumCardView.swift in Sources */,
 				A271D4C52979498600A8AAC6 /* ShowAllTasksViewModel.swift in Sources */,
-				A23F66AE2993BB36009E279D /* LockAppView.swift in Sources */,
 				A271D49C2978067400A8AAC6 /* ResetPasswordView.swift in Sources */,
 				A271D4A2297820E200A8AAC6 /* RegisterViewModel.swift in Sources */,
 				A271D4942977FFD200A8AAC6 /* RegisterView.swift in Sources */,
@@ -597,7 +707,10 @@
 				A271D4CE297983D300A8AAC6 /* UpdateTaskService.swift in Sources */,
 				A2F1561229D62342004116F7 /* s2View.swift in Sources */,
 				A2F1561429D6234E004116F7 /* s3View.swift in Sources */,
+				A26F438929DEFF8200889600 /* AboutThisAppView.swift in Sources */,
 				A2F1561629D6235A004116F7 /* s4View.swift in Sources */,
+				A26F437D29DE1F9A00889600 /* R1View.swift in Sources */,
+				A26F438129DEC3AD00889600 /* R3View.swift in Sources */,
 				A2F1561929D62413004116F7 /* s5View.swift in Sources */,
 				A260683429C7630A005BD972 /* CompletedSubtaskView.swift in Sources */,
 				A271D49E297819F000A8AAC6 /* RegisterDetailsModel.swift in Sources */,
@@ -623,7 +736,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2F7E39029FA954C004E11C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2F7E39729FA954C004E11C8 /* projectUnitTests.swift in Sources */,
+				A2F7E3AF29FA9E9E004E11C8 /* LockTest.swift in Sources */,
+				A2F7E3AB29FA959F004E11C8 /* UpdateTaskTest.swift in Sources */,
+				A2F7E3A929FA959F004E11C8 /* AddTaskTest.swift in Sources */,
+				A2F7E3AC29FA959F004E11C8 /* LoginTest.swift in Sources */,
+				A2F7E3AA29FA959F004E11C8 /* RegisterTest.swift in Sources */,
+				A2F7E3A829FA959F004E11C8 /* LogoutTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2F7E39929FA954C004E11C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2DDAA842976F18F007369AB /* firebaseTest */;
+			targetProxy = A2F7E39829FA954C004E11C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A2DDAA912976F190007369AB /* Debug */ = {
@@ -750,6 +885,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"firebaseTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to unlock app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -764,7 +900,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.firebaseTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = firebaseTest;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -781,6 +917,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"firebaseTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				ENABLE_PREVIEWS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to unlock app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -795,10 +932,44 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.firebaseTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = firebaseTest;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A2F7E39B29FA954C004E11C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zy.projectUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebaseTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firebaseTest";
+			};
+			name = Debug;
+		};
+		A2F7E39C29FA954C004E11C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = zy.projectUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebaseTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firebaseTest";
 			};
 			name = Release;
 		};
@@ -819,6 +990,15 @@
 			buildConfigurations = (
 				A2DDAA942976F190007369AB /* Debug */,
 				A2DDAA952976F190007369AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2F7E39A29FA954C004E11C8 /* Build configuration list for PBXNativeTarget "projectUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2F7E39B29FA954C004E11C8 /* Debug */,
+				A2F7E39C29FA954C004E11C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -866,6 +1046,21 @@
 			productName = FirebaseDatabase;
 		};
 		A2F155E229D3A0F1004116F7 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2F155E129D3A0F1004116F7 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		A2F7E39D29FA955B004E11C8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A2F7E39F29FA955B004E11C8 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2DDAA9A2976F956007369AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A2F7E3A129FA955B004E11C8 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A2F155E129D3A0F1004116F7 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;

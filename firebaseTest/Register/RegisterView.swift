@@ -12,6 +12,7 @@ struct RegisterView: View {
     @StateObject private var vm = RegisterViewModelImp(
         service: RegisterServiceImp()
     )
+    @State private var confirmedPassword = ""
     
     var body: some View {
         NavigationView{
@@ -35,7 +36,7 @@ struct RegisterView: View {
                     SecureFieldView(password: $vm.userDetails.password,
                                     placeholder: "Password",
                                     sfSymbol: "lock")
-                    SecureFieldView(password: .constant(""),
+                    SecureFieldView(password: $confirmedPassword,
                                     placeholder: "Comfirmed Password",
                                     sfSymbol: "lock")
                 }

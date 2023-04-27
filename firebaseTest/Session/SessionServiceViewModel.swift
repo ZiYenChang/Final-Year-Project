@@ -31,22 +31,22 @@ final class SessionServiceViewModelImp: ObservableObject{
         setupErrorSubscriptions()
     }
     
-    func updateFirstname() {
-        service.updateFirstname(with: details)
-            .sink { res in
-                //based on the result if it completes or get an error
-                switch res {
-                    //if error
-                case .failure(let error):
-                    self.state = .failed(error: error)
-                default: break
-                    
-                }
-            } receiveValue: { [weak self] in
-                self?.state = .successful
-            }
-            .store(in: &subscriptions)
-    }
+//    func updateFirstname() {
+//        service.updateFirstname(with: details)
+//            .sink { res in
+//                //based on the result if it completes or get an error
+//                switch res {
+//                    //if error
+//                case .failure(let error):
+//                    self.state = .failed(error: error)
+//                default: break
+//                    
+//                }
+//            } receiveValue: { [weak self] in
+//                self?.state = .successful
+//            }
+//            .store(in: &subscriptions)
+//    }
 }
 
 private extension SessionServiceViewModelImp{

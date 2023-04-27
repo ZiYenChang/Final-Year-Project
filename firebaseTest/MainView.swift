@@ -65,6 +65,7 @@ struct MainView: View {
                                 .opacity(selection == tabs.tasks ? 1 : 0.4)
                             Text("Task")
                                 .font(.caption2)
+                                .fontWeight(.medium)
                                 .foregroundColor(Color(red: 32/255, green: 43/255, blue: 63/255))
                                 .opacity(selection == tabs.tasks ? 1 : 0.4)
                         }
@@ -87,6 +88,7 @@ struct MainView: View {
                                 .opacity(selection == tabs.home ? 1 : 0.4)
                             Text("Home")
                                 .font(.caption2)
+                                .fontWeight(.medium)
                                 .foregroundColor(Color(red: 32/255, green: 43/255, blue: 63/255))
                                 .opacity(selection == tabs.home ? 1 : 0.4)
                         }
@@ -109,6 +111,7 @@ struct MainView: View {
                                 
                             Text("Feel")
                                 .font(.caption2)
+                                .fontWeight(.medium)
                                 .foregroundColor(Color(red: 32/255, green: 43/255, blue: 63/255))
                                 .opacity(selection == tabs.mood ? 1 : 0.4)
                         }
@@ -135,7 +138,7 @@ struct MainView: View {
                 
             }
             ToolbarItem(placement: .navigationBarLeading) {
-                Text("Welcome \(sessionService.userDetails?.firstName ?? " ")")
+                Text("Welcome, \(sessionService.userDetails?.firstName ?? " ")")
                     .font(.body)
                     .foregroundColor(.black.opacity(0.4))
                 

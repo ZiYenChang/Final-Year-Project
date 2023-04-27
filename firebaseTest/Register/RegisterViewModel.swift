@@ -8,27 +8,44 @@
 import Foundation
 import Combine
 
-enum RegisterState {
-    case successful
-    case failed (error:Error)
-    case na //not available
+enum RegisterState: Equatable{
+case successful
+case failed(error:Error)
+case na
+
+static func == (lhs: RegisterState, rhs: RegisterState) -> Bool {
+    switch (lhs, rhs) {
+    case (.successful, .successful):
+        return true
+        
+    case (let .failed(lhsError), let .failed(rhsError)):
+        return (lhsError).localizedDescription == (rhsError).localizedDescription
+
+    case (.na, .na):
+        return true
+
+    default:
+        return false
+    }
 }
 
-protocol RegisterViewModel {
-    //function: to handle registration
-    func register()
-    //property: for injecting and using service
-    var service: RegisterService{ get }
-    //property: handling state changes within the view model
-    var state: RegisterState{ get }
-    //property: to bind the user input with view model
-    var userDetails: RegisterDetailsModel{ get }
-    //initialiser: can actually inject service to view model
-    init(service: RegisterService)
-    var hasError: Bool{ get }
 }
 
-final class RegisterViewModelImp: ObservableObject, RegisterViewModel{
+//protocol RegisterViewModel {
+//    //function: to handle registration
+//    func register()
+//    //property: for injecting and using service
+//    var service: RegisterService{ get }
+//    //property: handling state changes within the view model
+//    var state: RegisterState{ get }
+//    //property: to bind the user input with view model
+//    var userDetails: RegisterDetailsModel{ get }
+//    //initialiser: can actually inject service to view model
+//    init(service: RegisterService)
+//    var hasError: Bool{ get }
+//}
+
+final class RegisterViewModelImp: ObservableObject{
     
     let service: RegisterService //get value from init
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegisterDetailsModel {
+struct RegisterDetailsModel: Equatable{
     var email: String
     var password: String
     var firstName: String

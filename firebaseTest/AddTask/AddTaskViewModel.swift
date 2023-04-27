@@ -8,22 +8,39 @@
 import Foundation
 import Combine
 
-enum AddTaskState {
+enum AddTaskState: Equatable{
     case successful
-    case failed (error:Error)
-    case na //not available
+    case failed(error:Error)
+    case na
+
+    static func == (lhs: AddTaskState, rhs: AddTaskState) -> Bool {
+        switch (lhs, rhs) {
+        case (.successful, .successful):
+            return true
+            
+        case (let .failed(lhsError), let .failed(rhsError)):
+            return (lhsError).localizedDescription == (rhsError).localizedDescription
+
+        case (.na, .na):
+            return true
+
+        default:
+            return false
+        }
+    }
+
 }
 
-protocol AddTaskViewModel {
-    func addTask()
-    var state: AddTaskState{ get }
-    var service: AddTaskService{ get }
-    var details: TaskModel{ get }
-    var hasError: Bool{ get }
-    init(service: AddTaskService)
-}
+//protocol AddTaskViewModel {
+//    func addTask()
+//    var state: AddTaskState{ get }
+//    var service: AddTaskService{ get }
+//    var details: TaskModel{ get }
+//    var hasError: Bool{ get }
+//    init(service: AddTaskService)
+//}
 
-final class AddTaskViewModelImp: ObservableObject, AddTaskViewModel{
+final class AddTaskViewModelImp: ObservableObject{
     
     @Published var hasError: Bool = false
     @Published var state: AddTaskState = .na

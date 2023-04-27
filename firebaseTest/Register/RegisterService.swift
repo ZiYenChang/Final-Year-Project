@@ -35,8 +35,8 @@ final class RegisterServiceImp: RegisterService {
                             //create a dictionary for the value that we want to store in firebase
                             //KEY:VALUE, we use the enum here to avoid typo
                             let values = [
-                                "courseName": details.firstName,
-                                "firstName": details.courseName,
+                                "firstName": details.firstName,
+                                "courseName": details.courseName,
                                 "email": details.email
                             ] as [String : Any]
                             

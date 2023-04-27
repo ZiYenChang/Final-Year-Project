@@ -14,17 +14,17 @@ enum UpdateTaskState {
     case na //not available
 }
 
-protocol UpdateTaskViewModel {
-    func updateTask()
-    func deleteSubtask()
-    var state: UpdateTaskState{ get }
-    var service: UpdateTaskService{ get }
-    var details: TaskModel{ get }
-    var hasError: Bool{ get }
-    init(service: UpdateTaskService, details: TaskModel, subtasks: [SubtaskModel])
-}
+//protocol UpdateTaskViewModel {
+//    func updateTask()
+//    func deleteSubtask()
+//    var state: UpdateTaskState{ get }
+//    var service: UpdateTaskService{ get }
+//    var details: TaskModel{ get }
+//    var hasError: Bool{ get }
+//    init(service: UpdateTaskService, details: TaskModel, subtasks: [SubtaskModel])
+//}
 
-final class UpdateTaskViewModelImp: ObservableObject, UpdateTaskViewModel {
+final class UpdateTaskViewModelImp: ObservableObject{
     
     @Published var hasError: Bool = false
     @Published var state: UpdateTaskState = .na
@@ -32,7 +32,7 @@ final class UpdateTaskViewModelImp: ObservableObject, UpdateTaskViewModel {
     @Published var subtasks: [SubtaskModel]
     @Published var subID: String = ""
     
-    private var subscriptions = Set<AnyCancellable>()
+    var subscriptions = Set<AnyCancellable>()
     
     let service: UpdateTaskService
     

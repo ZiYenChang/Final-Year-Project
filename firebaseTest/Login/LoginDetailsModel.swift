@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginDetailsModel{
+struct LoginDetailsModel: Equatable{
     //use var because need to use them in view model to bind the input to the struct
     var email: String
     var password: String

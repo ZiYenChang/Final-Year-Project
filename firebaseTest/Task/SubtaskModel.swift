@@ -35,9 +35,13 @@ extension SubtaskModel{
     
     static let sampleData: [SubtaskModel] =
     [
-        SubtaskModel(title: "1234",
-                  completed: false,
-                  lastUpdate: "15:36 Sun, 19 Mar 2023",
-                  completeDate: "15:36 Sun, 19 Mar 2023"),
+        SubtaskModel(
+            id: "123",
+            title: "1234",
+            completed: false,
+            lastUpdate: "15:36 Sun, 19 Mar 2023",
+            taskid: "123",
+            uid: "123",
+            completeDate: "15:36 Sun, 19 Mar 2023"),
     ]
 }

@@ -10,14 +10,14 @@ import Combine
 
 //no enum because we dont need to listen to the event - once email sent, we do nothing
 
-protocol ResetPasswordViewModel{
-    func resetPassword()
-    var service: ResetPasswordService{get}
-    var email: String{get}
-    init(service: ResetPasswordService)
-}
+//protocol ResetPasswordViewModel{
+//    func resetPassword()
+//    var service: ResetPasswordService{get}
+//    var email: String{get}
+//    init(service: ResetPasswordService)
+//}
 
-final class ResetPasswordViewModelImp: ObservableObject, ResetPasswordViewModel{
+final class ResetPasswordViewModelImp: ObservableObject{
     @Published var email: String = ""
     
     private var subscriptions = Set<AnyCancellable>()

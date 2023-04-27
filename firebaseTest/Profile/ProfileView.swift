@@ -17,6 +17,7 @@ struct ProfileView: View {
     @State private var editingName = false
     @FocusState private var keyboardFocused: Bool
     @State private var showForgotPassword = false
+    @State private var showSupport = false
     
     var body: some View {
         
@@ -25,7 +26,8 @@ struct ProfileView: View {
                     HStack{
                         if !editingName{
                             Text(vm.profile.firstName)
-                                .padding(.horizontal)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 0)
                             Spacer()
                             Button(action: {
                                 editingName.toggle()
@@ -33,12 +35,13 @@ struct ProfileView: View {
                                 Text("Edit")
                                     .padding(.trailing,8)
                             }
-                            .padding()
+                            .padding(18)
                             
                         }
                         else{
                             TextField("Your name", text: $vm.profile.firstName)
-                                .padding(.horizontal)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 0)
                                 .foregroundColor(.gray)
                                 .focused($keyboardFocused)
                                 .onAppear{
@@ -56,29 +59,32 @@ struct ProfileView: View {
                                 Text("Done")
                                     .padding(.trailing,8)
                             }
-                            .padding()
+                            .padding(18)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 1)
                     .background(.white.opacity(0.8))
                     .cornerRadius(9)
                     
-                    HStack{
-                        Text(vm.profile.email)
-                            .padding()
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    .background(.white.opacity(0.8))
-                    .cornerRadius(9)
+//                    HStack{
+//                        Text(vm.profile.email)
+//                            .padding(.horizontal, 10)
+//                            .padding(.vertical)
+//                        Spacer()
+//                    }
+//                    .padding(.horizontal, 10)
+//                    .background(.white.opacity(0.8))
+//                    .cornerRadius(9)
 
                     HStack{
                         Text("You are studying \(vm.profile.courseName) 🫡")
                             .multilineTextAlignment(.center)
-                            .padding()
+                            .padding(.vertical)
+                            .padding(.horizontal, 10)
                         Spacer()
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 10)
                     .background(.white.opacity(0.8))
                     .cornerRadius(9)
                     
@@ -88,7 +94,7 @@ struct ProfileView: View {
                             .padding(.top,30)
                             .fontWeight(.semibold)
                             .foregroundColor(.gray)
-                            .padding(.leading,22)
+                            .padding(.leading,18)
                         Spacer()
                     }
                     
@@ -97,7 +103,7 @@ struct ProfileView: View {
                             securityController.appLockStateChange(value)
                             print("the value \(value)")
                         })
-                        .padding(.horizontal,30)
+                        .padding(.horizontal,18)
                         .padding(.vertical,10)
                         .background(.white.opacity(0.8))
                         .cornerRadius(9)
@@ -105,7 +111,7 @@ struct ProfileView: View {
                         Text("Require Face ID to unlock App.")
                             .font(.caption)
                             .foregroundColor(.gray)
-                            .padding(.leading,30)
+                            .padding(.leading,18)
                         Spacer()
                     }
                     HStack{
@@ -120,7 +126,7 @@ struct ProfileView: View {
                         }
                         .padding(13)
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 10)
                     .background(.white.opacity(0.8))
                     .cornerRadius(9)
                     .padding(.top, 4)
@@ -128,9 +134,23 @@ struct ProfileView: View {
                 .padding()
                 
                 Spacer()
-//                ButtonView(title: "Logout") {
-//                    sessionService.logout()
-//                }
+                
+                VStack{
+                    Button(action: {
+                        showSupport.toggle()
+                    }, label: {
+                        Text("About this App")
+                            .frame(maxWidth: .infinity)
+                    })
+                    .sheet(isPresented: $showSupport) {
+                        AboutThisAppView()
+                    }
+                    .padding(13)
+                }
+                .background(.white.opacity(0.8))
+                .cornerRadius(9)
+                .padding(.horizontal)
+                
                 VStack{
                     Button(action: {
                         sessionService.logout()
@@ -138,12 +158,13 @@ struct ProfileView: View {
                         Text("Logout")
                             .frame(maxWidth: .infinity)
                             .foregroundColor(.red)
-                            .padding()
                     })
+                    .padding(13)
                 }
                 .background(.white.opacity(0.8))
                 .cornerRadius(9)
-                .padding()
+                .padding(.horizontal)
+                .padding(.bottom)
                 
             }
             .onAppear{

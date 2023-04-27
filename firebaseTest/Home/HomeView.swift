@@ -25,6 +25,7 @@ struct HomeView: View {
     @State private var isVideoDone = false
     @State private var hasSubtaskComplete = false
     
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14){
@@ -251,9 +252,13 @@ struct HomeView: View {
                 
                 //                if (checkLowMood(moods: vmMood.moods)){
                 VStack{
-                    LowMoodView(recentDeadline: 1)
+                    LowMoodView(recentDeadline: 1, user: sessionService.userDetails?.firstName ?? " ")
                 }
                 //                }
+                
+                VStack{
+                    GoodMoodView(user: sessionService.userDetails?.firstName ?? " ")
+                }
                 
             }
             .onAppear {
@@ -270,7 +275,7 @@ struct HomeView: View {
             //                vm.stopListening()
             //                vmMood.moodStopListening()
             //            }
-            .padding(.horizontal)
+            .padding()
         }
         .onAppear {
             vm.listentoRealtimeDatabase()

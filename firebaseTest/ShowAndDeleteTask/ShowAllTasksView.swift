@@ -31,10 +31,10 @@ enum StatusFilter: String, CaseIterable, Identifiable {
 
 struct ShowAllTasksView: View {
     @StateObject var vm = ShowAllTasksViewModel()
-    @State private var showAddTask = false
-    @State private var statusFilter: StatusFilter = .all
-    @State private var dateShowLatest = true
-    @State private var shownTask: Int = 0
+    @State var showAddTask = false
+    @State var statusFilter: StatusFilter = .all
+    @State var dateShowLatest = true
+    @State var shownTask: Int = 0
 
     
     @EnvironmentObject var sessionService: SessionServiceImp
@@ -215,7 +215,7 @@ struct ShowAllTasksView: View {
         
     }
     
-    private func sortByDeadline(tasks: Array<TaskModel>, byLatest:Bool)-> Array<TaskModel>{
+    func sortByDeadline(tasks: Array<TaskModel>, byLatest:Bool)-> Array<TaskModel>{
         var sortedArray:[TaskModel] = []
         if(byLatest){
             sortedArray = tasks.sorted(by: { $0.deadline.compare($1.deadline) == .orderedDescending })

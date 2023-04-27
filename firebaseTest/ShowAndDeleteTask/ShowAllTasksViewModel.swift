@@ -33,7 +33,7 @@ struct TempSubtaskModel: Identifiable, Codable {
 }
 
 
-final class ShowAllTasksViewModel: ObservableObject {
+class ShowAllTasksViewModel: ObservableObject {
 //    https://medium.com/swift-productions/swiftui-fetch-data-from-firebase-realtime-database-611406d8696c
     //let ref = FIRDatabase.database().referenceFromURL(FIREBASE_URL).child("topics")
 //    let query = ref.queryOrderedByChild("published").queryEqualToValue(true)
@@ -125,8 +125,6 @@ final class ShowAllTasksViewModel: ObservableObject {
                     let taskData = try JSONSerialization.data(withJSONObject: json)
                     let task = try self.decoder.decode(TempTaskModel.self, from: taskData)
                     self.tasks.append(self.convertDeadline(tempTask: task))
-                    print("'eachtask'")
-                    print(self.convertDeadline(tempTask: task))
                 } catch {
                     print("An error occurred", error)
                 }
@@ -166,7 +164,8 @@ final class ShowAllTasksViewModel: ObservableObject {
         subtasksPath?.removeAllObservers()
     }
     
-    func deleteTask(with id: String, with subtasks: [SubtaskModel] = []){
+//    func deleteTask(with id: String, with subtasks: [SubtaskModel] = []){
+    func deleteTask(with id: String){
         print("in deleteTask()")
         Database.database()
             .reference()
@@ -179,19 +178,19 @@ final class ShowAllTasksViewModel: ObservableObject {
                     print("Task deleted")
                 }
             }
-        for subtask in subtasks {
-            Database.database()
-                .reference()
-                .child("subtasks")
-                .child(subtask.id!)
-                .removeValue(){ error, ref in
-                    if let err = error{
-                        print("Failed due to error:", err)
-                    }else{
-                        print("Task deleted")
-                    }
-                }
-        }
+//        for subtask in subtasks {
+//            Database.database()
+//                .reference()
+//                .child("subtasks")
+//                .child(subtask.id!)
+//                .removeValue(){ error, ref in
+//                    if let err = error{
+//                        print("Failed due to error:", err)
+//                    }else{
+//                        print("Task deleted")
+//                    }
+//                }
+//        }
         
     }
     

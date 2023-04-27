@@ -5,9 +5,6 @@
 //  Created by Zi Yen Chang on 17/01/2023.
 //
 
-import SwiftUI
-import Firebase
-import LocalAuthentication
 
 
 //final class AppDelegate: NSObject, UIApplicationDelegate {
@@ -22,6 +19,10 @@ import LocalAuthentication
 //        return true
 //    }
 //}
+
+import SwiftUI
+import Firebase
+import LocalAuthentication
 
 @main
 struct firebaseTestApp: App {

@@ -39,37 +39,37 @@ final class SessionServiceImp: ObservableObject{
         try? Auth.auth().signOut() //mark it as an optional try - if it fails then nothing happen(nil)
     }
     
-    func updateFirstname(with details: SessionUserModel) -> AnyPublisher<Void, Error> {
-        Deferred{
-            Future{ promise in
-                let user = Auth.auth().currentUser?.uid
-                if let user = user {
-                    let values = [
-                        "firstName": details.firstName,
-                        "courseName": details.courseName
-                    ] as [String : Any]
-                    
-                    Database.database()
-                        .reference()
-                        .child("users")
-                        .child(user)
-                        .updateChildValues(values){ error, ref in
-                            if let err = error{
-                                promise(.failure (err))
-                                print("Failed due to error:", err)
-                            }
-                            else{
-                                print("Username Updated")
-                                promise(.success(()))
-                            }
-                            
-                        }
-                }
-            }
-        }
-        .receive(on: RunLoop.main)
-        .eraseToAnyPublisher()
-    }
+//    func updateFirstname(with details: SessionUserModel) -> AnyPublisher<Void, Error> {
+//        Deferred{
+//            Future{ promise in
+//                let user = Auth.auth().currentUser?.uid
+//                if let user = user {
+//                    let values = [
+//                        "firstName": details.firstName,
+//                        "courseName": details.courseName
+//                    ] as [String : Any]
+//
+//                    Database.database()
+//                        .reference()
+//                        .child("users")
+//                        .child(user)
+//                        .updateChildValues(values){ error, ref in
+//                            if let err = error{
+//                                promise(.failure (err))
+//                                print("Failed due to error:", err)
+//                            }
+//                            else{
+//                                print("Username Updated")
+//                                promise(.success(()))
+//                            }
+//
+//                        }
+//                }
+//            }
+//        }
+//        .receive(on: RunLoop.main)
+//        .eraseToAnyPublisher()
+//    }
     
 }
 
