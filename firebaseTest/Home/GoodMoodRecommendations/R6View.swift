@@ -20,7 +20,7 @@ struct R6View: View {
                         .scaledToFit()
                         .frame(width: 150.0)
                     VStack(alignment: .leading){
-                        Text("Mindfulness involves paying more attention to the present moment – to your own thoughts and feelings, and to the world around you. This can improve your mental wellbeing.")
+                        Text("Eating a healthy, balanced diet is an important part of maintaining good health, and can help you feel your best. ")
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom,3)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -28,44 +28,44 @@ struct R6View: View {
                     
                     VStack {
                         VStack(alignment: .leading){
-                            Text("Why mindfulness? 🧠")
+                            Text("😋 Healthy eating tips: ")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .padding(.bottom,1)
                                 .font(.headline)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Become more self-aware")
+                                Text("Eat at least 5 portions of a variety of fruit and vegetables every day ")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Feel calmer and less stressed")
+                                Text("Drink lots of water")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Help dealing issues more productively")
+                                Text("Choose unsaturated oils and spreads, and eat them in small amounts")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Notice signs of stress or anxiety earlier")
+                                Text("Have some dairy or dairy alternatives")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Cope with difficult or unhelpful thoughts")
+                                Text("Eat a good breakfast")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Help you be kinder towards yourself")
+                                Text("Limit your sugar intake")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
@@ -79,7 +79,7 @@ struct R6View: View {
                     .shadow(color: Color.black.opacity(0.1), radius: 4.0, x: 0, y: 0)
                     
                     VStack(alignment: .leading){
-                        Text("It is understandable to want to stop thinking about difficult things, but trying to get rid of upsetting thoughts sometimes make us think about them even more. The theory behind mindfulness is that by using [various techniques](https://www.mind.org.uk/information-support/drugs-and-treatments/mindfulness/mindfulness-exercises-tips/) to bring your attention to the present.")
+                        Text("Eating healthily can be a challenge if you are shopping on a budget, but you can make your money go further and buy some lower-cost nutritious foods.🍲")
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom,3)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -89,48 +89,41 @@ struct R6View: View {
                     
                     VStack {
                         VStack(alignment: .leading){
-                            Text("🙏 How to be more mindful:")
+                            Text("Eat affordably 🛒")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .padding(.bottom,1)
                                 .font(.headline)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Notice the everyday regularly")
+                                Text("Make a shopping list and stick to it")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Try something new")
+                                Text("Try the supermarket’s own brand or value brand products")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Be aware and accepting your thoughts")
+                                Text("Batch cooking")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Free yourself from the past and future")
+                                Text("Cooking with your housemates")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
                             HStack(alignment: .top) {
                                 Text("⋅")
-                                Text("Mindful meditation")
+                                Text("Frozen fruit and veg can be cheaper than fresh")
                                     .fixedSize(horizontal: false, vertical: true)
                             }
                             .padding(.bottom,1)
-                            HStack(alignment: .top) {
-                                Text("⋅")
-                                Text("Focus on your breathing")
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-                            .padding(.bottom,1)
-                            
 
                         }
                     }
@@ -140,11 +133,11 @@ struct R6View: View {
                     .shadow(color: Color.black.opacity(0.1), radius: 4.0, x: 0, y: 0)
                     
                     VStack(alignment: .leading){
-                        Text("Although anyone can try it, being mindful isn't always easy to do. It can take practice, and might not be right for everyone.")
+                        Text("Eating a healthy diet can help you feel better, cope with stress and perform better.")
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom,3)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("To understand more about mindfulness, treach more from the source websites and articles!🧑‍💻")
+                        Text("Remember, it's not just about what you eat, but also how much and how often. With some effort and planning, eating healthily can be both affordable and enjoyable. 😜")
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.bottom,3)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -156,19 +149,19 @@ struct R6View: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack(alignment: .top) {
                             Text("⋅")
-                            Text("[NHS Mindfulness](https://www.nhs.uk/mental-health/self-help/tips-and-support/mindfulness/)")
+                            Text("[8 tips for healthy eating](https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/)")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .opacity(0.8)
                         }
                         HStack(alignment: .top) {
                             Text("⋅")
-                            Text("[MIND Mindfulness](https://www.mind.org.uk/information-support/drugs-and-treatments/mindfulness/about-mindfulness/)")
+                            Text("[10 Healthy Eating Tips for Busy Students](https://clarke.edu/campus-life/health-wellness/counseling/articles-advice/10-healthy-eating-tips-for-the-busy-college-student/)")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .opacity(0.8)
                         }
                         HStack(alignment: .top) {
                             Text("⋅")
-                            Text("[MAYO CLINIC Mindfulness exercises](https://www.mayoclinic.org/healthy-lifestyle/consumer-health/in-depth/mindfulness-exercises/art-20046356)")
+                            Text("[A healthy and sustainable diet for the student budget](https://www.nutrition.org.uk/life-stages/students/)")
                                 .fixedSize(horizontal: false, vertical: true)
                                 .opacity(0.8)
                         }

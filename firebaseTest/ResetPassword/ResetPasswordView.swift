@@ -16,24 +16,42 @@ struct ResetPasswordView: View {
     var body: some View {
         
         NavigationView{
-            VStack(spacing: 16){
-                TextFieldView(text: $vm.email,
-                              placeholder: "Email",
-                              keyboardType: .emailAddress,
-                              sfSymbol: "envelope")
-                
-                ButtonView(title: "Reset") {
-                    vm.resetPassword()
-                    presentationMode.wrappedValue.dismiss()
+            ScrollView{
+                VStack(spacing: 16){
+                    TextFieldView(text: $vm.email,
+                                  placeholder: "Email",
+                                  keyboardType: .emailAddress,
+                                  sfSymbol: "envelope")
+                    
+                    VStack{
+                        Button(action: {
+                            vm.resetPassword()
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("Reset")
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(.blue)
+                        })
+                        .padding(13)
+                    }
+                    .background(.white.opacity(0.8))
+                    .cornerRadius(9)
+                    .padding(.top, 5)
+                    
                 }
-                .padding(.bottom)
-                
-                
+                .padding(.horizontal)
+                .padding(.top, 200)
             }
-            .padding(.horizontal)
             .navigationTitle("Reset Password")
             .applyClose()
+            .scrollContentBackground(.hidden)
+            .background(Image("orange-green")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea())
+            
         }
+        
     }
 }
 

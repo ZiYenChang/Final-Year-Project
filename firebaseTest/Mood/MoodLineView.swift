@@ -52,22 +52,25 @@ struct MoodLineView: View {
                         }
                         .padding(.vertical,4)
                         .padding(.leading, 15)
-                        .frame(width: ((CGFloat(data.count)+3)/7 * 290.0), height: 220)
+                        .padding(.top, 12)
+//                        .frame(width: ((CGFloat(data.count)+3)/7 * 290.0), height: 220)
+                        .frame(width: (((CGFloat(countDaysBetween(data: data.sorted(by: { $0.date.compare($1.date) == .orderedAscending}))))+3)/7 * 355.0), height: 220)
                         
                         // to ensure the graph starts from the end
                         HStack{
-                            ForEach(0..<(data.count), id: \.self) { i in
-                                Text("\(data[i].date, format: .dateTime.day())")
+                            ForEach(0..<(countDaysBetween(data: data.sorted(by: { $0.date.compare($1.date) == .orderedAscending}))), id: \.self) { i in
+//                                Text("\(data[i].date, format: .dateTime.day())")
+                                Text("\(i)")
                                     .font(.caption)
-                                    .padding(.trailing, 29)
+                                    .padding(.trailing, 35)
                                     .id(i)
-                                    .opacity(0.2)
+                                    .opacity(0)
                             }
                             .offset(x:54, y:-22)
                         } //end hstack
                     } // end vstack
                     .onAppear{
-                        value.scrollTo(data.count - 1)
+                        value.scrollTo((countDaysBetween(data: data.sorted(by: { $0.date.compare($1.date) == .orderedAscending}))) - 1)
                     }
                 } // end scrollview
             }// end scrollview reader
@@ -76,7 +79,7 @@ struct MoodLineView: View {
             Rectangle()
                 .fill(Color(red: 253/256, green: 251/256, blue: 247/256))
                 .frame(width: 22, height: 220)
-                .offset(x:0, y: -15)
+                .offset(x:0, y: -10)
 //                    .opacity(0.5)
             VStack{
                 Text("10")
@@ -89,15 +92,34 @@ struct MoodLineView: View {
                 Spacer()
                 Text("0")
                     .font(.caption2)
-                    .padding(.bottom, 39)
+                    .padding(.bottom, 30)
                     .foregroundColor(.gray)
                     
             }
-            .frame(height: 245)
+            .frame(height: 225)
             .padding(.leading, 8)
         } //end vstack
     }
     
+}
+
+import Foundation
+
+func countDaysBetween(data: [MoodChartData]) -> Int {
+    let calendar = Calendar.current
+    var start = Date()
+    var end = Date()
+    if data != []{
+        start = data[0].date
+        end = data[data.count-1].date
+    }
+    print("start")
+    print(start)
+    print("end")
+    print(end)
+    let components = calendar.dateComponents([.day], from: start, to: end)
+    return components.day ?? 0
+
 }
 
 struct MoodLineView_Previews: PreviewProvider {

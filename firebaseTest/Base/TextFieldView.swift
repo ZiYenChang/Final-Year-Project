@@ -23,12 +23,12 @@ struct TextFieldView: View {
                 ZStack(alignment: .leading){
                     if let systemImage = sfSymbol {
                         Image(systemName: systemImage)
-                            .font(.system(size: 16, weight: .semibold))
+                            .font(.system(size: 16, weight: .medium))
                             .padding(.leading, 10)
-                            .foregroundColor(.gray.opacity(0.5))
+                            .foregroundColor(.black.opacity(0.6))
                     }
-                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .stroke(.gray.opacity(0.25))
+                    RoundedRectangle(cornerRadius: 9, style: .continuous)
+                        .stroke(.black.opacity(0.5))
                 }
             )
     }

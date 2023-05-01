@@ -250,26 +250,26 @@ struct HomeView: View {
                 //                    .animation(.easeInOut(duration: 0.2), value: isMoodSelected)
                 //                }
                 
-                //                if (checkLowMood(moods: vmMood.moods)){
-                VStack{
-                    LowMoodView(recentDeadline: 1, user: sessionService.userDetails?.firstName ?? " ")
+                if (checkLowMood(moods: vmMood.moods)){
+                    VStack{
+                        LowMoodView(recentDeadline: 1, user: sessionService.userDetails?.firstName ?? " ")
+                    }
+                }else{
+                    VStack{
+                        GoodMoodView(user: sessionService.userDetails?.firstName ?? " ")
+                    }
                 }
-                //                }
                 
-                VStack{
-                    GoodMoodView(user: sessionService.userDetails?.firstName ?? " ")
-                }
+                
                 
             }
             .onAppear {
                 //                DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
                 //                vm.listentoRealtimeDatabase()
                 //                vmMood.moodlistenDatabase()
-                print("listentoRealtimeDatabase() run in AllTaskView")
+//                print("listentoRealtimeDatabase() run in AllTaskView")
                 NotificationManager.instance.requestAuthorization()
-                NotificationManager.instance.cancelNotification()
-                UIApplication.shared.applicationIconBadgeNumber = 0
-                NotificationManager.instance.scheduleTimeNotification(title: "Welcome to Seed", subtitle: "Your task management companion", minutes: 0.3)
+                
             }
             //            .onDisappear{
             //                vm.stopListening()

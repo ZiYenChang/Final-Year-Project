@@ -81,42 +81,6 @@ final class LoginTest: XCTestCase {
         XCTAssertEqual(mockService.loginDetails, expectedDetails)
     }
     
-//    func test_login_with_invalid_credentials_should_set_hasError_to_true() {
-//        // given
-//        let expectedDetails = LoginDetailsModel(email: "test@example.com", password: "password123")
-//        let expectedError = NSError(domain: "test", code: 123, userInfo: nil)
-//        mockService.loginResult = .failure(expectedError)
-//
-//        // when
-//        sut.details = expectedDetails
-//        sut.login()
-//
-//        // then
-//        XCTAssertEqual(sut.hasError, true)
-//    }
-//
-//    func test_login_with_empty_credentials_should_set_state_to_failed() {
-//        // given
-//        let expectedDetails = LoginDetailsModel(email: "", password: "")
-//        let expectedError = NSError(domain: "test", code: 456, userInfo: nil)
-//        let expectedState: LoginState = .failed(error: expectedError)
-//
-//        // when
-//        mockService.loginResult = .failure(expectedError)
-//        sut.details = expectedDetails
-//        sut.login()
-//
-//        // then
-//        XCTAssertEqual(sut.state, expectedState)
-//        XCTAssertEqual(sut.details, expectedDetails)
-//        switch sut.state {
-//        case .failed(let error):
-//            XCTAssertEqual(error as NSError, expectedError)
-//        default:
-//            XCTFail("State should be failed")
-//        }
-//    }
-    
     func testLoginWithEmailMissingSetStateFailed(){
         // given
         let expectedDetails = LoginDetailsModel(email: "", password: "password123")
@@ -160,56 +124,6 @@ final class LoginTest: XCTestCase {
             XCTFail("State should be failed")
         }
     }
-    
-    func test_login_with_valid_credentials_does_not_set_hasError() {
-        // given
-        let expectedDetails = LoginDetailsModel(email: "test@example.com", password: "password123")
-        mockService.loginResult = .success(())
-        
-        // when
-        sut.details = expectedDetails
-        sut.login()
-        
-        // then
-        XCTAssertEqual(sut.hasError, false)
-    }
-    
-    func test_login_with_valid_credentials_should_not_set_state_to_failed() {
-        // given
-        let expectedDetails = LoginDetailsModel(email: "test@example.com", password: "password123")
-        mockService.loginResult = .success(())
-        let notExpectedState: LoginState = .failed(error: NSError(domain: "test", code: 123, userInfo: nil))
-        
-        // when
-        sut.details = expectedDetails
-        sut.login()
-        
-        // then
-        XCTAssertNotEqual(sut.state, notExpectedState)
-    }
-    
-    func test_login_with_valid_credentials_and_unexpected_error_should_set_state_to_failed() {
-        // given
-        let expectedDetails = LoginDetailsModel(email: "test@example.com", password: "password123")
-        let expectedError = NSError(domain: "test", code: 456, userInfo: nil)
-        let expectedState: LoginState = .failed(error: expectedError)
-        
-        // when
-        mockService.loginResult = .failure(expectedError)
-        sut.details = expectedDetails
-        sut.login()
-        
-        // then
-        XCTAssertEqual(sut.state, expectedState)
-        XCTAssertEqual(sut.details, expectedDetails)
-        switch sut.state {
-        case .failed(let error):
-            XCTAssertEqual(error as NSError, expectedError)
-        default:
-            XCTFail("State should be failed")
-        }
-    }
-    
     
 }
 

@@ -34,25 +34,54 @@ struct LoginView: View {
                 }, label: {
                     Text("Forgot Password?")
                 })
-                .font(.system(size: 14, weight: .bold))
+                .font(.system(size: 14, weight: .semibold))
                 .sheet(isPresented: $showForgotPassword) {
                     ResetPasswordView()
                 }
             }
             Spacer()
-            VStack(spacing: 12){
-                ButtonView(title: "Login") {
-                    vm.login()
+                VStack{
+                    Button(action: {
+                        vm.login()
+                        NotificationManager.instance.cancelNotification()
+                        NotificationManager.instance.scheduleDateNotification(title: "How is your day?", subtitle: "Checkout your progress!", dateHour: 15, dateMinute: 13)
+                    }, label: {
+                        Text("Login")
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.white)
+                    })
+                    .padding(16)
                 }
-                ButtonView(title: "Register",bgColor: .clear, fgColor: .blue, borderColor: .blue) {
+                .background(.blue)
+                .cornerRadius(9)
+            
+            VStack{
+                Button(action: {
                     showRegister.toggle()
-                }
+                }, label: {
+                    Text("Register")
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.blue)
+                })
                 .sheet(isPresented: $showRegister) {
                     RegisterView()
                 }
+                .padding(13)
             }
+            .background(.white.opacity(0.8))
+            .cornerRadius(9)
             .padding(.bottom)
-            
+                
+//                ButtonView(title: "Login") {
+//                    vm.login()
+//                }
+//                ButtonView(title: "Register",bgColor: .clear, fgColor: .blue, borderColor: .blue) {
+//                    showRegister.toggle()
+//                }
+//                .sheet(isPresented: $showRegister) {
+//                    RegisterView()
+//                }
+//
         }
         .padding(.horizontal)
         .navigationTitle("Login")
@@ -67,6 +96,10 @@ struct LoginView: View {
                                  message: Text("Something went wrong. Pleasse try again"))
                 }
         })
+        .background(Image("orange-green")
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea())
     }
 }
 

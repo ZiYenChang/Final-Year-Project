@@ -39,7 +39,7 @@ struct ProfileView: View {
                             
                         }
                         else{
-                            TextField("Your name", text: $vm.profile.firstName)
+                            TextField("Username", text: $vm.profile.firstName)
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 0)
                                 .foregroundColor(.gray)
@@ -139,7 +139,7 @@ struct ProfileView: View {
                     Button(action: {
                         showSupport.toggle()
                     }, label: {
-                        Text("About this App")
+                        Text("About Seed")
                             .frame(maxWidth: .infinity)
                     })
                     .sheet(isPresented: $showSupport) {

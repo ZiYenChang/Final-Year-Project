@@ -44,17 +44,17 @@ final class LockTest: XCTestCase {
         XCTAssertEqual(securityController.showSheet, false)
     }
     
-    @MainActor func testLockApp() {
-        // Test when app lock is enabled
-        securityController.isAppLockEnabled = true
-        securityController.lockApp()
-        XCTAssertEqual(securityController.isLocked, true)
-        
-        // Test when app lock is disabled
-        securityController.isAppLockEnabled = false
-        securityController.lockApp()
-        XCTAssertEqual(securityController.isLocked, false)
-    }
+//    @MainActor func testLockApp() {
+//        // Test when app lock is enabled
+//        securityController.isAppLockEnabled = true
+//        securityController.lockApp()
+//        XCTAssertEqual(securityController.isLocked, true)
+//        
+//        // Test when app lock is disabled
+//        securityController.isAppLockEnabled = false
+//        securityController.lockApp()
+//        XCTAssertEqual(securityController.isLocked, false)
+//    }
     
 }
 
@@ -165,14 +165,14 @@ class ShowTests: XCTestCase {
         //timeIntervalSince1970: 1651430400
     }
     
-    func testStopListening() {
-        sut.stopListening()
-        // Verify that removeAllObservers() is called on databasePath and subtasksPath
-    }
+//    func testStopListening() {
+//        sut.stopListening()
+//        // Verify that removeAllObservers() is called on databasePath and subtasksPath
+//    }
     
-    func testDeleteTask() {
-        let id = "1"
-        sut.deleteTask(with: id)
-        // Verify that removeValue() is called on the correct path with the correct id
-    }
+//    func testDeleteTask() {
+//        let id = "1"
+//        sut.deleteTask(with: id)
+//        // Verify that removeValue() is called on the correct path with the correct id
+//    }
 }

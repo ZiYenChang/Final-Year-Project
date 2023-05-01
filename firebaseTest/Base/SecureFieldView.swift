@@ -24,11 +24,11 @@ struct SecureFieldView: View {
                     if let systemImage = sfSymbol {
                         Image(systemName: systemImage)
                             .font(.system(size: 16, weight: .semibold))
-                            .padding(.leading, 10)
-                            .foregroundColor(.gray.opacity(0.5))
+                            .padding(.leading, 12)
+                            .foregroundColor(.black.opacity(0.6))
                     }
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .stroke(.gray.opacity(0.25))
+                        .stroke(.black.opacity(0.5))
                 }
             )
     }

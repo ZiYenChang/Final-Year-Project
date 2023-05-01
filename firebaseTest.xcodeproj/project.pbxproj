@@ -94,7 +94,6 @@
 		A2F1561929D62413004116F7 /* s5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561829D62413004116F7 /* s5View.swift */; };
 		A2F1561B29D6244C004116F7 /* s6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561A29D6244C004116F7 /* s6View.swift */; };
 		A2F1561D29D62458004116F7 /* s7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561C29D62458004116F7 /* s7View.swift */; };
-		A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */; };
 		A2F7E39729FA954C004E11C8 /* projectUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E39629FA954C004E11C8 /* projectUnitTests.swift */; };
 		A2F7E39E29FA955B004E11C8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A2F7E39D29FA955B004E11C8 /* FirebaseAuth */; };
 		A2F7E3A029FA955B004E11C8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2F7E39F29FA955B004E11C8 /* FirebaseDatabase */; };
@@ -105,6 +104,7 @@
 		A2F7E3AB29FA959F004E11C8 /* UpdateTaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A629FA959F004E11C8 /* UpdateTaskTest.swift */; };
 		A2F7E3AC29FA959F004E11C8 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3A729FA959F004E11C8 /* LoginTest.swift */; };
 		A2F7E3AF29FA9E9E004E11C8 /* LockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3AE29FA9E9E004E11C8 /* LockTest.swift */; };
+		A2F7E3B229FCA07D004E11C8 /* RegisterTnCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7E3B129FCA07D004E11C8 /* RegisterTnCView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,7 +201,6 @@
 		A2F1561829D62413004116F7 /* s5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s5View.swift; sourceTree = "<group>"; };
 		A2F1561A29D6244C004116F7 /* s6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s6View.swift; sourceTree = "<group>"; };
 		A2F1561C29D62458004116F7 /* s7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = s7View.swift; sourceTree = "<group>"; };
-		A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodQuoteView.swift; sourceTree = "<group>"; };
 		A2F7E39429FA954C004E11C8 /* projectUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F7E39629FA954C004E11C8 /* projectUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectUnitTests.swift; sourceTree = "<group>"; };
 		A2F7E3A329FA959F004E11C8 /* LogoutTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutTest.swift; sourceTree = "<group>"; };
@@ -210,6 +209,7 @@
 		A2F7E3A629FA959F004E11C8 /* UpdateTaskTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTaskTest.swift; sourceTree = "<group>"; };
 		A2F7E3A729FA959F004E11C8 /* LoginTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
 		A2F7E3AE29FA9E9E004E11C8 /* LockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTest.swift; sourceTree = "<group>"; };
+		A2F7E3B129FCA07D004E11C8 /* RegisterTnCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTnCView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +245,6 @@
 				A264278829A57179009C9F78 /* GetMood */,
 				A23F66BA299BDD42009E279D /* AddMood */,
 				A23F66B4299BD09C009E279D /* MoodView.swift */,
-				A2F1561E29D86A19004116F7 /* MoodQuoteView.swift */,
 				A264278B29A57DD9009C9F78 /* MoodChartView.swift */,
 				A24D42B929B8D84F00313720 /* MoodCalendarView.swift */,
 				A20C3D7729AA3BE00020CCE2 /* MoodLineView.swift */,
@@ -325,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				A271D4932977FFD200A8AAC6 /* RegisterView.swift */,
+				A2F7E3B129FCA07D004E11C8 /* RegisterTnCView.swift */,
 				A271D49D297819F000A8AAC6 /* RegisterDetailsModel.swift */,
 				A271D49F29781A5600A8AAC6 /* RegisterService.swift */,
 				A271D4A1297820E200A8AAC6 /* RegisterViewModel.swift */,
@@ -662,7 +662,6 @@
 				A271D4C1297945AC00A8AAC6 /* ShowAllTasksView.swift in Sources */,
 				A271D4BC2978A17900A8AAC6 /* AddTaskService.swift in Sources */,
 				A271D499297803A900A8AAC6 /* HomeView.swift in Sources */,
-				A2F1561F29D86A19004116F7 /* MoodQuoteView.swift in Sources */,
 				A271D4A729782FF200A8AAC6 /* SessionService.swift in Sources */,
 				A26F438729DEFCB800889600 /* R6View.swift in Sources */,
 				A2823E6A298B10E400224E5A /* DatePickerView.swift in Sources */,
@@ -671,6 +670,7 @@
 				A2F1561D29D62458004116F7 /* s7View.swift in Sources */,
 				A264278C29A57DD9009C9F78 /* MoodChartView.swift in Sources */,
 				A2F0DDFC29819B61001AF1BB /* TaskStatusView.swift in Sources */,
+				A2F7E3B229FCA07D004E11C8 /* RegisterTnCView.swift in Sources */,
 				A271D4A029781A5600A8AAC6 /* RegisterService.swift in Sources */,
 				A2BDB20529BA0F5E00B2426E /* NotificationManager.swift in Sources */,
 				A271D4BE2978A4D800A8AAC6 /* AddTaskViewModel.swift in Sources */,
@@ -943,12 +943,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.projectUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -960,12 +963,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CPDUDCY5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.projectUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -38,6 +38,7 @@ struct MoodView: View {
         ScrollView {
             VStack {
 //                if isAfterTime(time: 11) && todayInput(moods: vm.moods){
+                if todayInput(moods: vm.moods){
                     VStack {
                         if !readyInput {
                             Image("work")
@@ -92,7 +93,7 @@ struct MoodView: View {
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 0)
                     .animation(.easeInOut(duration: 0.2), value: isMoodSelected)
                     .animation(.easeInOut(duration: 0.2), value: readyInput)
-//                }
+                }
                 
                 if (vm.moods != []){
                     MoodChartView()
@@ -112,7 +113,7 @@ struct MoodView: View {
                 vm.moodlistenDatabase()
             }
             .onDisappear{
-                vm.moodStopListening()
+//                vm.moodStopListening()
             }
         }
         .background(Image("yellow-pink-gradient"))

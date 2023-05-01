@@ -34,7 +34,7 @@ struct MoodChartView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack{
-                Text("Your mood trend ")
+                Text("Your satisfaction trend ")
                     .font(.title2)
                     .fontWeight(.bold)
                 

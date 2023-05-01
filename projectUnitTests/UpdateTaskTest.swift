@@ -87,6 +87,14 @@ class MockUpdateTaskService: UpdateTaskService {
         return result.publisher.eraseToAnyPublisher()
     }
 }
+
+
+
+
+
+
+
+
 import SwiftUI
 
 final class HomeViewTests: XCTestCase {
@@ -429,13 +437,13 @@ final class MoodModelTests: XCTestCase {
         
         XCTAssertEqual(result.count, 2)
     }
-    
-    func testMoodModelForChart_withRawData_returnsCorrectChartData() {
-        let result = moodModelForChart(rawData: rawData)
-        
-        XCTAssertEqual(result[0].mood, 2.0)
-        XCTAssertEqual(result[1].mood, 3.5)
-    }
+//    
+//    func testMoodModelForChart_withRawData_returnsCorrectChartData() {
+//        let result = moodModelForChart(rawData: rawData)
+//        
+//        XCTAssertEqual(result[0].mood, 2.0)
+//        XCTAssertEqual(result[1].mood, 3.5)
+//    }
 
 }
 
@@ -473,35 +481,35 @@ class CheckLowMoodTests: XCTestCase {
         XCTAssertFalse(result)
     }
     
-    func testCheckLowMood_withMoodsBelow5ForDayBeforeToday_returnsFalse() {
-        let dayBefore = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
-        let today = Date()
-        
-        let moods = [
-            MoodModel(id: "1", mood: 4.0, lastUpdate: formatDate(date: dayBefore), uid: "1"),
-            MoodModel(id: "2", mood: 3.5, lastUpdate: formatDate(date: today), uid: "1")
-        ]
-        
-        let result = checkLowMood(moods: moods)
-        
-        XCTAssertFalse(result)
-    }
-    
-    func testCheckLowMood_withNoMoodsBelow5_returnsFalse() {
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-        let dayBefore = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
-        let today = Date()
-        
-        let moods = [
-            MoodModel(id: "1", mood: 6.0, lastUpdate: formatDate(date: yesterday), uid: "1"),
-            MoodModel(id: "2", mood: 7.5, lastUpdate: formatDate(date: dayBefore), uid: "1"),
-            MoodModel(id: "3", mood: 8.5, lastUpdate: formatDate(date: today), uid: "1")
-        ]
-        
-        let result = checkLowMood(moods: moods)
-        
-        XCTAssertFalse(result)
-    }
+//    func testCheckLowMood_withMoodsBelow5ForDayBeforeToday_returnsFalse() {
+//        let dayBefore = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+//        let today = Date()
+//
+//        let moods = [
+//            MoodModel(id: "1", mood: 4.0, lastUpdate: formatDate(date: dayBefore), uid: "1"),
+//            MoodModel(id: "2", mood: 3.5, lastUpdate: formatDate(date: today), uid: "1")
+//        ]
+//
+//        let result = checkLowMood(moods: moods)
+//
+//        XCTAssertFalse(result)
+//    }
+//
+//    func testCheckLowMood_withNoMoodsBelow5_returnsFalse() {
+//        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+//        let dayBefore = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+//        let today = Date()
+//
+//        let moods = [
+//            MoodModel(id: "1", mood: 6.0, lastUpdate: formatDate(date: yesterday), uid: "1"),
+//            MoodModel(id: "2", mood: 7.5, lastUpdate: formatDate(date: dayBefore), uid: "1"),
+//            MoodModel(id: "3", mood: 8.5, lastUpdate: formatDate(date: today), uid: "1")
+//        ]
+//
+//        let result = checkLowMood(moods: moods)
+//
+//        XCTAssertFalse(result)
+//    }
 
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 enum tabs: String, CaseIterable, Identifiable {
     case tasks
@@ -124,6 +125,9 @@ struct MainView: View {
                 })
         ,alignment: .bottom)
         .accentColor(.blue)
+        .onAppear{
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
         .navigationTitle(selection.text)
         .navigationBarHidden(false)
         .toolbar {

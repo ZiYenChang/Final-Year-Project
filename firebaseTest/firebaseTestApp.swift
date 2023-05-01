@@ -23,6 +23,8 @@
 import SwiftUI
 import Firebase
 import LocalAuthentication
+import UserNotifications
+import UIKit
 
 @main
 struct firebaseTestApp: App {
@@ -48,8 +50,6 @@ struct firebaseTestApp: App {
             NavigationView{
                 switch sessionService.state{
                 case .loggedIn:
-//                    ZStack{
-//                        if appContext.appUnlocked {
                             MainView(securityController: securityController)
                                 .environmentObject(sessionService)
 //                                .environmentObject(securityController)
@@ -68,19 +68,6 @@ struct firebaseTestApp: App {
                                         }
                                     }
                                 }
-//                                .onAppear {
-//                                    print("on appear works for main view")
-//                                    if firstInApp == 0{
-////                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                                    print("is app enabled \(securityController.isAppLockEnabled)")
-//                                            securityController.showLockedViewIfEnabled(first: firstInApp)
-//                                            firstInApp = firstInApp + 1
-//                                            print("first in app \(firstInApp)")
-////                                            showSheet = securityController.isLocked
-////                                        }
-//                                        
-//                                    }
-//                                }
                                 .sheet(isPresented: $securityController.showSheet) {
                                     
                                         LockView()
@@ -93,24 +80,15 @@ struct firebaseTestApp: App {
                                                 print("sheet show because is locked is \($securityController.isLocked)")
                                             }
                                 }
-//                                .onChange(of: outsideApp) { newValue in
-//                                    if outsideApp{
-//                                        securityController.lockApp()
-//                                    }
-//                                }
-                                
-//                        }else {
-//                            LockAppView(appContext: appContext)
-//                                .background(Color.white)
-//                        }
-//                    }//end zstack
                     
                 case .loggedOut:
                     LoginView()
                     
                 }
             }
-            
+            .onAppear{
+                NotificationManager.instance.requestAuthorization()
+            }
         }
         .onChange(of: scenePhase, perform: { phase in
             switch phase {
@@ -121,14 +99,12 @@ struct firebaseTestApp: App {
                 print("now it is background")
             case .inactive:
                 outsideApp = true
-//                securityController.lockApp()
                 print("now it is inactive")
             case .active:
                 print("now it is active")
             default:
                 break
             }
-            
             
         })
 
