@@ -528,9 +528,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2DDAA842976F18F007369AB /* firebaseTest */ = {
+		A2DDAA842976F18F007369AB /* Seed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2DDAA932976F190007369AB /* Build configuration list for PBXNativeTarget "firebaseTest" */;
+			buildConfigurationList = A2DDAA932976F190007369AB /* Build configuration list for PBXNativeTarget "Seed" */;
 			buildPhases = (
 				A2DDAA812976F18F007369AB /* Sources */,
 				A2DDAA822976F18F007369AB /* Frameworks */,
@@ -540,7 +540,7 @@
 			);
 			dependencies = (
 			);
-			name = firebaseTest;
+			name = Seed;
 			packageProductDependencies = (
 				A2DDAA9B2976F956007369AB /* FirebaseAuth */,
 				A2DDAA9D2976F956007369AB /* FirebaseFirestore */,
@@ -611,7 +611,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2DDAA842976F18F007369AB /* firebaseTest */,
+				A2DDAA842976F18F007369AB /* Seed */,
 				A2F7E39329FA954C004E11C8 /* projectUnitTests */,
 			);
 		};
@@ -743,7 +743,7 @@
 /* Begin PBXTargetDependency section */
 		A2F7E39929FA954C004E11C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2DDAA842976F18F007369AB /* firebaseTest */;
+			target = A2DDAA842976F18F007369AB /* Seed */;
 			targetProxy = A2F7E39829FA954C004E11C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -943,7 +943,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebaseTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firebaseTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Seed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Seed";
 			};
 			name = Debug;
 		};
@@ -963,7 +963,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/firebaseTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/firebaseTest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Seed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Seed";
 			};
 			name = Release;
 		};
@@ -979,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2DDAA932976F190007369AB /* Build configuration list for PBXNativeTarget "firebaseTest" */ = {
+		A2DDAA932976F190007369AB /* Build configuration list for PBXNativeTarget "Seed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2DDAA942976F190007369AB /* Debug */,

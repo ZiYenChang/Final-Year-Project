@@ -7,7 +7,7 @@
 
 import XCTest
 import Combine
-@testable import firebaseTest
+@testable import Seed
 import LocalAuthentication
 
 

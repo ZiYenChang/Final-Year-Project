@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2DDAA842976F18F007369AB"
                BuildableName = "firebaseTest.app"
-               BlueprintName = "firebaseTest"
+               BlueprintName = "Seed"
                ReferencedContainer = "container:Seed.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,7 +57,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2DDAA842976F18F007369AB"
             BuildableName = "firebaseTest.app"
-            BlueprintName = "firebaseTest"
+            BlueprintName = "Seed"
             ReferencedContainer = "container:Seed.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,7 +74,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2DDAA842976F18F007369AB"
             BuildableName = "firebaseTest.app"
-            BlueprintName = "firebaseTest"
+            BlueprintName = "Seed"
             ReferencedContainer = "container:Seed.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
