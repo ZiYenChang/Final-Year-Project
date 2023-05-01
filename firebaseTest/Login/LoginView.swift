@@ -44,7 +44,7 @@ struct LoginView: View {
                     Button(action: {
                         vm.login()
                         NotificationManager.instance.cancelNotification()
-                        NotificationManager.instance.scheduleDateNotification(title: "How is your day?", subtitle: "Checkout your progress!", dateHour: 15, dateMinute: 13)
+                        NotificationManager.instance.scheduleDateNotification(title: "How is your day?", subtitle: "Checkout your progress!", dateHour: 16, dateMinute: 00)
                     }, label: {
                         Text("Login")
                             .frame(maxWidth: .infinity)

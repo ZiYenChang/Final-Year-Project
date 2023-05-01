@@ -24,13 +24,13 @@ struct AddTaskView: View {
                 Section{
                     TextField("Title", text: $vm.details.title)
                     TaskStatusPickerView(selection: $vm.details.status)
-                    TextField("Note", text: $vm.details.note, axis: .vertical)
-                        .lineLimit(3, reservesSpace: true)
                     HStack {
                         DatePicker(selection: $vm.details.deadline){
                             Text("Deadline")
                         }
                     }
+                    TextField("Note", text: $vm.details.note, axis: .vertical)
+                        .lineLimit(3, reservesSpace: true)
                 }
                 Section{
                     ForEach(self.subtasks, id: \.self){ subtask in

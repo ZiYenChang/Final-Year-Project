@@ -73,7 +73,6 @@
 		A2BDB20929BA1A9800B2426E /* MeditationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20829BA1A9800B2426E /* MeditationVideoView.swift */; };
 		A2BDB20B29BA230200B2426E /* RiskTaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */; };
 		A2DDAA892976F18F007369AB /* firebaseTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA882976F18F007369AB /* firebaseTestApp.swift */; };
-		A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDAA8A2976F18F007369AB /* ContentView.swift */; };
 		A2DDAA8D2976F190007369AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8C2976F190007369AB /* Assets.xcassets */; };
 		A2DDAA902976F190007369AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2DDAA8F2976F190007369AB /* Preview Assets.xcassets */; };
 		A2DDAA9C2976F956007369AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A2DDAA9B2976F956007369AB /* FirebaseAuth */; };
@@ -182,9 +181,8 @@
 		A2BDB20629BA0F9500B2426E /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		A2BDB20829BA1A9800B2426E /* MeditationVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationVideoView.swift; sourceTree = "<group>"; };
 		A2BDB20A29BA230200B2426E /* RiskTaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskTaskCardView.swift; sourceTree = "<group>"; };
-		A2DDAA852976F18F007369AB /* firebaseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebaseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2DDAA852976F18F007369AB /* Seed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DDAA882976F18F007369AB /* firebaseTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebaseTestApp.swift; sourceTree = "<group>"; };
-		A2DDAA8A2976F18F007369AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2DDAA8C2976F190007369AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2DDAA8F2976F190007369AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A2F0DDF52979E5A9001AF1BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 		A23F66B3299BD07A009E279D /* Mood */ = {
 			isa = PBXGroup;
 			children = (
-				A2F155C129D39B4D004116F7 /* MoodOptions */,
 				A264278829A57179009C9F78 /* GetMood */,
 				A23F66BA299BDD42009E279D /* AddMood */,
 				A23F66B4299BD09C009E279D /* MoodView.swift */,
@@ -441,7 +438,7 @@
 		A2DDAA862976F18F007369AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2DDAA852976F18F007369AB /* firebaseTest.app */,
+				A2DDAA852976F18F007369AB /* Seed.app */,
 				A2F7E39429FA954C004E11C8 /* projectUnitTests.xctest */,
 			);
 			name = Products;
@@ -466,7 +463,6 @@
 				A271D4922977FF7B00A8AAC6 /* Register */,
 				A271D4882977EEBE00A8AAC6 /* Login */,
 				A2DDAA882976F18F007369AB /* firebaseTestApp.swift */,
-				A2DDAA8A2976F18F007369AB /* ContentView.swift */,
 				A2DDAA8C2976F190007369AB /* Assets.xcassets */,
 				A21D91BA29D890DB00C87ACA /* GoogleService-Info.plist */,
 				A2DDAA8E2976F190007369AB /* Preview Content */,
@@ -499,13 +495,6 @@
 				A26F438829DEFF8200889600 /* AboutThisAppView.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		A2F155C129D39B4D004116F7 /* MoodOptions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MoodOptions;
 			sourceTree = "<group>";
 		};
 		A2F1560E29D622FC004116F7 /* LowMoodSuggestions */ = {
@@ -560,7 +549,7 @@
 				A21D91B829D8903D00C87ACA /* FirebaseDatabaseSwift */,
 			);
 			productName = firebaseTest;
-			productReference = A2DDAA852976F18F007369AB /* firebaseTest.app */;
+			productReference = A2DDAA852976F18F007369AB /* Seed.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A2F7E39329FA954C004E11C8 /* projectUnitTests */ = {
@@ -605,7 +594,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A2DDAA802976F18F007369AB /* Build configuration list for PBXProject "firebaseTest" */;
+			buildConfigurationList = A2DDAA802976F18F007369AB /* Build configuration list for PBXProject "Seed" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -686,7 +675,6 @@
 				A271D4C729795B8C00A8AAC6 /* ShowTaskDetailsView.swift in Sources */,
 				A271D48D2977EFF700A8AAC6 /* TextFieldView.swift in Sources */,
 				A248303229B328A500C6FC06 /* NearlyDueCardView.swift in Sources */,
-				A2DDAA8B2976F18F007369AB /* ContentView.swift in Sources */,
 				A2F0DDFE2981D31C001AF1BB /* TaskStatusPickerView.swift in Sources */,
 				A264278A29A571C0009C9F78 /* GetMoodViewModel.swift in Sources */,
 				A260683629C77AB5005BD972 /* LowMoodView.swift in Sources */,
@@ -900,7 +888,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.firebaseTest;
-				PRODUCT_NAME = firebaseTest;
+				PRODUCT_NAME = Seed;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -932,7 +920,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = zy.firebaseTest;
-				PRODUCT_NAME = firebaseTest;
+				PRODUCT_NAME = Seed;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -982,7 +970,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2DDAA802976F18F007369AB /* Build configuration list for PBXProject "firebaseTest" */ = {
+		A2DDAA802976F18F007369AB /* Build configuration list for PBXProject "Seed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2DDAA912976F190007369AB /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/ziyenchang/Documents/Final year project/firebaseTest/Seed.xcodeproj">
    </FileRef>
 </Workspace>
